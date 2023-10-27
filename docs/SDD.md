@@ -31,7 +31,7 @@
 ### Abstract Vehicle:
 1. Id
 2. Livello batteria
-3. Move
+    - Move
 
 ### Monopattino (Vehicle):
 1. Capacità batteria (variabile di classe)
