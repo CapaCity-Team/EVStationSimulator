@@ -18,9 +18,15 @@ class Vehicle(ABC):
     @abstractmethod
     def energy_consumption(self):
         pass
+    
+    @property
+    @abstractmethod
+    def velocity(self):
+        pass
 
     def move(self, distance: float):
         self.battery -= distance * self.energy_consumption
+        return distance / self.velocity
 
     def capacity(self):
         return self.max_capacity*self.battery
@@ -52,6 +58,7 @@ class Vehicle(ABC):
 class Scooter(Vehicle):
     BATTERY_CAPACITY = None
     ENERGY_CONSUMPTION = None
+    VELOCITY = None
     def __init__(self, scooter_id):
         super().__init__(scooter_id)
 
@@ -63,9 +70,15 @@ class Scooter(Vehicle):
     def energy_consumption(self):
         return self.ENERGY_CONSUMPTION
     
+    @property
+    def velocity(self):
+        return self.VELOCITY
+
+    
 class Bike(Vehicle):
     BATTERY_CAPACITY = None
     ENERGY_CONSUMPTION = None
+    VELOCITY = None
     def __init__(self, bike_id):
         super().__init__(bike_id)
 
@@ -76,3 +89,7 @@ class Bike(Vehicle):
     @property
     def energy_consumption(self):
         return self.ENERGY_CONSUMPTION
+    
+    @property
+    def velocity(self):
+        return self.VELOCITY
