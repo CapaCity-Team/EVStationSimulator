@@ -1,5 +1,5 @@
 import simpy
-from src.vehicle import Vehicle
+from vehicle import Vehicle
 from station_storage import StationStorage
 
 class Station:
@@ -30,20 +30,22 @@ class Station:
             self.charge_next_vehicle()
         
         except simpy.Interrupt:
-            print("Charging interrupted for vehicle {}".format(vehicle.id))
+            print("Charging interrupted for vehicle {} at {}".format(vehicle.id, self.env.now))
             charged_time = self.env.now - now
+            before = vehicle.battery
             vehicle.charge(charged_time / self.charging_time / vehicle.max_capacity)
+            print("Charged vehicle {} of {}% in station {}".format(vehicle.id, (vehicle.battery-before)*100, self.id))
 
         del self.charging_vehicles[vehicle]
 
     def charge_next_vehicle(self):
         to_charge = self.vehicles.next_vehicle_to_charge(self.charging_vehicles.keys())
         if to_charge is not None:
-            charging_process = self.charge(to_charge, self.env.now)
+            charging_process = self.env.process(self.charge(to_charge, self.env.now))
             self.charging_vehicles[to_charge] = charging_process
 
     def stop_charging(self):
-        for vehicle, process in self.charging_vehicles:
+        for vehicle, process in self.charging_vehicles.items():
             process.interrupt()
 
     def start_charging(self):

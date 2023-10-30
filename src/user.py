@@ -7,27 +7,24 @@ class User:
         self.id = id
         self.from_station = from_station
         self.to_station = to_station
-        self.action = env.process(self.run())
 
     def run(self):
-        print("User {} created".format(self.id))
-        print("User {} requesting vehicle from station {}".format(self.id, self.from_station.id))
-        
-        req_time = self.env.now
-        vehicle = yield self.from_station.request_unlock(self)
-        
-        print("User {} got vehicle {} with battery {} from station {} in {} seconds".format(self.id, vehicle.id, vehicle.battery, self.from_station.id, self.env.now - req_time))
+        print("User {} from station {} to station {}".format(self.id, self.from_station.id, self.to_station.id))
+        print("User {} requesting vehicle from station {} at {}".format(self.id, self.from_station.id, self.env.now))
+
+        vehicle = self.from_station.request_unlock()
+        battery = vehicle.battery*100
+        print("User {} got vehicle {} with battery {}% from station {} at {}".format(self.id, vehicle.id, battery, self.from_station.id, self.env.now))
         
         distance = self.from_station.distance(self.to_station)
         time = vehicle.move(distance)
         yield self.env.timeout(time)
 
-        print("User with vehicle {} arrived to station {} in {} seconds".format(vehicle.id, self.to_station.id, time))
+        print("User {} with vehicle {} arrived to station {} in {} using {}% battery".format(self.id, vehicle.id, self.to_station.id, time, battery-vehicle.battery*100))
 
-        print("User {} requesting lock in station {}".format(self.id, self.to_station.id))
+        print("User {} requesting lock in station {} at {}".format(self.id, self.to_station.id, self.env.now))
         
-        req_time = self.env.now
-        yield self.to_station.request_lock(vehicle, self)
+        self.to_station.request_lock(vehicle)
         
-        print("User {} locked vehicle {} in station {} in {} seconds".format(self.id, vehicle.id, self.to_station.id, self.env.now - req_time))
+        print("User {} locked vehicle {} in station {} at {}".format(self.id, vehicle.id, self.to_station.id, self.env.now))
         print("User {} finished".format(self.id))

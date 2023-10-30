@@ -13,7 +13,7 @@ class LIFO(ChargingPolicy):
     def vehicles_to_charge(self, vehicles, number):
         to_charge = []
         for vehicle in vehicles[::-1]:
-            if vehicle.is_charged():
+            if not vehicle.is_charged():
                 to_charge.append(vehicle)
             if len(to_charge) == number:
                 return to_charge
@@ -21,7 +21,7 @@ class LIFO(ChargingPolicy):
     
     def next_vehicle_to_charge(self, vehicles):
         for vehicle in vehicles[::-1]:
-            if vehicle.is_charged():
+            if not vehicle.is_charged():
                 return vehicle
         return None
     
@@ -29,7 +29,7 @@ class FIFO(ChargingPolicy):
     def vehicles_to_charge(self, vehicles, number):
         to_charge = []
         for vehicle in vehicles:
-            if vehicle.is_charged():
+            if not vehicle.is_charged():
                 to_charge.append(vehicle)
             if len(to_charge) == number:
                 return to_charge
@@ -37,6 +37,6 @@ class FIFO(ChargingPolicy):
     
     def next_vehicle_to_charge(self, vehicles):
         for vehicle in vehicles:
-            if vehicle.is_charged():
+            if not vehicle.is_charged():
                 return vehicle
         return None
