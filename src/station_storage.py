@@ -32,14 +32,14 @@ class StationStorage(ABC):
         pass
 
     def lock(self, vehicle):
-        self.slots.get()
+        yield self.slots.put("vehicle")
         self.add_vehicle(vehicle)
 
-    def unlock(self):
-        self.available_vehicles.get()
+    def unlock(self, user):
+        yield self.available_vehicles.get()
+        self.slots.get()
         v = self.pop_vehicle()
-        self.slots.put("vehicle")
-        return v
+        user.vehicle = v
 
 class StationStorageLIFO(StationStorage):
     def __init__(self, env: simpy.Environment, capacity: int, policy: ChargingPolicy):
@@ -52,8 +52,12 @@ class StationStorageLIFO(StationStorage):
 
     def add_vehicle(self, vehicle: Vehicle):
         self.vehicles.append(vehicle)
-        if len(self.available_vehicles.items) == 0 and vehicle.is_charged():
-            self.available_vehicles.put("vehicle")
+        if vehicle.is_charged():
+            if len(self.available_vehicles.items) == 0:
+                self.available_vehicles.put("vehicle")
+        else:
+            if len(self.available_vehicles.items) == 1:
+                self.available_vehicles.get()        
 
     def pop_vehicle(self) -> Vehicle:
         v = self.vehicles.pop()

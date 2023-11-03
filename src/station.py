@@ -39,7 +39,7 @@ class Station:
         del self.charging_vehicles[vehicle]
 
     def charge_next_vehicle(self):
-        to_charge = self.vehicles.next_vehicle_to_charge(self.charging_vehicles.keys())
+        to_charge = self.vehicles.next_vehicle_to_charge(list(self.charging_vehicles.keys()))
         if to_charge is not None:
             charging_process = self.env.process(self.charge(to_charge, self.env.now))
             self.charging_vehicles[to_charge] = charging_process
@@ -53,13 +53,13 @@ class Station:
             self.charge_next_vehicle()
 
     def request_lock(self, vehicle: Vehicle):
-        self.vehicles.lock(vehicle)
+        yield from self.vehicles.lock(vehicle)
         if self.vehicles.need_reschedule():
             self.stop_charging()
             self.start_charging()
     
-    def request_unlock(self) -> Vehicle:
-        return self.vehicles.unlock()
+    def request_unlock(self, user):
+        yield from self.vehicles.unlock(user)
     
     def distance(self, station):
         return ((self.position[0] - station.position[0])**2 + (self.position[1] - station.position[1])**2)**0.5

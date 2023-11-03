@@ -10,7 +10,7 @@ def main(env: Environment):
     Scooter.load_config("../config/vehicle.json")
 
     # inizializzazione stazioni
-    stations = [Station(env, i, (randint(0,20), randint(0,20)), 1, 2, StationStorageLIFO(env, 10, LIFO())) for i in range(5)]
+    stations = [Station(env, i, (randint(0,20), randint(0,20)), 1, 2, StationStorageLIFO(env, 10, LIFO())) for i in range(3)]
 
     # inizializzazione veicoli
     vehicles = [Scooter(i) for i in range(6*len(stations))]
@@ -23,8 +23,8 @@ def main(env: Environment):
     # inizializzazione utenti
     users = []
     for i in range(10):
-        p = randint(0,4)
-        a = randint(0,4)
+        p = randint(0,len(stations)-1)
+        a = randint(0,len(stations)-1)
         users.append(User(env, i, stations[p], stations[a]))
     
     # avvio simulazione
@@ -35,4 +35,4 @@ def main(env: Environment):
 if __name__ == "__main__":
     env = Environment()
     env.process(main(env))
-    env.run(until=20)
+    env.run(until=40)
