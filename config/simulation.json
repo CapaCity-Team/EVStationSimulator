@@ -1,0 +1,19 @@
+{
+    "Map": {
+        "Size": 100,
+        "Shape": "Square",
+        "Distribution": "random",
+        "Number of Stations": 10
+    },
+    "Station": {
+        "Charging Time": 1,
+        "Max Concurrent Charging": 3,
+        "Station Storage": "StationStorageLIFO",
+        "Capacity": 10,
+        "Charging Policy": "LIFO",
+        "Number of Vehicles": 6
+    },
+
+    "Number of Users": 100,
+    "Run Time": 100
+}

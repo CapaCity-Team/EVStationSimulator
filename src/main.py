@@ -1,30 +1,51 @@
+from user import User
 from station import Station
 from vehicle import Scooter
-from user import User
-from charging_policy import LIFO
-from station_storage import StationStorageLIFO
+
+import charging_policy
+import station_storage
+import map
+
 from simpy import Environment
 from random import randint
+import os, json
 
-def main(env: Environment):
-    Scooter.load_config("../config/vehicle.json")
+def main(env: Environment, config_data: dict):
+    try:
+        Scooter.load_config(os.path.join(os.path.dirname(__file__),"../config/vehicle.json"))
 
-    # inizializzazione stazioni
-    stations = [Station(env, i, (randint(0,20), randint(0,20)), 1, 2, StationStorageLIFO(env, 10, LIFO())) for i in range(3)]
+        # to do the multivehicle case
+        # vehicles_type = []
+        # for type in config_data["Vehicles"]["Type"]:
+        #     v = getattr(vehicle, type)
+        #     v.load_config(config_data["Vehicles"]["Config File"])
+        #     vehicles_type.append(vehicle)
 
-    # inizializzazione veicoli
-    vehicles = [Scooter(i) for i in range(6*len(stations))]
+        policy = getattr(charging_policy, config_data["Station"]["Charging Policy"])
 
-    # riempimento stazioni
+        storage = getattr(station_storage, config_data["Station"]["Station Storage"])
+
+        shape = getattr(map, config_data["Map"]["Shape"])
+    except AttributeError:
+        raise Exception(f'Invalid configuration file')
+    except Exception as e:
+        raise e
+
+    positions = shape(config_data["Map"]["Size"], config_data["Map"]["Distribution"]).generate(config_data["Map"]["Number of Stations"])
+
+    stations = [Station(env, i, position, config_data["Station"]["Charging Time"], config_data["Station"]["Max Concurrent Charging"], storage(env, config_data["Station"]["Capacity"], policy())) for i, position in enumerate(positions)]
+
     for i, station in enumerate(stations):
-        for j in range(6):
-            station.vehicles.add_vehicle(vehicles[i*6 + j])
+        for j in range(config_data["Station"]["Number of Vehicles"]):
+            station.vehicles.add_vehicle(Scooter(i*config_data["Station"]["Number of Vehicles"] + j))
     
     # inizializzazione utenti
     users = []
-    for i in range(10):
+    for i in range(config_data["Number of Users"]):
         p = randint(0,len(stations)-1)
         a = randint(0,len(stations)-1)
+        while a == p:
+            a = randint(0,len(stations)-1)
         users.append(User(env, i, stations[p], stations[a]))
     
     # avvio simulazione
@@ -34,5 +55,18 @@ def main(env: Environment):
 
 if __name__ == "__main__":
     env = Environment()
-    env.process(main(env))
-    env.run(until=40)
+
+    try:
+        config_file = os.path.join(os.path.dirname(__file__),"../config/simulation.json")
+        with open(config_file, 'r') as file:
+            config_data = json.load(file)
+    except FileNotFoundError:
+        raise Exception(f'File {config_file} not found')
+    except json.decoder.JSONDecodeError:
+        raise Exception(f'File {config_file} is not a valid JSON file')
+    except Exception as e:
+        raise e
+
+    env.process(main(env, config_data))
+    
+    env.run(until=config_data["Run Time"])
