@@ -1,6 +1,12 @@
 import simpy
 from station import Station
 
+import logging, os
+
+# Obtain a reference to the loggers configured in the main script
+logger = logging.getLogger(__name__)
+path_result = os.path.join(os.path.dirname(__file__), "../data/simulation_result/result.csv")
+
 class User:
     """
     A class representing a user of the electric station simulation.
@@ -24,22 +30,38 @@ class User:
         """
         The main method of the User class, representing the user's actions during the simulation.
         """
-        print("User {} from station {} to station {}".format(self.id, self.from_station.id, self.to_station.id))
-        print("User {} requesting vehicle from station {} at {}".format(self.id, self.from_station.id, self.env.now))
+        start_time = self.env.now
 
+        logger.info("User {} from station {} to station {}".format(self.id, self.from_station.id, self.to_station.id))
+        logger.info("User {} requesting vehicle from station {} at {}".format(self.id, self.from_station.id, self.env.now))
+
+        request_time = self.env.now
         yield from self.from_station.request_unlock(self)
+        unlock_time = self.env.now - request_time
+
         battery = self.vehicle.battery*100
-        print("User {} got vehicle {} with battery {}% from station {} at {}".format(self.id, self.vehicle.id, battery, self.from_station.id, self.env.now))
-        
+        logger.info("User {} got vehicle {} with battery {}% from station {} at {}".format(self.id, self.vehicle.id, battery, self.from_station.id, self.env.now))
+
         distance = self.from_station.distance(self.to_station)
         time = self.vehicle.move(distance)
         yield self.env.timeout(time)
 
-        print("User {} with vehicle {} arrived to station {} in {} using {}% battery".format(self.id, self.vehicle.id, self.to_station.id, time, battery-self.vehicle.battery*100))
+        battery_used = battery - self.vehicle.battery*100
 
-        print("User {} requesting lock in station {} at {}".format(self.id, self.to_station.id, self.env.now))
-        
+        logger.info("User {} with vehicle {} arrived to station {} in {} using {}% battery".format(self.id, self.vehicle.id, self.to_station.id, time, battery_used))
+
+        logger.info("User {} requesting lock in station {} at {}".format(self.id, self.to_station.id, self.env.now))
+ 
+        request_time = self.env.now
         yield from self.to_station.request_lock(self.vehicle)
+        lock_time = self.env.now - request_time
         
-        print("User {} locked vehicle {} in station {} at {}".format(self.id, self.vehicle.id, self.to_station.id, self.env.now))
-        print("User {} finished".format(self.id))
+        logger.info("User {} locked vehicle {} in station {} at {}".format(self.id, self.vehicle.id, self.to_station.id, self.env.now))
+        logger.info("User {} finished".format(self.id))
+
+        end_time = self.env.now
+        
+        # ["User ID", "From Station", "To Station", "Vehicle ID", "Start Time", "End Time", "Unlock Time", "Lock Time", "Distance", "Time Traveling", "Battery Used"]
+        print("{},{},{},{},{},{},{},{},{},{},{}".format(self.id, self.from_station.id, self.to_station.id, self.vehicle.id, start_time, end_time, unlock_time, lock_time, distance, time, battery_used),
+              file=open(path_result, "a"),
+                flush=True)

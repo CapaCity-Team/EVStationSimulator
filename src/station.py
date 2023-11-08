@@ -2,6 +2,11 @@ import simpy
 from vehicle import Vehicle
 from station_storage import StationStorage
 
+import logging
+
+# Obtain a reference to the logger configured in the main script
+logger = logging.getLogger(__name__)
+
 class Station:
     """
     A class representing a charging station for electric vehicles.
@@ -51,24 +56,24 @@ class Station:
         - A timeout event representing the time it takes to charge the vehicle.
         """
         try:
-            print("Charging vehicle {} with battery {} in station {}".format(vehicle.id, vehicle.battery, self.id))
+            logger.info("Charging vehicle {} with battery {}% in station {}".format(vehicle.id, vehicle.battery*100, self.id))
 
             time = self.charging_time * vehicle.capacity_left()
             yield self.env.timeout(time)
             vehicle.fully_charge()
 
-            print("Charged vehicle {} in {} seconds".format(vehicle.id, time))
+            logger.info("Charged vehicle {} in {} unit of time".format(vehicle.id, time))
 
             self.vehicles.charged(vehicle)
             
             self.charge_next_vehicle()
         
         except simpy.Interrupt:
-            print("Charging interrupted for vehicle {} at {}".format(vehicle.id, self.env.now))
+            logger.info("Charging interrupted for vehicle {} at {}".format(vehicle.id, self.env.now))
             charged_time = self.env.now - now
             before = vehicle.battery
             vehicle.charge(charged_time / self.charging_time / vehicle.max_capacity)
-            print("Charged vehicle {} of {}% in station {}".format(vehicle.id, (vehicle.battery-before)*100, self.id))
+            logger.info("Charged vehicle {} of {}% in station {}".format(vehicle.id, (vehicle.battery-before)*100, self.id))
 
         del self.charging_vehicles[vehicle]
 
@@ -133,3 +138,12 @@ class Station:
         - The Euclidean distance between the two stations.
         """
         return ((self.position[0] - station.position[0])**2 + (self.position[1] - station.position[1])**2)**0.5
+    
+    def add_vehicle(self, vehicle: Vehicle):
+        """
+        Adds a vehicle to the station in the deployment phase.
+
+        Parameters:
+        - vehicle (Vehicle): The vehicle to add to the station.
+        """
+        self.vehicles.add_vehicle(vehicle)

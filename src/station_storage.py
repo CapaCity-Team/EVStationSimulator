@@ -14,7 +14,7 @@ class StationStorage(ABC):
     - available_vehicles (simpy.Store): a store that represents the vehicles available for charging in the station.
     """
 
-    def __init__(self, env: simpy.Environment, capacity: int, policy: ChargingPolicy):
+    def __init__(self, env: simpy.Environment, policy: ChargingPolicy, params: dict):
         """
         Initializes a new instance of the StationStorage class.
 
@@ -23,10 +23,10 @@ class StationStorage(ABC):
         - capacity (int): the maximum number of vehicles that can be stored in the station.
         - policy (ChargingPolicy): the charging policy used by the station.
         """
-        self.capacity = capacity
+        self.capacity = params["Capacity"]
         self.policy = policy
         
-        self.slots = simpy.Store(env, capacity)
+        self.slots = simpy.Store(env, self.capacity)
         self.available_vehicles = simpy.Store(env)
 
     @abstractmethod
@@ -109,7 +109,7 @@ class StationStorageLIFO(StationStorage):
     A station storage that uses a last-in, first-out (LIFO) policy for charging its vehicles.
     """
 
-    def __init__(self, env: simpy.Environment, capacity: int, policy: ChargingPolicy):
+    def __init__(self, env: simpy.Environment, policy: ChargingPolicy, params: dict):
         """
         Initializes a new instance of the StationStorageLIFO class.
 
@@ -118,7 +118,7 @@ class StationStorageLIFO(StationStorage):
         - capacity (int): the maximum number of vehicles that can be stored in the station.
         - policy (ChargingPolicy): the charging policy used by the station.
         """
-        super().__init__(env, capacity, policy)
+        super().__init__(env, policy, params)
         self.vehicles = []
 
     def charged(self, vehicle: Vehicle):

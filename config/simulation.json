@@ -1,19 +1,37 @@
 {
     "Map": {
-        "Size": 100,
         "Shape": "Square",
-        "Distribution": "random",
+        "Shape Parameters": {
+            "Size": 10,
+            "Distribution": "random"
+        },
         "Number of Stations": 10
     },
+    
     "Station": {
         "Charging Time": 1,
         "Max Concurrent Charging": 3,
+        
         "Station Storage": "StationStorageLIFO",
-        "Capacity": 10,
         "Charging Policy": "LIFO",
-        "Number of Vehicles": 6
+
+        "Storage Parameters":{
+            "Capacity": 10
+        }
     },
 
-    "Number of Users": 100,
-    "Run Time": 100
+    "Vehicles": {
+        "Type": ["Scooter"],
+        "Deploy Vehicles": "uniform_distribution",
+        "Deploy Parameters": {
+            "Vehicles per Station": 6
+        }
+    },
+
+    "Users": {
+        "Number": 100,
+        "Interarrival Time": 1
+    },
+    
+    "Run Time": 500
 }

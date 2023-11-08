@@ -1,7 +1,7 @@
 {
     "Scooter": {
-        "BATTERY_CAPACITY" : 10,
-        "ENERGY_CONSUMPTION" : 0.03,
+        "BATTERY_CAPACITY" : 50,
+        "ENERGY_CONSUMPTION" : 0.05,
         "VELOCITY": 20
     },
 

@@ -4,18 +4,7 @@ from random import randint
 class Shape:
     """
     Abstract base class for all shapes.
-    """
-    def __init__(self, size: int, distribution: str):
-        """
-        Initializes a new instance of the Shape class.
-
-        Parameters:
-        - size (int): the size of the map.
-        - distribution (str): the distribution of the stations.
-        """
-        self.size = size
-        self.distribution = distribution
-
+    """    
     @abstractmethod
     def generate(self, number: int):
         """
@@ -33,6 +22,16 @@ class Square(Shape):
     """
     Square shape.
     """
+    def __init__(self, params: dict):
+        """
+        Initializes a new instance of the Square class.
+
+        Parameters:
+        - params (dict): the parameters for the shape.
+        """
+        self.size = params["Size"]
+        self.distribution = params["Distribution"]
+    
     def generate(self, number: int):
         """
         Generates a list of positions for the stations.
