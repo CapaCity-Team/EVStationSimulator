@@ -1,11 +1,11 @@
 {
     "Map": {
-        "Shape": "Square",
+        "Shape": "Grid",
         "Shape Parameters": {
-            "Size": 10,
-            "Distribution": "random"
-        },
-        "Number of Stations": 10
+            "Rows": 6,
+            "Columns": 6,
+            "Width": 3
+        }
     },
     
     "Station": {
@@ -29,7 +29,7 @@
     },
 
     "Users": {
-        "Number": 100,
+        "Number": 500,
         "Interarrival Time": 1
     },
     

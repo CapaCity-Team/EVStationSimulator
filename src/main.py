@@ -29,7 +29,7 @@ for handler in root_logger.handlers:
         root_logger.removeHandler(handler)
 
 path_result = os.path.join(os.path.dirname(__file__), "../data/simulation_result/result.csv")
-column_names = ["User ID", "From Station", "To Station", "Vehicle ID", "Start Time", "End Time", "Unlock Time", "Lock Time", "Distance", "Time Traveling", "Battery Used"]
+column_names = ["User ID", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]
 with open(path_result, "w") as f:
     print(",".join(column_names), file=f)
 
@@ -67,7 +67,7 @@ def main(env: Environment, config_data: dict):
         raise e
 
     # generazione posizioni stazioni
-    positions = shape(config_data["Map"]["Shape Parameters"]).generate(config_data["Map"]["Number of Stations"])
+    positions = shape(config_data["Map"]["Shape Parameters"]).generate()
 
     # creazione stazioni
     stations = [
@@ -98,6 +98,60 @@ def main(env: Environment, config_data: dict):
     for user in users:
         yield env.timeout(config_data["Users"]["Interarrival Time"])
         env.process(user.run())
+    
+def analyze_results():
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    import numpy as np
+
+    path_result = os.path.join(os.path.dirname(__file__), "../data/simulation_result/result.csv")
+    df = pd.read_csv(path_result)
+
+    # Column names:
+    # ["User ID", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]
+
+    print("Total Time: {}".format(df["Total Time"]))
+
+    # plot unlock time
+    plt.figure()
+    sns.histplot(data=df, x="Unlock Time", bins=100)
+    plt.savefig(os.path.join(os.path.dirname(__file__), "../data/simulation_result/unlock_time.png"))
+
+    # plot lock time
+    plt.figure()
+    sns.histplot(data=df, x="Lock Time", bins=100)
+    plt.savefig(os.path.join(os.path.dirname(__file__), "../data/simulation_result/lock_time.png"))
+
+    # plot From Station
+    plt.figure()
+    sns.histplot(data=df, x="From Station", bins=100)
+    plt.savefig(os.path.join(os.path.dirname(__file__), "../data/simulation_result/from_station.png"))
+
+    # plot To Station
+    plt.figure()
+    sns.histplot(data=df, x="To Station", bins=100)
+    plt.savefig(os.path.join(os.path.dirname(__file__), "../data/simulation_result/to_station.png"))
+
+    # Plot vehicle used
+    plt.figure()
+    sns.histplot(data=df, x="Vehicle ID", bins=100)
+    plt.savefig(os.path.join(os.path.dirname(__file__), "../data/simulation_result/vehicle_used.png"))
+
+    # plot distance
+    plt.figure()
+    sns.histplot(data=df, x="Distance", bins=100)
+    plt.savefig(os.path.join(os.path.dirname(__file__), "../data/simulation_result/distance.png"))
+
+    # plot battery used
+    plt.figure()
+    sns.histplot(data=df, x="Battery Used", bins=100)
+    plt.savefig(os.path.join(os.path.dirname(__file__), "../data/simulation_result/battery_used.png"))
+
+    # plot total time
+    plt.figure()
+    sns.histplot(data=df, x="Total Time", bins=100)
+    plt.savefig(os.path.join(os.path.dirname(__file__), "../data/simulation_result/total_time.png"))
 
 if __name__ == "__main__":
     # inizializzazione ambiente
@@ -120,3 +174,6 @@ if __name__ == "__main__":
     
     # esecuzione simulazione
     env.run(until=config_data["Run Time"])
+
+    # analisi risultati
+    analyze_results()

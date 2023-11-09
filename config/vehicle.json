@@ -1,13 +1,13 @@
 {
     "Scooter": {
-        "BATTERY_CAPACITY" : 50,
+        "BATTERY_CAPACITY" : 70,
         "ENERGY_CONSUMPTION" : 0.05,
-        "VELOCITY": 20
+        "VELOCITY": 5
     },
 
     "Bike": {
         "BATTERY_CAPACITY" : 80,
-        "ENERGY_CONSUMPTION" : 1,
-        "VELOCITY": 15
+        "ENERGY_CONSUMPTION" : 0.04,
+        "VELOCITY": 1.5
     }
 }

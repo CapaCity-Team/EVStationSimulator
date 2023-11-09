@@ -59,9 +59,13 @@ class User:
         logger.info("User {} locked vehicle {} in station {} at {}".format(self.id, self.vehicle.id, self.to_station.id, self.env.now))
         logger.info("User {} finished".format(self.id))
 
-        end_time = self.env.now
-        
-        # ["User ID", "From Station", "To Station", "Vehicle ID", "Start Time", "End Time", "Unlock Time", "Lock Time", "Distance", "Time Traveling", "Battery Used"]
-        print("{},{},{},{},{},{},{},{},{},{},{}".format(self.id, self.from_station.id, self.to_station.id, self.vehicle.id, start_time, end_time, unlock_time, lock_time, distance, time, battery_used),
-              file=open(path_result, "a"),
+        total_time = self.env.now - start_time
+        if total_time <= 0:
+            print("User {} total time is 0".format(self.id))
+            
+
+        with open(path_result, "a") as file:
+            # ["User ID", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]
+            print("{},{},{},{},{},{},{},{},{}".format(self.id, self.from_station.id, self.to_station.id, self.vehicle.id, unlock_time, lock_time, total_time, battery_used, distance),
+                file=file,
                 flush=True)
