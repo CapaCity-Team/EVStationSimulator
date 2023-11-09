@@ -1,34 +1,13 @@
 from abc import ABC, abstractmethod
 from random import randint
 
-class Shape:
-    """
-    Abstract base class for all shapes.
-    """    
+class Map(ABC):
     @abstractmethod
-    def generate(self, number: int):
-        """
-        Generates a list of positions for the stations.
-
-        Parameters:
-        - number (int): the number of stations to generate.
-
-        Returns:
-        - list: a list of positions for the stations.
-        """
+    def generate(self):
         pass
 
-class Square(Shape):
-    """
-    Square shape.
-    """
+class Square(Map):
     def __init__(self, params: dict):
-        """
-        Initializes a new instance of the Square class.
-
-        Parameters:
-        - params (dict): the parameters for the shape.
-        """
         self.size = params["Size"]
         self.distribution = params["Distribution"]
         self.number = params["Number of Stations"]
@@ -46,17 +25,8 @@ class Square(Shape):
 
         return positions
     
-class Circle(Shape):
-    """
-    Circle shape.
-    """
+class Circle(Map):
     def __init__(self, params: dict):
-        """
-        Initializes a new instance of the Circle class.
-
-        Parameters:
-        - params (dict): the parameters for the shape.
-        """
         self.radius = params["Radius"]
         self.distribution = params["Distribution"]
         self.number = params["Number of Stations"]
@@ -74,17 +44,8 @@ class Circle(Shape):
 
         return positions
     
-class Grid(Shape):
-    """
-    Grid shape.
-    """
+class Grid(Map):
     def __init__(self, params: dict):
-        """
-        Initializes a new instance of the Grid class.
-
-        Parameters:
-        - params (dict): the parameters for the shape.
-        """
         self.rows = params["Rows"]
         self.columns = params["Columns"]
         self.width = params["Width"]

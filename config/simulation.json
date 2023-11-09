@@ -1,7 +1,7 @@
 {
     "Map": {
-        "Shape": "Grid",
-        "Shape Parameters": {
+        "Type": "Grid",
+        "Parameters": {
             "Rows": 6,
             "Columns": 6,
             "Width": 3

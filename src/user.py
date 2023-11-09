@@ -8,17 +8,6 @@ logger = logging.getLogger(__name__)
 path_result = os.path.join(os.path.dirname(__file__), "../data/simulation_result/result.csv")
 
 class User:
-    """
-    A class representing a user of the electric station simulation.
-
-    Attributes:
-    - env (simpy.Environment): the simulation environment
-    - id (int): the user's ID
-    - from_station (Station): the station where the user starts
-    - to_station (Station): the station where the user wants to go
-    - vehicle (Vehicle): the vehicle the user is using
-    """
-
     def __init__(self, env: simpy.Environment, id: int, from_station: Station, to_station: Station):
         self.env = env
         self.id = id
@@ -27,9 +16,6 @@ class User:
         self.vehicle = None
 
     def run(self):
-        """
-        The main method of the User class, representing the user's actions during the simulation.
-        """
         start_time = self.env.now
 
         logger.info("User {} from station {} to station {}".format(self.id, self.from_station.id, self.to_station.id))
@@ -62,7 +48,7 @@ class User:
         total_time = self.env.now - start_time
         if total_time <= 0:
             print("User {} total time is 0".format(self.id))
-            
+
 
         with open(path_result, "a") as file:
             # ["User ID", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]

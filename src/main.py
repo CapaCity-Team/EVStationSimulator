@@ -43,7 +43,7 @@ def main(env: Environment, config_data: dict):
         import deployment
 
         # caricamento classe di mappa
-        shape = getattr(map, config_data["Map"]["Shape"])
+        map_type = getattr(map, config_data["Map"]["Type"])
 
         # caricamento classe di storage
         storage = getattr(station_storage, config_data["Station"]["Station Storage"])
@@ -67,7 +67,7 @@ def main(env: Environment, config_data: dict):
         raise e
 
     # generazione posizioni stazioni
-    positions = shape(config_data["Map"]["Shape Parameters"]).generate()
+    positions = map_type(config_data["Map"]["Parameters"]).generate()
 
     # creazione stazioni
     stations = [
