@@ -110,9 +110,7 @@ def analyze_results():
 
     # Column names:
     # ["User ID", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]
-
-    print("Total Time: {}".format(df["Total Time"]))
-
+    
     # plot unlock time
     plt.figure()
     sns.histplot(data=df, x="Unlock Time", bins=100)

@@ -4,6 +4,7 @@ from random import randint
 class Map(ABC):
     @abstractmethod
     def generate(self):
+        # Abstract method to generate the positions of the stations
         pass
 
 class Square(Map):
@@ -13,8 +14,9 @@ class Square(Map):
         self.number = params["Number of Stations"]
     
     def generate(self):
-
+        # Generate the positions of the stations
         if self.distribution == "random":
+            # Generate random positions
             positions = []
             while len(positions) < self.number:
                 position = (randint(0,self.size-1), randint(0,self.size-1))
@@ -32,8 +34,9 @@ class Circle(Map):
         self.number = params["Number of Stations"]
     
     def generate(self):
-
+        # Generate the positions of the stations
         if self.distribution == "random":
+            # Generate random positions
             positions = []
             while len(positions) < self.number:
                 position = (randint(-self.radius,self.radius), randint(-self.radius,self.radius))
@@ -51,6 +54,7 @@ class Grid(Map):
         self.width = params["Width"]
     
     def generate(self):
+        # Generate the positions of the stations in a grid
         positions = []
         for i in range(self.rows):
             for j in range(self.columns):
