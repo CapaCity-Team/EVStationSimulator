@@ -1,476 +1,1178 @@
-2023-11-10 15:09:33,919 - station - INFO - Charging vehicle 76 with battery 66.45898033750315% in station 16
-2023-11-10 15:09:33,920 - station - INFO - Charging vehicle 179 with battery 88.42408331560337% in station 16
-2023-11-10 15:09:33,920 - station - INFO - Charging vehicle 185 with battery 92.84426082867543% in station 16
-2023-11-10 15:09:33,920 - user - INFO - User 317 with vehicle 141 arrived to station 26 in 1.8973665961010275 using 47.4341649025257% battery
-2023-11-10 15:09:33,920 - user - INFO - User 317 requesting lock in station 26 at 463.18371197704505
-2023-11-10 15:09:33,920 - user - INFO - User 339 with vehicle 139 arrived to station 26 in 1.8973665961010275 using 47.4341649025257% battery
-2023-11-10 15:09:33,920 - user - INFO - User 339 requesting lock in station 26 at 463.18371197704505
-2023-11-10 15:09:33,920 - station - INFO - Station 26 has 2 vehicles
-2023-11-10 15:09:33,920 - user - INFO - User 317 locked vehicle 141 in station 26 at 463.18371197704505
-2023-11-10 15:09:33,920 - user - INFO - User 317 finished
-2023-11-10 15:09:33,920 - station - INFO - Charging interrupted for vehicle 93 at 463.18371197704505
-2023-11-10 15:09:33,920 - station - INFO - Charged vehicle 93 of 2.376224895424861% in station 26
-2023-11-10 15:09:33,920 - station - INFO - Charging vehicle 141 with battery 52.5658350974743% in station 26
-2023-11-10 15:09:33,920 - station - INFO - Station 26 has 3 vehicles
-2023-11-10 15:09:33,920 - user - INFO - User 339 locked vehicle 139 in station 26 at 463.18371197704505
-2023-11-10 15:09:33,920 - user - INFO - User 339 finished
-2023-11-10 15:09:33,920 - station - INFO - Charging interrupted for vehicle 141 at 463.18371197704505
-2023-11-10 15:09:33,920 - station - INFO - Charged vehicle 141 of 0.0% in station 26
-2023-11-10 15:09:33,920 - station - INFO - Charging vehicle 139 with battery 52.5658350974743% in station 26
-2023-11-10 15:09:33,920 - station - INFO - Charging vehicle 93 with battery 72.37622489542485% in station 26
-2023-11-10 15:09:33,921 - user - INFO - User 442 with vehicle 78 arrived to station 7 in 2.545584412271571 using 63.63961030678929% battery
-2023-11-10 15:09:33,921 - user - INFO - User 442 requesting lock in station 7 at 463.66568837975683
-2023-11-10 15:09:33,921 - user - INFO - User 463 from station 11 to station 32
-2023-11-10 15:09:33,921 - user - INFO - User 463 requesting vehicle from station 11 at 464
-2023-11-10 15:09:33,921 - station - INFO - Charged vehicle 181 in 37.85828839237189 unit of time
-2023-11-10 15:09:33,921 - station - INFO - Station 25 has 0 vehicles
-2023-11-10 15:09:33,921 - user - INFO - User 305 got vehicle 181 with battery 100% from station 25 at 464.42196369044956
-2023-11-10 15:09:33,921 - station - INFO - Charged vehicle 38 in 23.478713763747795 unit of time
-2023-11-10 15:09:33,921 - station - INFO - Charging vehicle 18 with battery 81.34520112357124% in station 8
-2023-11-10 15:09:33,921 - station - INFO - Station 8 has 8 vehicles
-2023-11-10 15:09:33,921 - user - INFO - User 417 got vehicle 38 with battery 100% from station 8 at 464.82035455024766
-2023-11-10 15:09:33,921 - user - INFO - User 464 from station 20 to station 21
-2023-11-10 15:09:33,921 - user - INFO - User 464 requesting vehicle from station 20 at 465
-2023-11-10 15:09:33,921 - station - INFO - Charged vehicle 165 in 5.710803202613359 unit of time
-2023-11-10 15:09:33,921 - station - INFO - Charging vehicle 81 with battery 13.374611017654026% in station 1
-2023-11-10 15:09:33,921 - user - INFO - User 462 with vehicle 29 arrived to station 11 in 3.0 using 75.0% battery
-2023-11-10 15:09:33,921 - user - INFO - User 462 requesting lock in station 11 at 466.0
-2023-11-10 15:09:33,921 - user - INFO - User 465 from station 28 to station 31
-2023-11-10 15:09:33,921 - user - INFO - User 465 requesting vehicle from station 28 at 466
-2023-11-10 15:09:33,921 - user - INFO - User 305 with vehicle 181 arrived to station 6 in 1.8973665961010275 using 47.4341649025257% battery
-2023-11-10 15:09:33,921 - user - INFO - User 305 requesting lock in station 6 at 466.3193302865506
-2023-11-10 15:09:33,922 - station - INFO - Station 6 has 4 vehicles
-2023-11-10 15:09:33,922 - user - INFO - User 305 locked vehicle 181 in station 6 at 466.3193302865506
-2023-11-10 15:09:33,922 - user - INFO - User 305 finished
-2023-11-10 15:09:33,922 - station - INFO - Charging interrupted for vehicle 157 at 466.3193302865506
-2023-11-10 15:09:33,922 - station - INFO - Charged vehicle 157 of 15.554341976692044% in station 6
-2023-11-10 15:09:33,922 - station - INFO - Charging vehicle 181 with battery 52.5658350974743% in station 6
-2023-11-10 15:09:33,922 - user - INFO - User 417 with vehicle 38 arrived to station 24 in 2.1633307652783937 using 54.083269131959845% battery
-2023-11-10 15:09:33,922 - user - INFO - User 417 requesting lock in station 24 at 466.98368531552603
-2023-11-10 15:09:33,922 - station - INFO - Station 24 has 3 vehicles
-2023-11-10 15:09:33,922 - user - INFO - User 417 locked vehicle 38 in station 24 at 466.98368531552603
-2023-11-10 15:09:33,922 - user - INFO - User 417 finished
-2023-11-10 15:09:33,922 - station - INFO - Charging interrupted for vehicle 150 at 466.98368531552603
-2023-11-10 15:09:33,922 - station - INFO - Charged vehicle 150 of 18.82532807229511% in station 24
-2023-11-10 15:09:33,922 - station - INFO - Charging vehicle 38 with battery 45.916730868040155% in station 24
-2023-11-10 15:09:33,922 - station - INFO - Charging vehicle 138 with battery 41.47938255542205% in station 24
-2023-11-10 15:09:33,922 - user - INFO - User 466 from station 34 to station 11
-2023-11-10 15:09:33,922 - user - INFO - User 466 requesting vehicle from station 34 at 467
-2023-11-10 15:09:33,922 - user - INFO - User 467 from station 32 to station 14
-2023-11-10 15:09:33,923 - user - INFO - User 467 requesting vehicle from station 32 at 468
-2023-11-10 15:09:33,923 - station - INFO - Station 32 has 7 vehicles
-2023-11-10 15:09:33,923 - user - INFO - User 467 got vehicle 99 with battery 100% from station 32 at 468
-2023-11-10 15:09:33,923 - station - INFO - Charged vehicle 185 in 5.0090174199272 unit of time
-2023-11-10 15:09:33,923 - station - INFO - Charging vehicle 148 with battery 21.595196034706838% in station 16
-2023-11-10 15:09:33,923 - user - INFO - User 468 from station 32 to station 35
-2023-11-10 15:09:33,923 - user - INFO - User 468 requesting vehicle from station 32 at 469
-2023-11-10 15:09:33,923 - station - INFO - Station 32 has 6 vehicles
-2023-11-10 15:09:33,923 - user - INFO - User 468 got vehicle 173 with battery 100% from station 32 at 469
-2023-11-10 15:09:33,923 - user - INFO - User 467 with vehicle 99 arrived to station 14 in 1.8 using 44.99999999999999% battery
-2023-11-10 15:09:33,923 - user - INFO - User 467 requesting lock in station 14 at 469.8
-2023-11-10 15:09:33,923 - station - INFO - Station 14 has 3 vehicles
-2023-11-10 15:09:33,923 - user - INFO - User 467 locked vehicle 99 in station 14 at 469.8
-2023-11-10 15:09:33,923 - user - INFO - User 467 finished
-2023-11-10 15:09:33,923 - station - INFO - Charging interrupted for vehicle 178 at 469.8
-2023-11-10 15:09:33,923 - station - INFO - Charged vehicle 178 of 30.482319221385733% in station 14
-2023-11-10 15:09:33,923 - station - INFO - Charging vehicle 99 with battery 55.00000000000001% in station 14
-2023-11-10 15:09:33,923 - station - INFO - Charged vehicle 95 in 23.478713763747795 unit of time
-2023-11-10 15:09:33,923 - station - INFO - Station 30 has 0 vehicles
-2023-11-10 15:09:33,923 - user - INFO - User 419 got vehicle 95 with battery 100% from station 30 at 469.82035455024766
-2023-11-10 15:09:33,923 - user - INFO - User 469 from station 34 to station 23
-2023-11-10 15:09:33,924 - user - INFO - User 469 requesting vehicle from station 34 at 470
-2023-11-10 15:09:33,924 - user - INFO - User 468 with vehicle 173 arrived to station 35 in 1.8 using 44.99999999999999% battery
-2023-11-10 15:09:33,924 - user - INFO - User 468 requesting lock in station 35 at 470.8
-2023-11-10 15:09:33,924 - station - INFO - Station 35 has 10 vehicles
-2023-11-10 15:09:33,924 - user - INFO - User 468 locked vehicle 173 in station 35 at 470.8
-2023-11-10 15:09:33,924 - user - INFO - User 468 finished
-2023-11-10 15:09:33,924 - station - INFO - Charging interrupted for vehicle 159 at 470.8
-2023-11-10 15:09:33,924 - station - INFO - Charged vehicle 159 of 28.360389693210752% in station 35
-2023-11-10 15:09:33,924 - station - INFO - Charging vehicle 173 with battery 55.00000000000001% in station 35
-2023-11-10 15:09:33,924 - station - INFO - Charging vehicle 20 with battery 93.70050136799583% in station 35
-2023-11-10 15:09:33,924 - user - INFO - User 470 from station 25 to station 16
-2023-11-10 15:09:33,924 - user - INFO - User 470 requesting vehicle from station 25 at 471
-2023-11-10 15:09:33,924 - station - INFO - Charged vehicle 179 in 8.103141679077638 unit of time
-2023-11-10 15:09:33,924 - station - INFO - Charging vehicle 56 with battery 86.91008386934446% in station 16
-2023-11-10 15:09:33,924 - station - INFO - Charged vehicle 80 in 10.457939277588071 unit of time
-2023-11-10 15:09:33,924 - station - INFO - Charging vehicle 209 with battery 50.92890787140571% in station 2
-2023-11-10 15:09:33,924 - user - INFO - User 419 with vehicle 95 arrived to station 14 in 2.1633307652783937 using 54.083269131959845% battery
-2023-11-10 15:09:33,924 - user - INFO - User 419 requesting lock in station 14 at 471.98368531552603
-2023-11-10 15:09:33,924 - station - INFO - Station 14 has 4 vehicles
-2023-11-10 15:09:33,924 - user - INFO - User 419 locked vehicle 95 in station 14 at 471.98368531552603
-2023-11-10 15:09:33,924 - user - INFO - User 419 finished
-2023-11-10 15:09:33,925 - station - INFO - Charging interrupted for vehicle 99 at 471.98368531552603
-2023-11-10 15:09:33,925 - station - INFO - Charged vehicle 99 of 3.1195504507514515% in station 14
-2023-11-10 15:09:33,925 - station - INFO - Charging vehicle 95 with battery 45.916730868040155% in station 14
-2023-11-10 15:09:33,925 - station - INFO - Charging vehicle 178 with battery 96.94129955888889% in station 14
-2023-11-10 15:09:33,925 - user - INFO - User 471 from station 8 to station 11
-2023-11-10 15:09:33,925 - user - INFO - User 471 requesting vehicle from station 8 at 472
-2023-11-10 15:09:33,925 - station - INFO - Charged vehicle 160 in 23.478713763747795 unit of time
-2023-11-10 15:09:33,925 - station - INFO - Station 11 has 9 vehicles
-2023-11-10 15:09:33,925 - user - INFO - User 463 got vehicle 160 with battery 100% from station 11 at 472.0264409785003
-2023-11-10 15:09:33,925 - station - INFO - Station 11 has 10 vehicles
-2023-11-10 15:09:33,925 - user - INFO - User 462 locked vehicle 29 in station 11 at 472.0264409785003
-2023-11-10 15:09:33,925 - user - INFO - User 462 finished
-2023-11-10 15:09:33,925 - station - INFO - Charging vehicle 29 with battery 25.0% in station 11
-2023-11-10 15:09:33,925 - station - INFO - Charged vehicle 184 in 23.478713763747795 unit of time
-2023-11-10 15:09:33,925 - station - INFO - Charging vehicle 96 with battery 55.00000000000001% in station 22
-2023-11-10 15:09:33,925 - station - INFO - Station 22 has 9 vehicles
-2023-11-10 15:09:33,925 - user - INFO - User 460 got vehicle 184 with battery 100% from station 22 at 472.4826291955158
-2023-11-10 15:09:33,925 - station - INFO - Charged vehicle 169 in 52.5 unit of time
-2023-11-10 15:09:33,925 - station - INFO - Station 12 has 3 vehicles
-2023-11-10 15:09:33,925 - user - INFO - User 430 got vehicle 169 with battery 100% from station 12 at 472.5
-2023-11-10 15:09:33,926 - station - INFO - Charged vehicle 164 in 43.29260906898544 unit of time
-2023-11-10 15:09:33,926 - station - INFO - Station 4 has 4 vehicles
-2023-11-10 15:09:33,926 - user - INFO - User 437 got vehicle 164 with battery 100% from station 4 at 472.766472444356
-2023-11-10 15:09:33,926 - user - INFO - User 472 from station 3 to station 10
-2023-11-10 15:09:33,926 - user - INFO - User 472 requesting vehicle from station 3 at 473
-2023-11-10 15:09:33,926 - user - INFO - User 473 from station 14 to station 2
-2023-11-10 15:09:33,926 - user - INFO - User 473 requesting vehicle from station 14 at 474
-2023-11-10 15:09:33,926 - station - INFO - Charged vehicle 178 in 2.141090308777782 unit of time
-2023-11-10 15:09:33,926 - station - INFO - Charging vehicle 99 with battery 58.119550450751454% in station 14
-2023-11-10 15:09:33,926 - user - INFO - User 430 with vehicle 169 arrived to station 30 in 1.8 using 44.99999999999999% battery
-2023-11-10 15:09:33,926 - user - INFO - User 430 requesting lock in station 30 at 474.3
-2023-11-10 15:09:33,926 - station - INFO - Station 30 has 1 vehicles
-2023-11-10 15:09:33,926 - user - INFO - User 430 locked vehicle 169 in station 30 at 474.3
-2023-11-10 15:09:33,926 - user - INFO - User 430 finished
-2023-11-10 15:09:33,926 - station - INFO - Charging vehicle 169 with battery 55.00000000000001% in station 30
-2023-11-10 15:09:33,926 - user - INFO - User 460 with vehicle 184 arrived to station 3 in 1.8973665961010275 using 47.4341649025257% battery
-2023-11-10 15:09:33,926 - user - INFO - User 460 requesting lock in station 3 at 474.37999579161686
-2023-11-10 15:09:33,926 - station - INFO - Station 3 has 1 vehicles
-2023-11-10 15:09:33,926 - user - INFO - User 460 locked vehicle 184 in station 3 at 474.37999579161686
-2023-11-10 15:09:33,926 - user - INFO - User 460 finished
-2023-11-10 15:09:33,927 - station - INFO - Charging vehicle 184 with battery 52.5658350974743% in station 3
-2023-11-10 15:09:33,927 - user - INFO - User 474 from station 1 to station 21
-2023-11-10 15:09:33,927 - user - INFO - User 474 requesting vehicle from station 1 at 475
-2023-11-10 15:09:33,927 - user - INFO - User 463 with vehicle 160 arrived to station 32 in 3.0 using 75.0% battery
-2023-11-10 15:09:33,927 - user - INFO - User 463 requesting lock in station 32 at 475.0264409785003
-2023-11-10 15:09:33,927 - station - INFO - Station 32 has 7 vehicles
-2023-11-10 15:09:33,927 - user - INFO - User 463 locked vehicle 160 in station 32 at 475.0264409785003
-2023-11-10 15:09:33,927 - user - INFO - User 463 finished
-2023-11-10 15:09:33,927 - station - INFO - Charging interrupted for vehicle 148 at 475.0264409785003
-2023-11-10 15:09:33,927 - station - INFO - Charged vehicle 148 of 29.323487112143315% in station 32
-2023-11-10 15:09:33,927 - station - INFO - Charging vehicle 160 with battery 25.0% in station 32
-2023-11-10 15:09:33,927 - station - INFO - Charged vehicle 140 in 21.000000000000004 unit of time
-2023-11-10 15:09:33,927 - station - INFO - Charged vehicle 20 in 4.409649042402922 unit of time
-2023-11-10 15:09:33,927 - station - INFO - Charging vehicle 159 with battery 68.36038969321075% in station 35
-2023-11-10 15:09:33,927 - user - INFO - User 437 with vehicle 164 arrived to station 33 in 3.059411708155671 using 76.48529270389179% battery
-2023-11-10 15:09:33,927 - user - INFO - User 437 requesting lock in station 33 at 475.82588415251166
-2023-11-10 15:09:33,927 - station - INFO - Station 33 has 9 vehicles
-2023-11-10 15:09:33,927 - user - INFO - User 437 locked vehicle 164 in station 33 at 475.82588415251166
-2023-11-10 15:09:33,927 - user - INFO - User 437 finished
-2023-11-10 15:09:33,928 - station - INFO - Charging vehicle 164 with battery 23.514707296108217% in station 33
-2023-11-10 15:09:33,928 - user - INFO - User 475 from station 5 to station 24
-2023-11-10 15:09:33,928 - user - INFO - User 475 requesting vehicle from station 5 at 476
-2023-11-10 15:09:33,928 - user - INFO - User 476 from station 3 to station 30
-2023-11-10 15:09:33,928 - user - INFO - User 476 requesting vehicle from station 3 at 477
-2023-11-10 15:09:33,928 - station - INFO - Charged vehicle 18 in 13.05835921350013 unit of time
-2023-11-10 15:09:33,928 - station - INFO - Station 8 has 7 vehicles
-2023-11-10 15:09:33,928 - user - INFO - User 438 got vehicle 18 with battery 100% from station 8 at 477.8787137637478
-2023-11-10 15:09:33,928 - station - INFO - Station 8 has 6 vehicles
-2023-11-10 15:09:33,928 - user - INFO - User 471 got vehicle 145 with battery 100% from station 8 at 477.8787137637478
-2023-11-10 15:09:33,928 - user - INFO - User 477 from station 21 to station 34
-2023-11-10 15:09:33,928 - user - INFO - User 477 requesting vehicle from station 21 at 478
-2023-11-10 15:09:33,928 - station - INFO - Station 21 has 8 vehicles
-2023-11-10 15:09:33,928 - user - INFO - User 477 got vehicle 197 with battery 100% from station 21 at 478
-2023-11-10 15:09:33,928 - station - INFO - Charged vehicle 54 in 61.22499489587565 unit of time
-2023-11-10 15:09:33,928 - station - INFO - Station 17 has 9 vehicles
-2023-11-10 15:09:33,928 - user - INFO - User 435 got vehicle 54 with battery 100% from station 17 at 478.2249948958756
-2023-11-10 15:09:33,928 - station - INFO - Station 17 has 10 vehicles
-2023-11-10 15:09:33,928 - user - INFO - User 354 locked vehicle 21 in station 17 at 478.2249948958756
-2023-11-10 15:09:33,928 - user - INFO - User 354 finished
-2023-11-10 15:09:33,929 - station - INFO - Charging vehicle 21 with battery 70.0% in station 17
-2023-11-10 15:09:33,929 - user - INFO - User 478 from station 19 to station 29
-2023-11-10 15:09:33,929 - user - INFO - User 478 requesting vehicle from station 19 at 479
-2023-11-10 15:09:33,929 - station - INFO - Station 19 has 6 vehicles
-2023-11-10 15:09:33,929 - user - INFO - User 478 got vehicle 106 with battery 100% from station 19 at 479
-2023-11-10 15:09:33,929 - user - INFO - User 477 with vehicle 197 arrived to station 34 in 1.3416407864998738 using 33.54101966249685% battery
-2023-11-10 15:09:33,929 - user - INFO - User 477 requesting lock in station 34 at 479.34164078649985
-2023-11-10 15:09:33,929 - user - INFO - User 471 with vehicle 145 arrived to station 11 in 1.8 using 44.99999999999999% battery
-2023-11-10 15:09:33,929 - user - INFO - User 471 requesting lock in station 11 at 479.6787137637478
-2023-11-10 15:09:33,929 - user - INFO - User 479 from station 35 to station 17
-2023-11-10 15:09:33,929 - user - INFO - User 479 requesting vehicle from station 35 at 480
-2023-11-10 15:09:33,929 - station - INFO - Charged vehicle 56 in 9.162941291458873 unit of time
-2023-11-10 15:09:33,929 - station - INFO - Charging vehicle 40 with battery 89.51262498089196% in station 16
-2023-11-10 15:09:33,929 - user - INFO - User 438 with vehicle 18 arrived to station 29 in 2.545584412271571 using 63.63961030678929% battery
-2023-11-10 15:09:33,929 - user - INFO - User 438 requesting lock in station 29 at 480.42429817601936
-2023-11-10 15:09:33,929 - station - INFO - Station 29 has 2 vehicles
-2023-11-10 15:09:33,929 - user - INFO - User 438 locked vehicle 18 in station 29 at 480.42429817601936
-2023-11-10 15:09:33,929 - user - INFO - User 438 finished
-2023-11-10 15:09:33,929 - station - INFO - Charging interrupted for vehicle 13 at 480.42429817601936
-2023-11-10 15:09:33,929 - station - INFO - Charged vehicle 13 of 32.4627909188858% in station 29
-2023-11-10 15:09:33,929 - station - INFO - Charging vehicle 18 with battery 36.36038969321071% in station 29
-2023-11-10 15:09:33,929 - user - INFO - User 480 from station 27 to station 24
-2023-11-10 15:09:33,930 - user - INFO - User 480 requesting vehicle from station 27 at 481
-2023-11-10 15:09:33,930 - station - INFO - Station 27 has 0 vehicles
-2023-11-10 15:09:33,930 - user - INFO - User 480 got vehicle 162 with battery 100% from station 27 at 481
-2023-11-10 15:09:33,930 - user - INFO - User 435 with vehicle 54 arrived to station 31 in 3.0 using 75.0% battery
-2023-11-10 15:09:33,930 - user - INFO - User 435 requesting lock in station 31 at 481.2249948958756
-2023-11-10 15:09:33,930 - user - INFO - User 478 with vehicle 106 arrived to station 29 in 2.473863375370596 using 61.846584384264915% battery
-2023-11-10 15:09:33,930 - user - INFO - User 478 requesting lock in station 29 at 481.47386337537057
-2023-11-10 15:09:33,930 - station - INFO - Station 29 has 3 vehicles
-2023-11-10 15:09:33,930 - user - INFO - User 478 locked vehicle 106 in station 29 at 481.47386337537057
-2023-11-10 15:09:33,930 - user - INFO - User 478 finished
-2023-11-10 15:09:33,930 - station - INFO - Charging interrupted for vehicle 18 at 481.47386337537057
-2023-11-10 15:09:33,930 - station - INFO - Charged vehicle 18 of 1.4993788562160104% in station 29
-2023-11-10 15:09:33,930 - station - INFO - Charging vehicle 106 with battery 38.153415615735085% in station 29
-2023-11-10 15:09:33,930 - station - INFO - Charging vehicle 13 with battery 57.4627909188858% in station 29
-2023-11-10 15:09:33,930 - station - INFO - Charged vehicle 168 in 52.5 unit of time
-2023-11-10 15:09:33,930 - station - INFO - Station 34 has 9 vehicles
-2023-11-10 15:09:33,930 - user - INFO - User 455 got vehicle 168 with battery 100% from station 34 at 481.5
-2023-11-10 15:09:33,930 - station - INFO - Station 34 has 10 vehicles
-2023-11-10 15:09:33,930 - user - INFO - User 384 locked vehicle 144 in station 34 at 481.5
-2023-11-10 15:09:33,930 - user - INFO - User 384 finished
-2023-11-10 15:09:33,931 - station - INFO - Charging vehicle 144 with battery 38.153415615735085% in station 34
-2023-11-10 15:09:33,931 - station - INFO - Station 34 has 9 vehicles
-2023-11-10 15:09:33,931 - user - INFO - User 466 got vehicle 144 with battery 38.153415615735085% from station 34 at 481.5
-2023-11-10 15:09:33,931 - station - INFO - Station 34 has 10 vehicles
-2023-11-10 15:09:33,931 - user - INFO - User 388 locked vehicle 203 in station 34 at 481.5
-2023-11-10 15:09:33,931 - user - INFO - User 388 finished
-2023-11-10 15:09:33,931 - station - INFO - Charging interrupted for vehicle 144 at 481.5
-2023-11-10 15:09:33,931 - station - INFO - Charged vehicle 144 of 0.0% in station 34
-2023-11-10 15:09:33,931 - station - INFO - Charging vehicle 203 with battery 85.0% in station 34
-2023-11-10 15:09:33,931 - station - INFO - Station 34 has 9 vehicles
-2023-11-10 15:09:33,931 - user - INFO - User 469 got vehicle 203 with battery 85.0% from station 34 at 481.5
-2023-11-10 15:09:33,931 - station - INFO - Station 34 has 10 vehicles
-2023-11-10 15:09:33,931 - user - INFO - User 395 locked vehicle 215 in station 34 at 481.5
-2023-11-10 15:09:33,931 - user - INFO - User 395 finished
-2023-11-10 15:09:33,931 - station - INFO - Charging interrupted for vehicle 203 at 481.5
-2023-11-10 15:09:33,931 - station - INFO - Charged vehicle 203 of 0.0% in station 34
-2023-11-10 15:09:33,932 - station - INFO - Charging vehicle 215 with battery 66.45898033750315% in station 34
-2023-11-10 15:09:33,932 - user - INFO - User 481 from station 26 to station 20
-2023-11-10 15:09:33,932 - user - INFO - User 481 requesting vehicle from station 26 at 482
-2023-11-10 15:09:33,932 - station - INFO - Charged vehicle 93 in 19.3366425732026 unit of time
-2023-11-10 15:09:33,932 - station - INFO - Charging vehicle 141 with battery 52.5658350974743% in station 26
-2023-11-10 15:09:33,932 - user - INFO - User 455 with vehicle 168 arrived to station 22 in 1.2 using 30.0% battery
-2023-11-10 15:09:33,932 - user - INFO - User 455 requesting lock in station 22 at 482.7
-2023-11-10 15:09:33,932 - station - INFO - Station 22 has 10 vehicles
-2023-11-10 15:09:33,932 - user - INFO - User 455 locked vehicle 168 in station 22 at 482.7
-2023-11-10 15:09:33,932 - user - INFO - User 455 finished
-2023-11-10 15:09:33,932 - station - INFO - Charging interrupted for vehicle 96 at 482.7
-2023-11-10 15:09:33,932 - station - INFO - Charged vehicle 96 of 14.596244006405968% in station 22
-2023-11-10 15:09:33,932 - station - INFO - Charging vehicle 168 with battery 70.0% in station 22
-2023-11-10 15:09:33,932 - user - INFO - User 480 with vehicle 162 arrived to station 24 in 1.8 using 44.99999999999999% battery
-2023-11-10 15:09:33,932 - user - INFO - User 480 requesting lock in station 24 at 482.8
-2023-11-10 15:09:33,932 - station - INFO - Station 24 has 4 vehicles
-2023-11-10 15:09:33,933 - user - INFO - User 480 locked vehicle 162 in station 24 at 482.8
-2023-11-10 15:09:33,933 - user - INFO - User 480 finished
-2023-11-10 15:09:33,933 - station - INFO - Charging interrupted for vehicle 38 at 482.8
-2023-11-10 15:09:33,933 - station - INFO - Charged vehicle 38 of 22.59473526353426% in station 24
-2023-11-10 15:09:33,933 - station - INFO - Charging interrupted for vehicle 138 at 482.8
-2023-11-10 15:09:33,933 - station - INFO - Charged vehicle 138 of 22.59473526353426% in station 24
-2023-11-10 15:09:33,933 - station - INFO - Charging vehicle 162 with battery 55.00000000000001% in station 24
-2023-11-10 15:09:33,933 - station - INFO - Charging vehicle 150 with battery 82.61212463669868% in station 24
-2023-11-10 15:09:33,933 - user - INFO - User 469 with vehicle 203 arrived to station 23 in 1.3416407864998738 using 33.54101966249685% battery
-2023-11-10 15:09:33,933 - user - INFO - User 469 requesting lock in station 23 at 482.84164078649985
-2023-11-10 15:09:33,933 - station - INFO - Station 23 has 1 vehicles
-2023-11-10 15:09:33,933 - user - INFO - User 469 locked vehicle 203 in station 23 at 482.84164078649985
-2023-11-10 15:09:33,933 - user - INFO - User 469 finished
-2023-11-10 15:09:33,934 - station - INFO - Charging vehicle 203 with battery 51.45898033750315% in station 23
-2023-11-10 15:09:33,934 - user - INFO - User 482 from station 26 to station 31
-2023-11-10 15:09:33,934 - user - INFO - User 482 requesting vehicle from station 26 at 483
-2023-11-10 15:09:33,934 - user - INFO - User 466 with vehicle 144 arrived to station 11 in 2.473863375370596 using 61.846584384264915% battery
-2023-11-10 15:09:33,934 - user - INFO - User 466 requesting lock in station 11 at 483.97386337537057
-2023-11-10 15:09:33,934 - user - INFO - User 483 from station 8 to station 14
-2023-11-10 15:09:33,934 - user - INFO - User 483 requesting vehicle from station 8 at 484
-2023-11-10 15:09:33,934 - station - INFO - Station 8 has 5 vehicles
-2023-11-10 15:09:33,934 - user - INFO - User 483 got vehicle 53 with battery 100% from station 8 at 484
-2023-11-10 15:09:33,934 - user - INFO - User 483 with vehicle 53 arrived to station 14 in 0.6 using 15.0% battery
-2023-11-10 15:09:33,934 - user - INFO - User 483 requesting lock in station 14 at 484.6
-2023-11-10 15:09:33,935 - station - INFO - Station 14 has 5 vehicles
-2023-11-10 15:09:33,935 - user - INFO - User 483 locked vehicle 53 in station 14 at 484.6
-2023-11-10 15:09:33,935 - user - INFO - User 483 finished
-2023-11-10 15:09:33,935 - station - INFO - Charging interrupted for vehicle 95 at 484.6
-2023-11-10 15:09:33,935 - station - INFO - Charged vehicle 95 of 18.0233066921057% in station 14
-2023-11-10 15:09:33,935 - station - INFO - Charging interrupted for vehicle 99 at 484.6
-2023-11-10 15:09:33,935 - station - INFO - Charged vehicle 99 of 14.964606250994573% in station 14
-2023-11-10 15:09:33,935 - station - INFO - Charging vehicle 53 with battery 85.0% in station 14
-2023-11-10 15:09:33,935 - station - INFO - Charged vehicle 46 in 38.606878347776956 unit of time
-2023-11-10 15:09:33,935 - user - INFO - User 484 from station 29 to station 11
-2023-11-10 15:09:33,935 - user - INFO - User 484 requesting vehicle from station 29 at 485
-2023-11-10 15:09:33,935 - user - INFO - User 485 from station 19 to station 18
-2023-11-10 15:09:33,935 - user - INFO - User 485 requesting vehicle from station 19 at 486
-2023-11-10 15:09:33,935 - station - INFO - Station 19 has 5 vehicles
-2023-11-10 15:09:33,936 - user - INFO - User 485 got vehicle 47 with battery 100% from station 19 at 486
-2023-11-10 15:09:33,936 - station - INFO - Charged vehicle 76 in 23.478713763747795 unit of time
-2023-11-10 15:09:33,936 - station - INFO - Station 16 has 5 vehicles
-2023-11-10 15:09:33,936 - user - INFO - User 316 got vehicle 76 with battery 100% from station 16 at 486.59568390944065
-2023-11-10 15:09:33,936 - user - INFO - User 485 with vehicle 47 arrived to station 18 in 0.6 using 15.0% battery
-2023-11-10 15:09:33,936 - user - INFO - User 485 requesting lock in station 18 at 486.6
-2023-11-10 15:09:33,936 - user - INFO - User 486 from station 2 to station 30
-2023-11-10 15:09:33,936 - user - INFO - User 486 requesting vehicle from station 2 at 487
-2023-11-10 15:09:33,936 - station - INFO - Charged vehicle 183 in 27.633369790053223 unit of time
-2023-11-10 15:09:33,936 - station - INFO - Charging vehicle 101 with battery 72.35045151019911% in station 1
-2023-11-10 15:09:33,936 - user - INFO - User 316 with vehicle 76 arrived to station 11 in 0.8485281374238569 using 21.213203435596427% battery
-2023-11-10 15:09:33,936 - user - INFO - User 316 requesting lock in station 11 at 487.4442120468645
-2023-11-10 15:09:33,936 - station - INFO - Charged vehicle 40 in 7.341162513375625 unit of time
-2023-11-10 15:09:33,936 - user - INFO - User 487 from station 24 to station 25
-2023-11-10 15:09:33,936 - user - INFO - User 487 requesting vehicle from station 24 at 488
-2023-11-10 15:09:33,937 - user - INFO - User 488 from station 30 to station 15
-2023-11-10 15:09:33,937 - user - INFO - User 488 requesting vehicle from station 30 at 489
-2023-11-10 15:09:33,937 - user - INFO - User 489 from station 17 to station 29
-2023-11-10 15:09:33,937 - user - INFO - User 489 requesting vehicle from station 17 at 490
-2023-11-10 15:09:33,937 - user - INFO - User 490 from station 27 to station 30
-2023-11-10 15:09:33,937 - user - INFO - User 490 requesting vehicle from station 27 at 491
-2023-11-10 15:09:33,937 - user - INFO - User 491 from station 12 to station 8
-2023-11-10 15:09:33,937 - user - INFO - User 491 requesting vehicle from station 12 at 492
-2023-11-10 15:09:33,937 - station - INFO - Station 12 has 2 vehicles
-2023-11-10 15:09:33,937 - user - INFO - User 491 got vehicle 74 with battery 100% from station 12 at 492
-2023-11-10 15:09:33,937 - user - INFO - User 492 from station 5 to station 29
-2023-11-10 15:09:33,937 - user - INFO - User 492 requesting vehicle from station 5 at 493
-2023-11-10 15:09:33,937 - user - INFO - User 491 with vehicle 74 arrived to station 8 in 1.3416407864998738 using 33.54101966249685% battery
-2023-11-10 15:09:33,937 - user - INFO - User 491 requesting lock in station 8 at 493.34164078649985
-2023-11-10 15:09:33,938 - station - INFO - Station 8 has 6 vehicles
-2023-11-10 15:09:33,938 - user - INFO - User 491 locked vehicle 74 in station 8 at 493.34164078649985
-2023-11-10 15:09:33,938 - user - INFO - User 491 finished
-2023-11-10 15:09:33,938 - station - INFO - Charging vehicle 74 with battery 66.45898033750315% in station 8
-2023-11-10 15:09:33,938 - user - INFO - User 493 from station 27 to station 22
-2023-11-10 15:09:33,938 - user - INFO - User 493 requesting vehicle from station 27 at 494
-2023-11-10 15:09:33,938 - station - INFO - Charged vehicle 119 in 46.84358015122394 unit of time
-2023-11-10 15:09:33,938 - station - INFO - Station 5 has 5 vehicles
-2023-11-10 15:09:33,938 - user - INFO - User 386 got vehicle 119 with battery 100% from station 5 at 494.0081338522379
-2023-11-10 15:09:33,938 - station - INFO - Station 5 has 4 vehicles
-2023-11-10 15:09:33,938 - user - INFO - User 397 got vehicle 196 with battery 100% from station 5 at 494.0081338522379
-2023-11-10 15:09:33,938 - station - INFO - Station 5 has 3 vehicles
-2023-11-10 15:09:33,939 - user - INFO - User 446 got vehicle 16 with battery 100% from station 5 at 494.0081338522379
-2023-11-10 15:09:33,939 - station - INFO - Station 5 has 2 vehicles
-2023-11-10 15:09:33,939 - user - INFO - User 458 got vehicle 32 with battery 100% from station 5 at 494.0081338522379
-2023-11-10 15:09:33,939 - station - INFO - Station 5 has 1 vehicles
-2023-11-10 15:09:33,939 - user - INFO - User 459 got vehicle 31 with battery 100% from station 5 at 494.0081338522379
-2023-11-10 15:09:33,939 - station - INFO - Station 5 has 0 vehicles
-2023-11-10 15:09:33,939 - user - INFO - User 475 got vehicle 30 with battery 100% from station 5 at 494.0081338522379
-2023-11-10 15:09:33,939 - station - INFO - Charged vehicle 150 in 12.171512754310923 unit of time
-2023-11-10 15:09:33,939 - station - INFO - Charging vehicle 38 with battery 68.51146613157442% in station 24
-2023-11-10 15:09:33,939 - user - INFO - User 494 from station 8 to station 20
-2023-11-10 15:09:33,939 - user - INFO - User 494 requesting vehicle from station 8 at 495
-2023-11-10 15:09:33,939 - station - INFO - Charged vehicle 53 in 10.500000000000002 unit of time
-2023-11-10 15:09:33,939 - station - INFO - Charging vehicle 95 with battery 63.94003756014585% in station 14
-2023-11-10 15:09:33,940 - station - INFO - Station 14 has 4 vehicles
-2023-11-10 15:09:33,940 - user - INFO - User 473 got vehicle 53 with battery 100% from station 14 at 495.1
-2023-11-10 15:09:33,940 - user - INFO - User 386 with vehicle 119 arrived to station 9 in 1.3416407864998738 using 33.54101966249685% battery
-2023-11-10 15:09:33,940 - user - INFO - User 386 requesting lock in station 9 at 495.34977463873776
-2023-11-10 15:09:33,940 - station - INFO - Station 9 has 4 vehicles
-2023-11-10 15:09:33,940 - user - INFO - User 386 locked vehicle 119 in station 9 at 495.34977463873776
-2023-11-10 15:09:33,940 - user - INFO - User 386 finished
-2023-11-10 15:09:33,940 - station - INFO - Charging vehicle 119 with battery 66.45898033750315% in station 9
-2023-11-10 15:09:33,940 - station - INFO - Charged vehicle 182 in 38.478552579784235 unit of time
-2023-11-10 15:09:33,940 - user - INFO - User 495 from station 10 to station 28
-2023-11-10 15:09:33,941 - user - INFO - User 495 requesting vehicle from station 10 at 496
-2023-11-10 15:09:33,941 - station - INFO - Station 10 has 9 vehicles
-2023-11-10 15:09:33,941 - user - INFO - User 495 got vehicle 98 with battery 100% from station 10 at 496
-2023-11-10 15:09:33,941 - station - INFO - Station 10 has 10 vehicles
-2023-11-10 15:09:33,941 - user - INFO - User 243 locked vehicle 151 in station 10 at 496
-2023-11-10 15:09:33,941 - user - INFO - User 243 finished
-2023-11-10 15:09:33,941 - station - INFO - Charging vehicle 151 with battery 78.78679656440357% in station 10
-2023-11-10 15:09:33,941 - user - INFO - User 446 with vehicle 16 arrived to station 14 in 2.1633307652783937 using 54.083269131959845% battery
-2023-11-10 15:09:33,941 - user - INFO - User 446 requesting lock in station 14 at 496.1714646175163
-2023-11-10 15:09:33,941 - station - INFO - Station 14 has 5 vehicles
-2023-11-10 15:09:33,941 - user - INFO - User 446 locked vehicle 16 in station 14 at 496.1714646175163
-2023-11-10 15:09:33,941 - user - INFO - User 446 finished
-2023-11-10 15:09:33,941 - station - INFO - Charging interrupted for vehicle 95 at 496.1714646175163
-2023-11-10 15:09:33,941 - station - INFO - Charged vehicle 95 of 1.530663739308935% in station 14
-2023-11-10 15:09:33,941 - station - INFO - Charging vehicle 16 with battery 45.916730868040155% in station 14
-2023-11-10 15:09:33,942 - station - INFO - Charging vehicle 99 with battery 73.08415670174602% in station 14
-2023-11-10 15:09:33,942 - user - INFO - User 473 with vehicle 53 arrived to station 2 in 1.2 using 30.0% battery
-2023-11-10 15:09:33,942 - user - INFO - User 473 requesting lock in station 2 at 496.3
-2023-11-10 15:09:33,942 - station - INFO - Station 2 has 8 vehicles
-2023-11-10 15:09:33,942 - user - INFO - User 473 locked vehicle 53 in station 2 at 496.3
-2023-11-10 15:09:33,942 - user - INFO - User 473 finished
-2023-11-10 15:09:33,942 - station - INFO - Charging interrupted for vehicle 12 at 496.3
-2023-11-10 15:09:33,942 - station - INFO - Charged vehicle 12 of 71.33940675334348% in station 2
-2023-11-10 15:09:33,942 - station - INFO - Charging interrupted for vehicle 209 at 496.3
-2023-11-10 15:09:33,942 - station - INFO - Charged vehicle 209 of 35.20133546286275% in station 2
-2023-11-10 15:09:33,942 - station - INFO - Charging vehicle 53 with battery 70.0% in station 2
-2023-11-10 15:09:33,942 - station - INFO - Charged vehicle 139 in 33.20391543176799 unit of time
-2023-11-10 15:09:33,942 - station - INFO - Station 26 has 2 vehicles
-2023-11-10 15:09:33,942 - user - INFO - User 424 got vehicle 139 with battery 100% from station 26 at 496.38762740881305
-2023-11-10 15:09:33,942 - user - INFO - User 496 from station 0 to station 21
-2023-11-10 15:09:33,942 - user - INFO - User 496 requesting vehicle from station 0 at 497
-2023-11-10 15:09:33,942 - station - INFO - Station 0 has 9 vehicles
-2023-11-10 15:09:33,942 - user - INFO - User 496 got vehicle 170 with battery 100% from station 0 at 497
-2023-11-10 15:09:33,942 - station - INFO - Station 0 has 10 vehicles
-2023-11-10 15:09:33,942 - user - INFO - User 434 locked vehicle 156 in station 0 at 497
-2023-11-10 15:09:33,943 - user - INFO - User 434 finished
-2023-11-10 15:09:33,943 - station - INFO - Charging vehicle 156 with battery 45.916730868040155% in station 0
-2023-11-10 15:09:33,943 - user - INFO - User 458 with vehicle 32 arrived to station 33 in 3.2310988842807022 using 80.77747210701756% battery
-2023-11-10 15:09:33,943 - user - INFO - User 458 requesting lock in station 33 at 497.2392327365186
-2023-11-10 15:09:33,943 - station - INFO - Station 33 has 10 vehicles
-2023-11-10 15:09:33,943 - user - INFO - User 458 locked vehicle 32 in station 33 at 497.2392327365186
-2023-11-10 15:09:33,943 - user - INFO - User 458 finished
-2023-11-10 15:09:33,943 - station - INFO - Charging interrupted for vehicle 164 at 497.2392327365186
-2023-11-10 15:09:33,943 - station - INFO - Charged vehicle 164 of 30.590497977152776% in station 33
-2023-11-10 15:09:33,943 - station - INFO - Charging vehicle 32 with battery 19.222527892982445% in station 33
-2023-11-10 15:09:33,943 - station - INFO - Charged vehicle 159 in 22.14772721475248 unit of time
-2023-11-10 15:09:33,943 - user - INFO - User 424 with vehicle 139 arrived to station 28 in 1.2 using 30.0% battery
-2023-11-10 15:09:33,943 - user - INFO - User 424 requesting lock in station 28 at 497.58762740881303
-2023-11-10 15:09:33,943 - station - INFO - Station 28 has 1 vehicles
-2023-11-10 15:09:33,943 - user - INFO - User 424 locked vehicle 139 in station 28 at 497.58762740881303
-2023-11-10 15:09:33,943 - user - INFO - User 424 finished
-2023-11-10 15:09:33,943 - station - INFO - Charging vehicle 139 with battery 70.0% in station 28
-2023-11-10 15:09:33,943 - user - INFO - User 495 with vehicle 98 arrived to station 28 in 1.8 using 44.99999999999999% battery
-2023-11-10 15:09:33,943 - user - INFO - User 495 requesting lock in station 28 at 497.8
-2023-11-10 15:09:33,944 - station - INFO - Station 28 has 2 vehicles
-2023-11-10 15:09:33,944 - user - INFO - User 495 locked vehicle 98 in station 28 at 497.8
-2023-11-10 15:09:33,944 - user - INFO - User 495 finished
-2023-11-10 15:09:33,944 - station - INFO - Charging interrupted for vehicle 139 at 497.8
-2023-11-10 15:09:33,944 - station - INFO - Charged vehicle 139 of 0.30338941598139213% in station 28
-2023-11-10 15:09:33,944 - station - INFO - Charging vehicle 98 with battery 55.00000000000001% in station 28
-2023-11-10 15:09:33,944 - user - INFO - User 459 with vehicle 31 arrived to station 24 in 3.841874542459709 using 96.04686356149273% battery
-2023-11-10 15:09:33,944 - user - INFO - User 459 requesting lock in station 24 at 497.8500083946976
-2023-11-10 15:09:33,944 - user - INFO - User 475 with vehicle 30 arrived to station 24 in 3.841874542459709 using 96.04686356149273% battery
-2023-11-10 15:09:33,944 - user - INFO - User 475 requesting lock in station 24 at 497.8500083946976
-2023-11-10 15:09:33,944 - station - INFO - Station 24 has 5 vehicles
-2023-11-10 15:09:33,944 - user - INFO - User 459 locked vehicle 31 in station 24 at 497.8500083946976
-2023-11-10 15:09:33,944 - user - INFO - User 459 finished
-2023-11-10 15:09:33,944 - station - INFO - Charging interrupted for vehicle 162 at 497.8500083946976
-2023-11-10 15:09:33,944 - station - INFO - Charged vehicle 162 of 21.50001199242516% in station 24
-2023-11-10 15:09:33,944 - station - INFO - Charging interrupted for vehicle 38 at 497.8500083946976
-2023-11-10 15:09:33,944 - station - INFO - Charged vehicle 38 of 4.1121366291238415% in station 24
-2023-11-10 15:09:33,944 - station - INFO - Charging vehicle 31 with battery 3.9531364385072654% in station 24
-2023-11-10 15:09:33,944 - station - INFO - Charging vehicle 138 with battery 64.07411781895631% in station 24
-2023-11-10 15:09:33,944 - station - INFO - Station 24 has 6 vehicles
-2023-11-10 15:09:33,945 - user - INFO - User 475 locked vehicle 30 in station 24 at 497.8500083946976
-2023-11-10 15:09:33,945 - user - INFO - User 475 finished
-2023-11-10 15:09:33,945 - station - INFO - Charging interrupted for vehicle 31 at 497.8500083946976
-2023-11-10 15:09:33,945 - station - INFO - Charged vehicle 31 of 0.0% in station 24
-2023-11-10 15:09:33,945 - station - INFO - Charging interrupted for vehicle 138 at 497.8500083946976
-2023-11-10 15:09:33,945 - station - INFO - Charged vehicle 138 of 0.0% in station 24
-2023-11-10 15:09:33,945 - station - INFO - Charging vehicle 30 with battery 3.9531364385072654% in station 24
-2023-11-10 15:09:33,945 - station - INFO - Charging vehicle 162 with battery 76.50001199242517% in station 24
-2023-11-10 15:09:33,945 - station - INFO - Charging vehicle 38 with battery 72.62360276069826% in station 24
-2023-11-10 15:09:33,945 - station - INFO - Charged vehicle 7 in 43.29260906898544 unit of time
-2023-11-10 15:09:33,945 - station - INFO - Charging vehicle 58 with battery 94.21904726333057% in station 7
-2023-11-10 15:09:33,945 - station - INFO - Station 7 has 9 vehicles
-2023-11-10 15:09:33,945 - user - INFO - User 345 got vehicle 7 with battery 100% from station 7 at 497.99295360178473
-2023-11-10 15:09:33,945 - station - INFO - Station 7 has 10 vehicles
-2023-11-10 15:09:33,945 - user - INFO - User 442 locked vehicle 78 in station 7 at 497.99295360178473
-2023-11-10 15:09:33,945 - user - INFO - User 442 finished
-2023-11-10 15:09:33,945 - station - INFO - Charging interrupted for vehicle 58 at 497.99295360178473
-2023-11-10 15:09:33,945 - station - INFO - Charged vehicle 58 of 0.0% in station 7
-2023-11-10 15:09:33,945 - station - INFO - Charging vehicle 78 with battery 36.36038969321071% in station 7
-2023-11-10 15:09:33,945 - user - INFO - User 497 from station 30 to station 5
-2023-11-10 15:09:33,946 - user - INFO - User 497 requesting vehicle from station 30 at 498
-2023-11-10 15:09:33,946 - user - INFO - User 397 with vehicle 196 arrived to station 30 in 4.242640687119286 using 106.06601717798215% battery
-2023-11-10 15:09:33,946 - user - INFO - User 397 requesting lock in station 30 at 498.25077453935717
-2023-11-10 15:09:33,946 - station - INFO - Station 30 has 2 vehicles
-2023-11-10 15:09:33,946 - user - INFO - User 397 locked vehicle 196 in station 30 at 498.25077453935717
-2023-11-10 15:09:33,946 - user - INFO - User 397 finished
-2023-11-10 15:09:33,946 - station - INFO - Charging interrupted for vehicle 169 at 498.25077453935717
-2023-11-10 15:09:33,946 - station - INFO - Charged vehicle 169 of 34.21539219908165% in station 30
-2023-11-10 15:09:33,946 - station - INFO - Charging vehicle 196 with battery -6.0660171779821415% in station 30
-2023-11-10 15:09:33,946 - user - INFO - User 498 from station 11 to station 5
-2023-11-10 15:09:33,946 - user - INFO - User 498 requesting vehicle from station 11 at 499
-2023-11-10 15:09:33,946 - station - INFO - Charged vehicle 21 in 21.000000000000004 unit of time
-2023-11-10 15:09:33,946 - station - INFO - Station 17 has 9 vehicles
-2023-11-10 15:09:33,946 - user - INFO - User 489 got vehicle 21 with battery 100% from station 17 at 499.2249948958756
-2023-11-10 15:09:33,946 - station - INFO - Station 17 has 10 vehicles
-2023-11-10 15:09:33,946 - user - INFO - User 385 locked vehicle 27 in station 17 at 499.2249948958756
-2023-11-10 15:09:33,946 - user - INFO - User 385 finished
-2023-11-10 15:09:33,946 - station - INFO - Charging vehicle 27 with battery 38.153415615735085% in station 17
-2023-11-10 15:09:33,946 - station - INFO - Charged vehicle 181 in 33.20391543176799 unit of time
-2023-11-10 15:09:33,947 - station - INFO - Charging vehicle 157 with battery 32.4945541568307% in station 6
-2023-11-10 15:09:33,947 - user - INFO - User 496 with vehicle 170 arrived to station 21 in 2.545584412271571 using 63.63961030678929% battery
-2023-11-10 15:09:33,947 - user - INFO - User 496 requesting lock in station 21 at 499.5455844122716
-2023-11-10 15:09:33,947 - station - INFO - Station 21 has 9 vehicles
-2023-11-10 15:09:33,947 - user - INFO - User 496 locked vehicle 170 in station 21 at 499.5455844122716
-2023-11-10 15:09:33,947 - user - INFO - User 496 finished
-2023-11-10 15:09:33,947 - station - INFO - Charging vehicle 170 with battery 36.36038969321071% in station 21
+2023-11-10 15:35:49,350 - station - INFO - Charging vehicle 80 with battery 23.514707296108217% in station 33
+2023-11-10 15:35:49,350 - user - INFO - User 400 with vehicle 116 arrived to station 27 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,350 - user - INFO - User 400 requesting lock in station 27 at 403.84917158378926
+2023-11-10 15:35:49,350 - station - INFO - Station 27 has 6 vehicles
+2023-11-10 15:35:49,350 - user - INFO - User 400 locked vehicle 116 in station 27 at 403.84917158378926
+2023-11-10 15:35:49,350 - user - INFO - User 400 finished
+2023-11-10 15:35:49,350 - station - INFO - Charging interrupted for vehicle 74 at 403.84917158378926
+2023-11-10 15:35:49,350 - station - INFO - Charged vehicle 74 of 9.54774889684188% in station 27
+2023-11-10 15:35:49,350 - station - INFO - Charging vehicle 116 with battery 66.45898033750315% in station 27
+2023-11-10 15:35:49,350 - station - INFO - Charging vehicle 191 with battery 57.8113954480837% in station 27
+2023-11-10 15:35:49,350 - user - INFO - User 403 from station 21 to station 11
+2023-11-10 15:35:49,350 - user - INFO - User 403 requesting vehicle from station 21 at 404
+2023-11-10 15:35:49,350 - user - INFO - User 337 with vehicle 38 arrived to station 26 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,350 - user - INFO - User 337 requesting lock in station 26 at 404.0651210683261
+2023-11-10 15:35:49,351 - station - INFO - Station 26 has 7 vehicles
+2023-11-10 15:35:49,351 - user - INFO - User 337 locked vehicle 38 in station 26 at 404.0651210683261
+2023-11-10 15:35:49,351 - user - INFO - User 337 finished
+2023-11-10 15:35:49,351 - station - INFO - Charging interrupted for vehicle 53 at 404.0651210683261
+2023-11-10 15:35:49,351 - station - INFO - Charged vehicle 53 of 47.688342136180495% in station 26
+2023-11-10 15:35:49,351 - station - INFO - Charging vehicle 38 with battery 52.5658350974743% in station 26
+2023-11-10 15:35:49,351 - station - INFO - Charging vehicle 73 with battery 99.69677212616718% in station 26
+2023-11-10 15:35:49,351 - station - INFO - Charged vehicle 73 in 0.2122595116829762 unit of time
+2023-11-10 15:35:49,351 - station - INFO - Charging vehicle 53 with battery 80.6063028111868% in station 26
+2023-11-10 15:35:49,351 - user - INFO - User 404 from station 1 to station 20
+2023-11-10 15:35:49,351 - user - INFO - User 404 requesting vehicle from station 1 at 405
+2023-11-10 15:35:49,351 - station - INFO - Charged vehicle 59 in 27.69671090323105 unit of time
+2023-11-10 15:35:49,351 - station - INFO - Charging vehicle 46 with battery 52.01921761095938% in station 28
+2023-11-10 15:35:49,351 - station - INFO - Station 28 has 4 vehicles
+2023-11-10 15:35:49,351 - user - INFO - User 325 got vehicle 59 with battery 100% from station 28 at 405.0894080218636
+2023-11-10 15:35:49,351 - user - INFO - User 401 with vehicle 68 arrived to station 30 in 3.841874542459709 using 96.04686356149273% battery
+2023-11-10 15:35:49,351 - user - INFO - User 401 requesting lock in station 30 at 405.8418745424597
+2023-11-10 15:35:49,351 - station - INFO - Station 30 has 9 vehicles
+2023-11-10 15:35:49,351 - user - INFO - User 401 locked vehicle 68 in station 30 at 405.8418745424597
+2023-11-10 15:35:49,352 - user - INFO - User 401 finished
+2023-11-10 15:35:49,352 - station - INFO - Charging interrupted for vehicle 123 at 405.8418745424597
+2023-11-10 15:35:49,352 - station - INFO - Charged vehicle 123 of 6.353945703948999% in station 30
+2023-11-10 15:35:49,352 - station - INFO - Charging vehicle 68 with battery 3.9531364385072654% in station 30
+2023-11-10 15:35:49,352 - user - INFO - User 405 from station 19 to station 24
+2023-11-10 15:35:49,352 - user - INFO - User 405 requesting vehicle from station 19 at 406
+2023-11-10 15:35:49,352 - station - INFO - Station 19 has 3 vehicles
+2023-11-10 15:35:49,352 - user - INFO - User 405 got vehicle 155 with battery 100% from station 19 at 406
+2023-11-10 15:35:49,352 - station - INFO - Charged vehicle 134 in 37.85828839237189 unit of time
+2023-11-10 15:35:49,352 - station - INFO - Charging vehicle 10 with battery 82.86754241098784% in station 15
+2023-11-10 15:35:49,352 - station - INFO - Station 15 has 7 vehicles
+2023-11-10 15:35:49,352 - user - INFO - User 372 got vehicle 134 with battery 100% from station 15 at 406.02161915765026
+2023-11-10 15:35:49,352 - station - INFO - Charged vehicle 154 in 34.758799146021495 unit of time
+2023-11-10 15:35:49,352 - station - INFO - Charging vehicle 107 with battery 88.95268037906348% in station 25
+2023-11-10 15:35:49,352 - station - INFO - Station 25 has 7 vehicles
+2023-11-10 15:35:49,352 - user - INFO - User 392 got vehicle 154 with battery 100% from station 25 at 406.1391278590364
+2023-11-10 15:35:49,352 - station - INFO - Charged vehicle 83 in 33.20391543176799 unit of time
+2023-11-10 15:35:49,352 - station - INFO - Charging vehicle 34 with battery 62.70481917459537% in station 22
+2023-11-10 15:35:49,352 - station - INFO - Station 22 has 2 vehicles
+2023-11-10 15:35:49,352 - user - INFO - User 394 got vehicle 83 with battery 100% from station 22 at 406.481610740884
+2023-11-10 15:35:49,353 - user - INFO - User 405 with vehicle 155 arrived to station 24 in 0.8485281374238569 using 21.213203435596427% battery
+2023-11-10 15:35:49,353 - user - INFO - User 405 requesting lock in station 24 at 406.84852813742384
+2023-11-10 15:35:49,353 - station - INFO - Station 24 has 8 vehicles
+2023-11-10 15:35:49,353 - user - INFO - User 405 locked vehicle 155 in station 24 at 406.84852813742384
+2023-11-10 15:35:49,353 - user - INFO - User 405 finished
+2023-11-10 15:35:49,353 - station - INFO - Charging interrupted for vehicle 131 at 406.84852813742384
+2023-11-10 15:35:49,353 - station - INFO - Charged vehicle 131 of 25.121710531636342% in station 24
+2023-11-10 15:35:49,353 - station - INFO - Charging vehicle 155 with battery 78.78679656440357% in station 24
+2023-11-10 15:35:49,353 - user - INFO - User 406 from station 21 to station 35
+2023-11-10 15:35:49,353 - user - INFO - User 406 requesting vehicle from station 21 at 407
+2023-11-10 15:35:49,353 - user - INFO - User 394 with vehicle 83 arrived to station 16 in 0.6 using 15.0% battery
+2023-11-10 15:35:49,353 - user - INFO - User 394 requesting lock in station 16 at 407.081610740884
+2023-11-10 15:35:49,353 - station - INFO - Charged vehicle 202 in 33.20391543176799 unit of time
+2023-11-10 15:35:49,353 - station - INFO - Charging vehicle 177 with battery 68.41430967690934% in station 3
+2023-11-10 15:35:49,353 - station - INFO - Station 3 has 9 vehicles
+2023-11-10 15:35:49,353 - user - INFO - User 347 got vehicle 202 with battery 100% from station 3 at 407.158615133325
+2023-11-10 15:35:49,353 - station - INFO - Station 3 has 10 vehicles
+2023-11-10 15:35:49,353 - user - INFO - User 378 locked vehicle 101 in station 3 at 407.158615133325
+2023-11-10 15:35:49,353 - user - INFO - User 378 finished
+2023-11-10 15:35:49,354 - station - INFO - Charging interrupted for vehicle 177 at 407.158615133325
+2023-11-10 15:35:49,354 - station - INFO - Charged vehicle 177 of 0.0% in station 3
+2023-11-10 15:35:49,354 - station - INFO - Charging vehicle 101 with battery 25.0% in station 3
+2023-11-10 15:35:49,354 - user - INFO - User 392 with vehicle 154 arrived to station 13 in 1.2 using 30.0% battery
+2023-11-10 15:35:49,354 - user - INFO - User 392 requesting lock in station 13 at 407.3391278590364
+2023-11-10 15:35:49,354 - station - INFO - Station 13 has 2 vehicles
+2023-11-10 15:35:49,354 - user - INFO - User 392 locked vehicle 154 in station 13 at 407.3391278590364
+2023-11-10 15:35:49,354 - user - INFO - User 392 finished
+2023-11-10 15:35:49,354 - station - INFO - Charging interrupted for vehicle 106 at 407.3391278590364
+2023-11-10 15:35:49,354 - station - INFO - Charged vehicle 106 of 38.341611227194875% in station 13
+2023-11-10 15:35:49,354 - station - INFO - Charging vehicle 154 with battery 70.0% in station 13
+2023-11-10 15:35:49,354 - user - INFO - User 325 with vehicle 59 arrived to station 5 in 2.473863375370596 using 61.846584384264915% battery
+2023-11-10 15:35:49,354 - user - INFO - User 325 requesting lock in station 5 at 407.5632713972342
+2023-11-10 15:35:49,354 - user - INFO - User 372 with vehicle 134 arrived to station 29 in 1.6970562748477138 using 42.42640687119285% battery
+2023-11-10 15:35:49,354 - user - INFO - User 372 requesting lock in station 29 at 407.718675432498
+2023-11-10 15:35:49,354 - station - INFO - Station 29 has 5 vehicles
+2023-11-10 15:35:49,354 - user - INFO - User 372 locked vehicle 134 in station 29 at 407.718675432498
+2023-11-10 15:35:49,354 - user - INFO - User 372 finished
+2023-11-10 15:35:49,354 - station - INFO - Charging interrupted for vehicle 172 at 407.718675432498
+2023-11-10 15:35:49,354 - station - INFO - Charged vehicle 172 of 26.74106607660893% in station 29
+2023-11-10 15:35:49,355 - station - INFO - Charging vehicle 134 with battery 57.57359312880715% in station 29
+2023-11-10 15:35:49,355 - station - INFO - Charging vehicle 93 with battery 93.89228545668395% in station 29
+2023-11-10 15:35:49,355 - user - INFO - User 407 from station 20 to station 24
+2023-11-10 15:35:49,355 - user - INFO - User 407 requesting vehicle from station 20 at 408
+2023-11-10 15:35:49,355 - station - INFO - Station 20 has 6 vehicles
+2023-11-10 15:35:49,355 - user - INFO - User 407 got vehicle 94 with battery 100% from station 20 at 408
+2023-11-10 15:35:49,355 - user - INFO - User 347 with vehicle 202 arrived to station 11 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,355 - user - INFO - User 347 requesting lock in station 11 at 408.50025591982484
+2023-11-10 15:35:49,355 - station - INFO - Station 11 has 3 vehicles
+2023-11-10 15:35:49,355 - user - INFO - User 347 locked vehicle 202 in station 11 at 408.50025591982484
+2023-11-10 15:35:49,355 - user - INFO - User 347 finished
+2023-11-10 15:35:49,355 - station - INFO - Charging vehicle 202 with battery 66.45898033750315% in station 11
+2023-11-10 15:35:49,355 - user - INFO - User 408 from station 5 to station 18
+2023-11-10 15:35:49,355 - user - INFO - User 408 requesting vehicle from station 5 at 409
+2023-11-10 15:35:49,355 - user - INFO - User 407 with vehicle 94 arrived to station 24 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,355 - user - INFO - User 407 requesting lock in station 24 at 409.34164078649985
+2023-11-10 15:35:49,355 - station - INFO - Station 24 has 9 vehicles
+2023-11-10 15:35:49,355 - user - INFO - User 407 locked vehicle 94 in station 24 at 409.34164078649985
+2023-11-10 15:35:49,356 - user - INFO - User 407 finished
+2023-11-10 15:35:49,356 - station - INFO - Charging interrupted for vehicle 155 at 409.34164078649985
+2023-11-10 15:35:49,356 - station - INFO - Charged vehicle 155 of 3.561589498680018% in station 24
+2023-11-10 15:35:49,356 - station - INFO - Charging vehicle 94 with battery 66.45898033750315% in station 24
+2023-11-10 15:35:49,356 - station - INFO - Charging vehicle 131 with battery 71.0384413996765% in station 24
+2023-11-10 15:35:49,356 - station - INFO - Charged vehicle 165 in 10.500000000000002 unit of time
+2023-11-10 15:35:49,356 - user - INFO - User 409 from station 16 to station 33
+2023-11-10 15:35:49,356 - user - INFO - User 409 requesting vehicle from station 16 at 410
+2023-11-10 15:35:49,356 - user - INFO - User 410 from station 35 to station 12
+2023-11-10 15:35:49,356 - user - INFO - User 410 requesting vehicle from station 35 at 411
+2023-11-10 15:35:49,356 - station - INFO - Charged vehicle 9 in 52.5 unit of time
+2023-11-10 15:35:49,356 - station - INFO - Station 31 has 1 vehicles
+2023-11-10 15:35:49,356 - user - INFO - User 361 got vehicle 9 with battery 100% from station 31 at 411.5
+2023-11-10 15:35:49,356 - station - INFO - Station 31 has 0 vehicles
+2023-11-10 15:35:49,356 - user - INFO - User 379 got vehicle 186 with battery 100% from station 31 at 411.5
+2023-11-10 15:35:49,356 - station - INFO - Charged vehicle 93 in 4.275400180321231 unit of time
+2023-11-10 15:35:49,356 - station - INFO - Charging vehicle 172 with battery 93.20004641411208% in station 29
+2023-11-10 15:35:49,356 - user - INFO - User 411 from station 13 to station 24
+2023-11-10 15:35:49,356 - user - INFO - User 411 requesting vehicle from station 13 at 412
+2023-11-10 15:35:49,357 - station - INFO - Charged vehicle 161 in 21.000000000000004 unit of time
+2023-11-10 15:35:49,357 - user - INFO - User 379 with vehicle 186 arrived to station 30 in 0.6 using 15.0% battery
+2023-11-10 15:35:49,357 - user - INFO - User 379 requesting lock in station 30 at 412.1
+2023-11-10 15:35:49,357 - station - INFO - Station 30 has 10 vehicles
+2023-11-10 15:35:49,357 - user - INFO - User 379 locked vehicle 186 in station 30 at 412.1
+2023-11-10 15:35:49,357 - user - INFO - User 379 finished
+2023-11-10 15:35:49,357 - station - INFO - Charging interrupted for vehicle 68 at 412.1
+2023-11-10 15:35:49,357 - station - INFO - Charged vehicle 68 of 8.940179225057577% in station 30
+2023-11-10 15:35:49,357 - station - INFO - Charging vehicle 186 with battery 85.0% in station 30
+2023-11-10 15:35:49,357 - station - INFO - Charging vehicle 123 with battery 21.501131961563296% in station 30
+2023-11-10 15:35:49,357 - user - INFO - User 412 from station 21 to station 8
+2023-11-10 15:35:49,357 - user - INFO - User 412 requesting vehicle from station 21 at 413
+2023-11-10 15:35:49,357 - station - INFO - Charged vehicle 107 in 7.7331237346555595 unit of time
+2023-11-10 15:35:49,357 - user - INFO - User 413 from station 21 to station 15
+2023-11-10 15:35:49,357 - user - INFO - User 413 requesting vehicle from station 21 at 414
+2023-11-10 15:35:49,357 - station - INFO - Charged vehicle 171 in 43.29260906898544 unit of time
+2023-11-10 15:35:49,357 - station - INFO - Charging vehicle 72 with battery 72.67511621071647% in station 9
+2023-11-10 15:35:49,357 - station - INFO - Station 9 has 9 vehicles
+2023-11-10 15:35:49,357 - user - INFO - User 369 got vehicle 171 with battery 100% from station 9 at 414.766472444356
+2023-11-10 15:35:49,357 - station - INFO - Station 9 has 10 vehicles
+2023-11-10 15:35:49,358 - user - INFO - User 391 locked vehicle 158 in station 9 at 414.766472444356
+2023-11-10 15:35:49,358 - user - INFO - User 391 finished
+2023-11-10 15:35:49,358 - station - INFO - Charging interrupted for vehicle 72 at 414.766472444356
+2023-11-10 15:35:49,358 - station - INFO - Charged vehicle 72 of 0.0% in station 9
+2023-11-10 15:35:49,358 - station - INFO - Charging vehicle 158 with battery 78.78679656440357% in station 9
+2023-11-10 15:35:49,358 - user - INFO - User 361 with vehicle 9 arrived to station 4 in 3.49857113690718 using 87.46427842267951% battery
+2023-11-10 15:35:49,358 - user - INFO - User 361 requesting lock in station 4 at 414.9985711369072
+2023-11-10 15:35:49,358 - station - INFO - Station 4 has 8 vehicles
+2023-11-10 15:35:49,358 - user - INFO - User 361 locked vehicle 9 in station 4 at 414.9985711369072
+2023-11-10 15:35:49,358 - user - INFO - User 361 finished
+2023-11-10 15:35:49,358 - station - INFO - Charging vehicle 9 with battery 12.53572157732049% in station 4
+2023-11-10 15:35:49,358 - user - INFO - User 414 from station 9 to station 28
+2023-11-10 15:35:49,358 - user - INFO - User 414 requesting vehicle from station 9 at 415
+2023-11-10 15:35:49,358 - user - INFO - User 415 from station 24 to station 27
+2023-11-10 15:35:49,358 - user - INFO - User 415 requesting vehicle from station 24 at 416
+2023-11-10 15:35:49,358 - user - INFO - User 369 with vehicle 171 arrived to station 23 in 1.6970562748477138 using 42.42640687119285% battery
+2023-11-10 15:35:49,358 - user - INFO - User 369 requesting lock in station 23 at 416.46352871920374
+2023-11-10 15:35:49,358 - station - INFO - Station 23 has 2 vehicles
+2023-11-10 15:35:49,358 - user - INFO - User 369 locked vehicle 171 in station 23 at 416.46352871920374
+2023-11-10 15:35:49,359 - user - INFO - User 369 finished
+2023-11-10 15:35:49,359 - station - INFO - Charging vehicle 171 with battery 57.57359312880715% in station 23
+2023-11-10 15:35:49,359 - station - INFO - Charged vehicle 172 in 4.759967510121543 unit of time
+2023-11-10 15:35:49,359 - user - INFO - User 416 from station 1 to station 24
+2023-11-10 15:35:49,359 - user - INFO - User 416 requesting vehicle from station 1 at 417
+2023-11-10 15:35:49,359 - station - INFO - Charged vehicle 195 in 33.20391543176799 unit of time
+2023-11-10 15:35:49,359 - station - INFO - Station 5 has 9 vehicles
+2023-11-10 15:35:49,359 - user - INFO - User 408 got vehicle 195 with battery 100% from station 5 at 417.2486989213682
+2023-11-10 15:35:49,359 - station - INFO - Station 5 has 10 vehicles
+2023-11-10 15:35:49,359 - user - INFO - User 323 locked vehicle 129 in station 5 at 417.2486989213682
+2023-11-10 15:35:49,359 - user - INFO - User 323 finished
+2023-11-10 15:35:49,359 - station - INFO - Charging vehicle 129 with battery 25.0% in station 5
+2023-11-10 15:35:49,359 - station - INFO - Charged vehicle 53 in 13.575588032169247 unit of time
+2023-11-10 15:35:49,359 - user - INFO - User 417 from station 35 to station 34
+2023-11-10 15:35:49,359 - user - INFO - User 417 requesting vehicle from station 35 at 418
+2023-11-10 15:35:49,359 - station - INFO - Charged vehicle 10 in 11.992720312308514 unit of time
+2023-11-10 15:35:49,359 - user - INFO - User 418 from station 33 to station 30
+2023-11-10 15:35:49,359 - user - INFO - User 418 requesting vehicle from station 33 at 419
+2023-11-10 15:35:49,359 - station - INFO - Charged vehicle 110 in 43.983438487779125 unit of time
+2023-11-10 15:35:49,360 - station - INFO - Station 17 has 7 vehicles
+2023-11-10 15:35:49,360 - user - INFO - User 342 got vehicle 110 with battery 100% from station 17 at 419.2590945927159
+2023-11-10 15:35:49,360 - station - INFO - Station 17 has 6 vehicles
+2023-11-10 15:35:49,360 - user - INFO - User 357 got vehicle 127 with battery 100% from station 17 at 419.2590945927159
+2023-11-10 15:35:49,360 - user - INFO - User 419 from station 24 to station 8
+2023-11-10 15:35:49,360 - user - INFO - User 419 requesting vehicle from station 24 at 420
+2023-11-10 15:35:49,360 - user - INFO - User 408 with vehicle 195 arrived to station 18 in 3.49857113690718 using 87.46427842267951% battery
+2023-11-10 15:35:49,360 - user - INFO - User 408 requesting lock in station 18 at 420.7472700582754
+2023-11-10 15:35:49,360 - station - INFO - Station 18 has 3 vehicles
+2023-11-10 15:35:49,360 - user - INFO - User 408 locked vehicle 195 in station 18 at 420.7472700582754
+2023-11-10 15:35:49,360 - user - INFO - User 408 finished
+2023-11-10 15:35:49,360 - station - INFO - Charging vehicle 195 with battery 12.53572157732049% in station 18
+2023-11-10 15:35:49,360 - user - INFO - User 420 from station 17 to station 0
+2023-11-10 15:35:49,360 - user - INFO - User 420 requesting vehicle from station 17 at 421
+2023-11-10 15:35:49,360 - station - INFO - Station 17 has 5 vehicles
+2023-11-10 15:35:49,360 - user - INFO - User 420 got vehicle 169 with battery 100% from station 17 at 421
+2023-11-10 15:35:49,360 - user - INFO - User 342 with vehicle 110 arrived to station 19 in 2.473863375370596 using 61.846584384264915% battery
+2023-11-10 15:35:49,360 - user - INFO - User 342 requesting lock in station 19 at 421.73295796808645
+2023-11-10 15:35:49,360 - station - INFO - Station 19 has 4 vehicles
+2023-11-10 15:35:49,360 - user - INFO - User 342 locked vehicle 110 in station 19 at 421.73295796808645
+2023-11-10 15:35:49,361 - user - INFO - User 342 finished
+2023-11-10 15:35:49,361 - station - INFO - Charging vehicle 110 with battery 38.153415615735085% in station 19
+2023-11-10 15:35:49,361 - user - INFO - User 357 with vehicle 127 arrived to station 1 in 2.6832815729997477 using 67.0820393249937% battery
+2023-11-10 15:35:49,361 - user - INFO - User 357 requesting lock in station 1 at 421.94237616571564
+2023-11-10 15:35:49,361 - station - INFO - Station 1 has 8 vehicles
+2023-11-10 15:35:49,361 - user - INFO - User 357 locked vehicle 127 in station 1 at 421.94237616571564
+2023-11-10 15:35:49,361 - user - INFO - User 357 finished
+2023-11-10 15:35:49,361 - station - INFO - Charging interrupted for vehicle 45 at 421.94237616571564
+2023-11-10 15:35:49,361 - station - INFO - Charged vehicle 45 of 38.641520769559335% in station 1
+2023-11-10 15:35:49,361 - station - INFO - Charging vehicle 127 with battery 32.9179606750063% in station 1
+2023-11-10 15:35:49,361 - station - INFO - Charging vehicle 70 with battery 45.7151635834165% in station 1
+2023-11-10 15:35:49,361 - station - INFO - Charging vehicle 168 with battery 30.388107212724876% in station 1
+2023-11-10 15:35:49,361 - user - INFO - User 421 from station 1 to station 34
+2023-11-10 15:35:49,361 - user - INFO - User 421 requesting vehicle from station 1 at 422
+2023-11-10 15:35:49,361 - station - INFO - Charged vehicle 186 in 10.500000000000002 unit of time
+2023-11-10 15:35:49,361 - station - INFO - Charging vehicle 68 with battery 12.893315663564842% in station 30
+2023-11-10 15:35:49,362 - user - INFO - User 422 from station 2 to station 14
+2023-11-10 15:35:49,362 - user - INFO - User 422 requesting vehicle from station 2 at 423
+2023-11-10 15:35:49,362 - station - INFO - Station 2 has 5 vehicles
+2023-11-10 15:35:49,362 - user - INFO - User 422 got vehicle 178 with battery 100% from station 2 at 423
+2023-11-10 15:35:49,362 - user - INFO - User 423 from station 3 to station 35
+2023-11-10 15:35:49,362 - user - INFO - User 423 requesting vehicle from station 3 at 424
+2023-11-10 15:35:49,362 - user - INFO - User 422 with vehicle 178 arrived to station 14 in 1.2 using 30.0% battery
+2023-11-10 15:35:49,362 - user - INFO - User 422 requesting lock in station 14 at 424.2
+2023-11-10 15:35:49,362 - station - INFO - Station 14 has 8 vehicles
+2023-11-10 15:35:49,362 - user - INFO - User 422 locked vehicle 178 in station 14 at 424.2
+2023-11-10 15:35:49,362 - user - INFO - User 422 finished
+2023-11-10 15:35:49,362 - station - INFO - Charging vehicle 178 with battery 70.0% in station 14
+2023-11-10 15:35:49,362 - user - INFO - User 420 with vehicle 169 arrived to station 0 in 3.2310988842807022 using 80.77747210701756% battery
+2023-11-10 15:35:49,362 - user - INFO - User 420 requesting lock in station 0 at 424.2310988842807
+2023-11-10 15:35:49,362 - user - INFO - User 424 from station 16 to station 15
+2023-11-10 15:35:49,362 - user - INFO - User 424 requesting vehicle from station 16 at 425
+2023-11-10 15:35:49,362 - user - INFO - User 425 from station 15 to station 1
+2023-11-10 15:35:49,362 - user - INFO - User 425 requesting vehicle from station 15 at 426
+2023-11-10 15:35:49,362 - station - INFO - Station 15 has 6 vehicles
+2023-11-10 15:35:49,362 - user - INFO - User 425 got vehicle 10 with battery 100% from station 15 at 426
+2023-11-10 15:35:49,362 - station - INFO - Charged vehicle 88 in 43.29260906898544 unit of time
+2023-11-10 15:35:49,362 - station - INFO - Charging vehicle 35 with battery 7.915096451620962% in station 7
+2023-11-10 15:35:49,363 - user - INFO - User 426 from station 34 to station 25
+2023-11-10 15:35:49,363 - user - INFO - User 426 requesting vehicle from station 34 at 427
+2023-11-10 15:35:49,363 - station - INFO - Charged vehicle 116 in 23.478713763747795 unit of time
+2023-11-10 15:35:49,363 - station - INFO - Charging vehicle 74 with battery 94.54774889684188% in station 27
+2023-11-10 15:35:49,363 - user - INFO - User 425 with vehicle 10 arrived to station 1 in 1.6970562748477138 using 42.42640687119285% battery
+2023-11-10 15:35:49,363 - user - INFO - User 425 requesting lock in station 1 at 427.69705627484774
+2023-11-10 15:35:49,363 - station - INFO - Station 1 has 9 vehicles
+2023-11-10 15:35:49,363 - user - INFO - User 425 locked vehicle 10 in station 1 at 427.69705627484774
+2023-11-10 15:35:49,363 - user - INFO - User 425 finished
+2023-11-10 15:35:49,363 - station - INFO - Charging interrupted for vehicle 127 at 427.69705627484774
+2023-11-10 15:35:49,363 - station - INFO - Charged vehicle 127 of 8.220971584474423% in station 1
+2023-11-10 15:35:49,363 - station - INFO - Charging interrupted for vehicle 70 at 427.69705627484774
+2023-11-10 15:35:49,363 - station - INFO - Charged vehicle 70 of 8.220971584474423% in station 1
+2023-11-10 15:35:49,363 - station - INFO - Charging interrupted for vehicle 168 at 427.69705627484774
+2023-11-10 15:35:49,363 - station - INFO - Charged vehicle 168 of 8.220971584474423% in station 1
+2023-11-10 15:35:49,363 - station - INFO - Charging vehicle 10 with battery 57.57359312880715% in station 1
+2023-11-10 15:35:49,363 - station - INFO - Charging vehicle 45 with battery 93.64152076955934% in station 1
+2023-11-10 15:35:49,363 - user - INFO - User 427 from station 22 to station 16
+2023-11-10 15:35:49,363 - user - INFO - User 427 requesting vehicle from station 22 at 428
+2023-11-10 15:35:49,363 - station - INFO - Charged vehicle 175 in 33.20391543176799 unit of time
+2023-11-10 15:35:49,363 - station - INFO - Charging vehicle 194 with battery 89.74703392985727% in station 21
+2023-11-10 15:35:49,364 - station - INFO - Station 21 has 4 vehicles
+2023-11-10 15:35:49,364 - user - INFO - User 353 got vehicle 175 with battery 100% from station 21 at 428.19459365489314
+2023-11-10 15:35:49,364 - station - INFO - Charged vehicle 154 in 21.000000000000004 unit of time
+2023-11-10 15:35:49,364 - station - INFO - Charging vehicle 106 with battery 78.34161122719486% in station 13
+2023-11-10 15:35:49,364 - station - INFO - Station 13 has 1 vehicles
+2023-11-10 15:35:49,364 - user - INFO - User 252 got vehicle 154 with battery 100% from station 13 at 428.3391278590364
+2023-11-10 15:35:49,364 - station - INFO - Charged vehicle 166 in 56.54423047491229 unit of time
+2023-11-10 15:35:49,364 - station - INFO - Charging vehicle 141 with battery 96.97508001342021% in station 0
+2023-11-10 15:35:49,364 - user - INFO - User 252 with vehicle 154 arrived to station 12 in 0.6 using 15.0% battery
+2023-11-10 15:35:49,364 - user - INFO - User 252 requesting lock in station 12 at 428.93912785903643
+2023-11-10 15:35:49,364 - station - INFO - Station 12 has 3 vehicles
+2023-11-10 15:35:49,364 - user - INFO - User 252 locked vehicle 154 in station 12 at 428.93912785903643
+2023-11-10 15:35:49,364 - user - INFO - User 252 finished
+2023-11-10 15:35:49,364 - station - INFO - Charging interrupted for vehicle 28 at 428.93912785903643
+2023-11-10 15:35:49,364 - station - INFO - Charged vehicle 28 of 59.51892212165075% in station 12
+2023-11-10 15:35:49,364 - station - INFO - Charging vehicle 154 with battery 85.0% in station 12
+2023-11-10 15:35:49,364 - station - INFO - Charging vehicle 203 with battery 90.10840339125843% in station 12
+2023-11-10 15:35:49,364 - user - INFO - User 428 from station 19 to station 25
+2023-11-10 15:35:49,364 - user - INFO - User 428 requesting vehicle from station 19 at 429
+2023-11-10 15:35:49,364 - station - INFO - Charged vehicle 131 in 20.27309102022645 unit of time
+2023-11-10 15:35:49,365 - station - INFO - Charging vehicle 155 with battery 82.3483860630836% in station 24
+2023-11-10 15:35:49,365 - station - INFO - Charged vehicle 158 in 14.8492424049175 unit of time
+2023-11-10 15:35:49,365 - station - INFO - Charging vehicle 72 with battery 72.67511621071647% in station 9
+2023-11-10 15:35:49,365 - station - INFO - Station 9 has 9 vehicles
+2023-11-10 15:35:49,365 - user - INFO - User 414 got vehicle 158 with battery 100% from station 9 at 429.6157148492735
+2023-11-10 15:35:49,365 - user - INFO - User 429 from station 1 to station 33
+2023-11-10 15:35:49,365 - user - INFO - User 429 requesting vehicle from station 1 at 430
+2023-11-10 15:35:49,365 - user - INFO - User 353 with vehicle 175 arrived to station 4 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,365 - user - INFO - User 353 requesting lock in station 4 at 430.0919602509942
+2023-11-10 15:35:49,365 - station - INFO - Station 4 has 9 vehicles
+2023-11-10 15:35:49,365 - user - INFO - User 353 locked vehicle 175 in station 4 at 430.0919602509942
+2023-11-10 15:35:49,365 - user - INFO - User 353 finished
+2023-11-10 15:35:49,365 - station - INFO - Charging interrupted for vehicle 9 at 430.0919602509942
+2023-11-10 15:35:49,365 - station - INFO - Charged vehicle 9 of 21.561984448695735% in station 4
+2023-11-10 15:35:49,365 - station - INFO - Charging vehicle 175 with battery 52.5658350974743% in station 4
+2023-11-10 15:35:49,365 - station - INFO - Charged vehicle 141 in 2.1174439906058518 unit of time
+2023-11-10 15:35:49,365 - user - INFO - User 430 from station 18 to station 7
+2023-11-10 15:35:49,365 - user - INFO - User 430 requesting vehicle from station 18 at 431
+2023-11-10 15:35:49,365 - station - INFO - Charged vehicle 74 in 3.8165757722106863 unit of time
+2023-11-10 15:35:49,365 - user - INFO - User 414 with vehicle 158 arrived to station 28 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,365 - user - INFO - User 414 requesting lock in station 28 at 431.51308144537455
+2023-11-10 15:35:49,366 - station - INFO - Station 28 has 5 vehicles
+2023-11-10 15:35:49,366 - user - INFO - User 414 locked vehicle 158 in station 28 at 431.51308144537455
+2023-11-10 15:35:49,366 - user - INFO - User 414 finished
+2023-11-10 15:35:49,366 - station - INFO - Charging interrupted for vehicle 46 at 431.51308144537455
+2023-11-10 15:35:49,366 - station - INFO - Charged vehicle 46 of 37.748104890729905% in station 28
+2023-11-10 15:35:49,366 - station - INFO - Charging vehicle 158 with battery 52.5658350974743% in station 28
+2023-11-10 15:35:49,366 - station - INFO - Charged vehicle 202 in 23.478713763747795 unit of time
+2023-11-10 15:35:49,366 - user - INFO - User 431 from station 0 to station 13
+2023-11-10 15:35:49,366 - user - INFO - User 431 requesting vehicle from station 0 at 432
+2023-11-10 15:35:49,366 - station - INFO - Station 0 has 9 vehicles
+2023-11-10 15:35:49,366 - user - INFO - User 431 got vehicle 166 with battery 100% from station 0 at 432
+2023-11-10 15:35:49,366 - station - INFO - Station 0 has 10 vehicles
+2023-11-10 15:35:49,366 - user - INFO - User 286 locked vehicle 139 in station 0 at 432
+2023-11-10 15:35:49,366 - user - INFO - User 286 finished
+2023-11-10 15:35:49,366 - station - INFO - Charging vehicle 139 with battery 85.0% in station 0
+2023-11-10 15:35:49,366 - station - INFO - Charged vehicle 45 in 4.450935461308463 unit of time
+2023-11-10 15:35:49,366 - station - INFO - Charging vehicle 127 with battery 41.13893225948072% in station 1
+2023-11-10 15:35:49,366 - station - INFO - Charged vehicle 34 in 26.10662657778324 unit of time
+2023-11-10 15:35:49,366 - station - INFO - Station 22 has 1 vehicles
+2023-11-10 15:35:49,367 - user - INFO - User 427 got vehicle 34 with battery 100% from station 22 at 432.5882373186672
+2023-11-10 15:35:49,367 - station - INFO - Charged vehicle 94 in 23.478713763747795 unit of time
+2023-11-10 15:35:49,367 - station - INFO - Station 24 has 8 vehicles
+2023-11-10 15:35:49,367 - user - INFO - User 396 got vehicle 94 with battery 100% from station 24 at 432.82035455024766
+2023-11-10 15:35:49,367 - user - INFO - User 432 from station 25 to station 9
+2023-11-10 15:35:49,367 - user - INFO - User 432 requesting vehicle from station 25 at 433
+2023-11-10 15:35:49,367 - station - INFO - Station 25 has 6 vehicles
+2023-11-10 15:35:49,367 - user - INFO - User 432 got vehicle 107 with battery 100% from station 25 at 433
+2023-11-10 15:35:49,367 - user - INFO - User 427 with vehicle 34 arrived to station 16 in 0.6 using 15.0% battery
+2023-11-10 15:35:49,367 - user - INFO - User 427 requesting lock in station 16 at 433.18823731866723
+2023-11-10 15:35:49,367 - user - INFO - User 431 with vehicle 166 arrived to station 13 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,367 - user - INFO - User 431 requesting lock in station 13 at 433.34164078649985
+2023-11-10 15:35:49,367 - station - INFO - Station 13 has 2 vehicles
+2023-11-10 15:35:49,367 - user - INFO - User 431 locked vehicle 166 in station 13 at 433.34164078649985
+2023-11-10 15:35:49,367 - user - INFO - User 431 finished
+2023-11-10 15:35:49,367 - station - INFO - Charging interrupted for vehicle 106 at 433.34164078649985
+2023-11-10 15:35:49,367 - station - INFO - Charged vehicle 106 of 7.146447039233495% in station 13
+2023-11-10 15:35:49,367 - station - INFO - Charging vehicle 166 with battery 66.45898033750315% in station 13
+2023-11-10 15:35:49,367 - station - INFO - Charged vehicle 191 in 29.53202318634141 unit of time
+2023-11-10 15:35:49,367 - user - INFO - User 433 from station 9 to station 10
+2023-11-10 15:35:49,367 - user - INFO - User 433 requesting vehicle from station 9 at 434
+2023-11-10 15:35:49,368 - user - INFO - User 434 from station 22 to station 16
+2023-11-10 15:35:49,368 - user - INFO - User 434 requesting vehicle from station 22 at 435
+2023-11-10 15:35:49,368 - station - INFO - Station 22 has 0 vehicles
+2023-11-10 15:35:49,368 - user - INFO - User 434 got vehicle 112 with battery 100% from station 22 at 435
+2023-11-10 15:35:49,368 - user - INFO - User 432 with vehicle 107 arrived to station 9 in 2.1633307652783937 using 54.083269131959845% battery
+2023-11-10 15:35:49,368 - user - INFO - User 432 requesting lock in station 9 at 435.1633307652784
+2023-11-10 15:35:49,368 - station - INFO - Station 9 has 10 vehicles
+2023-11-10 15:35:49,368 - user - INFO - User 432 locked vehicle 107 in station 9 at 435.1633307652784
+2023-11-10 15:35:49,368 - user - INFO - User 432 finished
+2023-11-10 15:35:49,368 - station - INFO - Charging interrupted for vehicle 72 at 435.1633307652784
+2023-11-10 15:35:49,368 - station - INFO - Charged vehicle 72 of 7.925165594292672% in station 9
+2023-11-10 15:35:49,368 - station - INFO - Charging vehicle 107 with battery 45.916730868040155% in station 9
+2023-11-10 15:35:49,368 - station - INFO - Charged vehicle 194 in 7.177076249099913 unit of time
+2023-11-10 15:35:49,368 - station - INFO - Charging vehicle 159 with battery 98.73774767813515% in station 21
+2023-11-10 15:35:49,368 - station - INFO - Station 21 has 3 vehicles
+2023-11-10 15:35:49,368 - user - INFO - User 364 got vehicle 194 with battery 100% from station 21 at 435.37166990399305
+2023-11-10 15:35:49,368 - user - INFO - User 434 with vehicle 112 arrived to station 16 in 0.6 using 15.0% battery
+2023-11-10 15:35:49,368 - user - INFO - User 434 requesting lock in station 16 at 435.6
+2023-11-10 15:35:49,368 - station - INFO - Charged vehicle 203 in 6.9241176261190915 unit of time
+2023-11-10 15:35:49,368 - station - INFO - Charging vehicle 28 with battery 78.7414500146332% in station 12
+2023-11-10 15:35:49,368 - user - INFO - User 435 from station 24 to station 12
+2023-11-10 15:35:49,369 - user - INFO - User 435 requesting vehicle from station 24 at 436
+2023-11-10 15:35:49,369 - user - INFO - User 396 with vehicle 94 arrived to station 4 in 3.3941125496954276 using 84.8528137423857% battery
+2023-11-10 15:35:49,369 - user - INFO - User 396 requesting lock in station 4 at 436.2144670999431
+2023-11-10 15:35:49,369 - station - INFO - Station 4 has 10 vehicles
+2023-11-10 15:35:49,369 - user - INFO - User 396 locked vehicle 94 in station 4 at 436.2144670999431
+2023-11-10 15:35:49,369 - user - INFO - User 396 finished
+2023-11-10 15:35:49,369 - station - INFO - Charging interrupted for vehicle 175 at 436.2144670999431
+2023-11-10 15:35:49,369 - station - INFO - Charged vehicle 175 of 8.746438355641272% in station 4
+2023-11-10 15:35:49,369 - station - INFO - Charging vehicle 94 with battery 15.147186257614297% in station 4
+2023-11-10 15:35:49,369 - station - INFO - Charging vehicle 9 with battery 34.097706026016226% in station 4
+2023-11-10 15:35:49,369 - station - INFO - Charged vehicle 159 in 0.8835766253053978 unit of time
+2023-11-10 15:35:49,369 - station - INFO - Station 21 has 2 vehicles
+2023-11-10 15:35:49,369 - user - INFO - User 383 got vehicle 159 with battery 100% from station 21 at 436.25524652929846
+2023-11-10 15:35:49,369 - station - INFO - Station 21 has 1 vehicles
+2023-11-10 15:35:49,369 - user - INFO - User 389 got vehicle 187 with battery 100% from station 21 at 436.25524652929846
+2023-11-10 15:35:49,369 - station - INFO - Station 21 has 0 vehicles
+2023-11-10 15:35:49,369 - user - INFO - User 398 got vehicle 126 with battery 100% from station 21 at 436.25524652929846
+2023-11-10 15:35:49,369 - user - INFO - User 436 from station 12 to station 1
+2023-11-10 15:35:49,369 - user - INFO - User 436 requesting vehicle from station 12 at 437
+2023-11-10 15:35:49,369 - user - INFO - User 364 with vehicle 194 arrived to station 7 in 1.6970562748477138 using 42.42640687119285% battery
+2023-11-10 15:35:49,370 - user - INFO - User 364 requesting lock in station 7 at 437.0687261788408
+2023-11-10 15:35:49,370 - station - INFO - Station 7 has 5 vehicles
+2023-11-10 15:35:49,370 - user - INFO - User 364 locked vehicle 194 in station 7 at 437.0687261788408
+2023-11-10 15:35:49,370 - user - INFO - User 364 finished
+2023-11-10 15:35:49,370 - station - INFO - Charging interrupted for vehicle 35 at 437.0687261788408
+2023-11-10 15:35:49,370 - station - INFO - Charged vehicle 35 of 14.717505334978275% in station 7
+2023-11-10 15:35:49,370 - station - INFO - Charging vehicle 194 with battery 57.57359312880715% in station 7
+2023-11-10 15:35:49,370 - user - INFO - User 398 with vehicle 126 arrived to station 28 in 0.8485281374238569 using 21.213203435596427% battery
+2023-11-10 15:35:49,370 - user - INFO - User 398 requesting lock in station 28 at 437.1037746667223
+2023-11-10 15:35:49,370 - station - INFO - Station 28 has 6 vehicles
+2023-11-10 15:35:49,370 - user - INFO - User 398 locked vehicle 126 in station 28 at 437.1037746667223
+2023-11-10 15:35:49,370 - user - INFO - User 398 finished
+2023-11-10 15:35:49,370 - station - INFO - Charging interrupted for vehicle 158 at 437.1037746667223
+2023-11-10 15:35:49,370 - station - INFO - Charged vehicle 158 of 7.986704601925354% in station 28
+2023-11-10 15:35:49,370 - station - INFO - Charging vehicle 126 with battery 78.78679656440357% in station 28
+2023-11-10 15:35:49,370 - station - INFO - Charging vehicle 46 with battery 89.76732250168928% in station 28
+2023-11-10 15:35:49,370 - station - INFO - Charged vehicle 38 in 33.20391543176799 unit of time
+2023-11-10 15:35:49,371 - station - INFO - Station 26 has 6 vehicles
+2023-11-10 15:35:49,371 - user - INFO - User 386 got vehicle 38 with battery 100% from station 26 at 437.2690365000941
+2023-11-10 15:35:49,371 - station - INFO - Charged vehicle 134 in 29.698484809835 unit of time
+2023-11-10 15:35:49,371 - station - INFO - Station 29 has 4 vehicles
+2023-11-10 15:35:49,371 - user - INFO - User 213 got vehicle 134 with battery 100% from station 29 at 437.417160242333
+2023-11-10 15:35:49,371 - station - INFO - Station 29 has 3 vehicles
+2023-11-10 15:35:49,371 - user - INFO - User 219 got vehicle 172 with battery 100% from station 29 at 437.417160242333
+2023-11-10 15:35:49,371 - station - INFO - Station 29 has 2 vehicles
+2023-11-10 15:35:49,371 - user - INFO - User 319 got vehicle 93 with battery 100% from station 29 at 437.417160242333
+2023-11-10 15:35:49,371 - station - INFO - Station 29 has 1 vehicles
+2023-11-10 15:35:49,371 - user - INFO - User 354 got vehicle 132 with battery 100% from station 29 at 437.417160242333
+2023-11-10 15:35:49,371 - station - INFO - Station 29 has 0 vehicles
+2023-11-10 15:35:49,371 - user - INFO - User 362 got vehicle 192 with battery 100% from station 29 at 437.417160242333
+2023-11-10 15:35:49,371 - user - INFO - User 389 with vehicle 187 arrived to station 35 in 1.6970562748477138 using 42.42640687119285% battery
+2023-11-10 15:35:49,371 - user - INFO - User 389 requesting lock in station 35 at 437.9523028041462
+2023-11-10 15:35:49,371 - user - INFO - User 437 from station 3 to station 7
+2023-11-10 15:35:49,371 - user - INFO - User 437 requesting vehicle from station 3 at 438
+2023-11-10 15:35:49,371 - user - INFO - User 362 with vehicle 192 arrived to station 35 in 0.6 using 15.0% battery
+2023-11-10 15:35:49,371 - user - INFO - User 362 requesting lock in station 35 at 438.01716024233303
+2023-11-10 15:35:49,371 - user - INFO - User 383 with vehicle 159 arrived to station 4 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,371 - user - INFO - User 383 requesting lock in station 4 at 438.1526131253995
+2023-11-10 15:35:49,371 - user - INFO - User 319 with vehicle 93 arrived to station 21 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,372 - user - INFO - User 319 requesting lock in station 21 at 438.75880102883286
+2023-11-10 15:35:49,372 - station - INFO - Station 21 has 1 vehicles
+2023-11-10 15:35:49,372 - user - INFO - User 319 locked vehicle 93 in station 21 at 438.75880102883286
+2023-11-10 15:35:49,372 - user - INFO - User 319 finished
+2023-11-10 15:35:49,372 - station - INFO - Charging vehicle 93 with battery 66.45898033750315% in station 21
+2023-11-10 15:35:49,372 - user - INFO - User 438 from station 31 to station 14
+2023-11-10 15:35:49,372 - user - INFO - User 438 requesting vehicle from station 31 at 439
+2023-11-10 15:35:49,372 - user - INFO - User 386 with vehicle 38 arrived to station 7 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,372 - user - INFO - User 386 requesting lock in station 7 at 439.16640309619515
+2023-11-10 15:35:49,372 - station - INFO - Station 7 has 6 vehicles
+2023-11-10 15:35:49,372 - user - INFO - User 386 locked vehicle 38 in station 7 at 439.16640309619515
+2023-11-10 15:35:49,372 - user - INFO - User 386 finished
+2023-11-10 15:35:49,372 - station - INFO - Charging interrupted for vehicle 194 at 439.16640309619515
+2023-11-10 15:35:49,372 - station - INFO - Charged vehicle 194 of 2.996681310506233% in station 7
+2023-11-10 15:35:49,372 - station - INFO - Charging vehicle 38 with battery 52.5658350974743% in station 7
+2023-11-10 15:35:49,372 - station - INFO - Charging vehicle 35 with battery 22.63260178659924% in station 7
+2023-11-10 15:35:49,373 - user - INFO - User 213 with vehicle 134 arrived to station 20 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,373 - user - INFO - User 213 requesting lock in station 20 at 439.31452683843406
+2023-11-10 15:35:49,373 - user - INFO - User 354 with vehicle 132 arrived to station 32 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,373 - user - INFO - User 354 requesting lock in station 32 at 439.31452683843406
+2023-11-10 15:35:49,373 - station - INFO - Station 20 has 7 vehicles
+2023-11-10 15:35:49,373 - user - INFO - User 213 locked vehicle 134 in station 20 at 439.31452683843406
+2023-11-10 15:35:49,373 - user - INFO - User 213 finished
+2023-11-10 15:35:49,373 - station - INFO - Charging vehicle 134 with battery 52.5658350974743% in station 20
+2023-11-10 15:35:49,373 - station - INFO - Station 32 has 1 vehicles
+2023-11-10 15:35:49,373 - user - INFO - User 354 locked vehicle 132 in station 32 at 439.31452683843406
+2023-11-10 15:35:49,373 - user - INFO - User 354 finished
+2023-11-10 15:35:49,373 - station - INFO - Charging vehicle 132 with battery 52.5658350974743% in station 32
+2023-11-10 15:35:49,374 - station - INFO - Charged vehicle 154 in 10.500000000000002 unit of time
+2023-11-10 15:35:49,374 - station - INFO - Station 12 has 2 vehicles
+2023-11-10 15:35:49,374 - user - INFO - User 346 got vehicle 154 with battery 100% from station 12 at 439.43912785903643
+2023-11-10 15:35:49,374 - user - INFO - User 219 with vehicle 172 arrived to station 19 in 2.473863375370596 using 61.846584384264915% battery
+2023-11-10 15:35:49,374 - user - INFO - User 219 requesting lock in station 19 at 439.8910236177036
+2023-11-10 15:35:49,374 - station - INFO - Station 19 has 5 vehicles
+2023-11-10 15:35:49,374 - user - INFO - User 219 locked vehicle 172 in station 19 at 439.8910236177036
+2023-11-10 15:35:49,374 - user - INFO - User 219 finished
+2023-11-10 15:35:49,374 - station - INFO - Charging interrupted for vehicle 110 at 439.8910236177036
+2023-11-10 15:35:49,374 - station - INFO - Charged vehicle 110 of 25.940093785167328% in station 19
+2023-11-10 15:35:49,374 - station - INFO - Charging vehicle 172 with battery 38.153415615735085% in station 19
+2023-11-10 15:35:49,374 - user - INFO - User 439 from station 0 to station 9
+2023-11-10 15:35:49,374 - user - INFO - User 439 requesting vehicle from station 0 at 440
+2023-11-10 15:35:49,374 - user - INFO - User 346 with vehicle 154 arrived to station 18 in 0.6 using 15.0% battery
+2023-11-10 15:35:49,374 - user - INFO - User 346 requesting lock in station 18 at 440.03912785903645
+2023-11-10 15:35:49,374 - station - INFO - Station 18 has 4 vehicles
+2023-11-10 15:35:49,374 - user - INFO - User 346 locked vehicle 154 in station 18 at 440.03912785903645
+2023-11-10 15:35:49,374 - user - INFO - User 346 finished
+2023-11-10 15:35:49,374 - station - INFO - Charging interrupted for vehicle 195 at 440.03912785903645
+2023-11-10 15:35:49,374 - station - INFO - Charged vehicle 195 of 27.55979685823011% in station 18
+2023-11-10 15:35:49,375 - station - INFO - Charging vehicle 154 with battery 85.0% in station 18
+2023-11-10 15:35:49,375 - user - INFO - User 440 from station 25 to station 5
+2023-11-10 15:35:49,375 - user - INFO - User 440 requesting vehicle from station 25 at 441
+2023-11-10 15:35:49,375 - station - INFO - Station 25 has 5 vehicles
+2023-11-10 15:35:49,375 - user - INFO - User 440 got vehicle 209 with battery 100% from station 25 at 441
+2023-11-10 15:35:49,375 - station - INFO - Charged vehicle 155 in 12.356129755841486 unit of time
+2023-11-10 15:35:49,375 - station - INFO - Station 24 has 7 vehicles
+2023-11-10 15:35:49,375 - user - INFO - User 415 got vehicle 155 with battery 100% from station 24 at 441.9708615625678
+2023-11-10 15:35:49,375 - station - INFO - Station 24 has 6 vehicles
+2023-11-10 15:35:49,375 - user - INFO - User 419 got vehicle 131 with battery 100% from station 24 at 441.9708615625678
+2023-11-10 15:35:49,375 - station - INFO - Station 24 has 5 vehicles
+2023-11-10 15:35:49,375 - user - INFO - User 435 got vehicle 189 with battery 100% from station 24 at 441.9708615625678
+2023-11-10 15:35:49,375 - user - INFO - User 441 from station 22 to station 33
+2023-11-10 15:35:49,375 - user - INFO - User 441 requesting vehicle from station 22 at 442
+2023-11-10 15:35:49,375 - station - INFO - Charged vehicle 139 in 10.500000000000002 unit of time
+2023-11-10 15:35:49,375 - station - INFO - Station 0 has 9 vehicles
+2023-11-10 15:35:49,375 - user - INFO - User 439 got vehicle 139 with battery 100% from station 0 at 442.5
+2023-11-10 15:35:49,375 - station - INFO - Station 0 has 10 vehicles
+2023-11-10 15:35:49,375 - user - INFO - User 387 locked vehicle 179 in station 0 at 442.5
+2023-11-10 15:35:49,375 - user - INFO - User 387 finished
+2023-11-10 15:35:49,376 - station - INFO - Charging vehicle 179 with battery 12.53572157732049% in station 0
+2023-11-10 15:35:49,376 - user - INFO - User 442 from station 11 to station 15
+2023-11-10 15:35:49,376 - user - INFO - User 442 requesting vehicle from station 11 at 443
+2023-11-10 15:35:49,376 - station - INFO - Station 11 has 2 vehicles
+2023-11-10 15:35:49,376 - user - INFO - User 442 got vehicle 202 with battery 100% from station 11 at 443
+2023-11-10 15:35:49,376 - user - INFO - User 435 with vehicle 189 arrived to station 12 in 1.2 using 30.0% battery
+2023-11-10 15:35:49,376 - user - INFO - User 435 requesting lock in station 12 at 443.1708615625678
+2023-11-10 15:35:49,376 - station - INFO - Station 12 has 3 vehicles
+2023-11-10 15:35:49,376 - user - INFO - User 435 locked vehicle 189 in station 12 at 443.1708615625678
+2023-11-10 15:35:49,376 - user - INFO - User 435 finished
+2023-11-10 15:35:49,376 - station - INFO - Charging interrupted for vehicle 28 at 443.1708615625678
+2023-11-10 15:35:49,376 - station - INFO - Charged vehicle 28 of 10.439451539160371% in station 12
+2023-11-10 15:35:49,376 - station - INFO - Charging vehicle 189 with battery 70.0% in station 12
+2023-11-10 15:35:49,376 - user - INFO - User 415 with vehicle 155 arrived to station 27 in 1.8 using 44.99999999999999% battery
+2023-11-10 15:35:49,376 - user - INFO - User 415 requesting lock in station 27 at 443.7708615625678
+2023-11-10 15:35:49,376 - station - INFO - Station 27 has 7 vehicles
+2023-11-10 15:35:49,376 - user - INFO - User 415 locked vehicle 155 in station 27 at 443.7708615625678
+2023-11-10 15:35:49,376 - user - INFO - User 415 finished
+2023-11-10 15:35:49,376 - station - INFO - Charging vehicle 155 with battery 55.00000000000001% in station 27
+2023-11-10 15:35:49,377 - user - INFO - User 443 from station 7 to station 28
+2023-11-10 15:35:49,377 - user - INFO - User 443 requesting vehicle from station 7 at 444
+2023-11-10 15:35:49,377 - user - INFO - User 419 with vehicle 131 arrived to station 8 in 2.1633307652783937 using 54.083269131959845% battery
+2023-11-10 15:35:49,377 - user - INFO - User 419 requesting lock in station 8 at 444.13419232784616
+2023-11-10 15:35:49,377 - station - INFO - Station 8 has 5 vehicles
+2023-11-10 15:35:49,377 - user - INFO - User 419 locked vehicle 131 in station 8 at 444.13419232784616
+2023-11-10 15:35:49,377 - user - INFO - User 419 finished
+2023-11-10 15:35:49,377 - station - INFO - Charging vehicle 131 with battery 45.916730868040155% in station 8
+2023-11-10 15:35:49,377 - station - INFO - Charged vehicle 46 in 7.162874248817501 unit of time
+2023-11-10 15:35:49,377 - station - INFO - Charging vehicle 158 with battery 60.55253969939965% in station 28
+2023-11-10 15:35:49,377 - user - INFO - User 442 with vehicle 202 arrived to station 15 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,377 - user - INFO - User 442 requesting lock in station 15 at 444.34164078649985
+2023-11-10 15:35:49,377 - station - INFO - Station 15 has 7 vehicles
+2023-11-10 15:35:49,377 - user - INFO - User 442 locked vehicle 202 in station 15 at 444.34164078649985
+2023-11-10 15:35:49,377 - user - INFO - User 442 finished
+2023-11-10 15:35:49,377 - station - INFO - Charging vehicle 202 with battery 66.45898033750315% in station 15
+2023-11-10 15:35:49,377 - user - INFO - User 440 with vehicle 209 arrived to station 5 in 3.3941125496954276 using 84.8528137423857% battery
+2023-11-10 15:35:49,377 - user - INFO - User 440 requesting lock in station 5 at 444.3941125496954
+2023-11-10 15:35:49,377 - user - INFO - User 439 with vehicle 139 arrived to station 9 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,377 - user - INFO - User 439 requesting lock in station 9 at 444.39736659610105
+2023-11-10 15:35:49,378 - user - INFO - User 444 from station 32 to station 34
+2023-11-10 15:35:49,378 - user - INFO - User 444 requesting vehicle from station 32 at 445
+2023-11-10 15:35:49,378 - station - INFO - Charged vehicle 178 in 21.000000000000004 unit of time
+2023-11-10 15:35:49,378 - station - INFO - Charged vehicle 51 in 43.29260906898544 unit of time
+2023-11-10 15:35:49,378 - station - INFO - Station 16 has 9 vehicles
+2023-11-10 15:35:49,378 - user - INFO - User 402 got vehicle 51 with battery 100% from station 16 at 445.80013986627483
+2023-11-10 15:35:49,378 - station - INFO - Station 16 has 10 vehicles
+2023-11-10 15:35:49,378 - user - INFO - User 394 locked vehicle 83 in station 16 at 445.80013986627483
+2023-11-10 15:35:49,378 - user - INFO - User 394 finished
+2023-11-10 15:35:49,378 - station - INFO - Charging vehicle 83 with battery 85.0% in station 16
+2023-11-10 15:35:49,378 - station - INFO - Station 16 has 9 vehicles
+2023-11-10 15:35:49,378 - user - INFO - User 409 got vehicle 83 with battery 85.0% from station 16 at 445.80013986627483
+2023-11-10 15:35:49,378 - station - INFO - Station 16 has 10 vehicles
+2023-11-10 15:35:49,378 - user - INFO - User 427 locked vehicle 34 in station 16 at 445.80013986627483
+2023-11-10 15:35:49,378 - user - INFO - User 427 finished
+2023-11-10 15:35:49,378 - station - INFO - Charging interrupted for vehicle 83 at 445.80013986627483
+2023-11-10 15:35:49,378 - station - INFO - Charged vehicle 83 of 0.0% in station 16
+2023-11-10 15:35:49,378 - station - INFO - Charging vehicle 34 with battery 85.0% in station 16
+2023-11-10 15:35:49,378 - station - INFO - Station 16 has 9 vehicles
+2023-11-10 15:35:49,379 - user - INFO - User 424 got vehicle 34 with battery 85.0% from station 16 at 445.80013986627483
+2023-11-10 15:35:49,379 - station - INFO - Station 16 has 10 vehicles
+2023-11-10 15:35:49,379 - user - INFO - User 434 locked vehicle 112 in station 16 at 445.80013986627483
+2023-11-10 15:35:49,379 - user - INFO - User 434 finished
+2023-11-10 15:35:49,379 - station - INFO - Charging interrupted for vehicle 34 at 445.80013986627483
+2023-11-10 15:35:49,379 - station - INFO - Charged vehicle 34 of 0.0% in station 16
+2023-11-10 15:35:49,379 - station - INFO - Charging vehicle 112 with battery 85.0% in station 16
+2023-11-10 15:35:49,379 - user - INFO - User 445 from station 28 to station 24
+2023-11-10 15:35:49,379 - user - INFO - User 445 requesting vehicle from station 28 at 446
+2023-11-10 15:35:49,379 - station - INFO - Charged vehicle 171 in 29.698484809835 unit of time
+2023-11-10 15:35:49,379 - user - INFO - User 424 with vehicle 34 arrived to station 15 in 0.6 using 15.0% battery
+2023-11-10 15:35:49,379 - user - INFO - User 424 requesting lock in station 15 at 446.40013986627486
+2023-11-10 15:35:49,379 - station - INFO - Station 15 has 8 vehicles
+2023-11-10 15:35:49,379 - user - INFO - User 424 locked vehicle 34 in station 15 at 446.40013986627486
+2023-11-10 15:35:49,379 - user - INFO - User 424 finished
+2023-11-10 15:35:49,379 - station - INFO - Charging interrupted for vehicle 202 at 446.40013986627486
+2023-11-10 15:35:49,379 - station - INFO - Charged vehicle 202 of 2.940712971107151% in station 15
+2023-11-10 15:35:49,379 - station - INFO - Charging vehicle 34 with battery 70.0% in station 15
+2023-11-10 15:35:49,380 - user - INFO - User 446 from station 17 to station 1
+2023-11-10 15:35:49,380 - user - INFO - User 446 requesting vehicle from station 17 at 447
+2023-11-10 15:35:49,380 - station - INFO - Station 17 has 4 vehicles
+2023-11-10 15:35:49,380 - user - INFO - User 446 got vehicle 196 with battery 100% from station 17 at 447
+2023-11-10 15:35:49,380 - user - INFO - User 402 with vehicle 51 arrived to station 5 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,380 - user - INFO - User 402 requesting lock in station 5 at 447.1417806527747
+2023-11-10 15:35:49,380 - user - INFO - User 409 with vehicle 83 arrived to station 33 in 1.8973665961010275 using 47.434164902525694% battery
+2023-11-10 15:35:49,380 - user - INFO - User 409 requesting lock in station 33 at 447.6975064623759
+2023-11-10 15:35:49,380 - station - INFO - Station 33 has 5 vehicles
+2023-11-10 15:35:49,380 - user - INFO - User 409 locked vehicle 83 in station 33 at 447.6975064623759
+2023-11-10 15:35:49,380 - user - INFO - User 409 finished
+2023-11-10 15:35:49,380 - station - INFO - Charging interrupted for vehicle 80 at 447.6975064623759
+2023-11-10 15:35:49,380 - station - INFO - Charged vehicle 80 of 63.76870679174317% in station 33
+2023-11-10 15:35:49,380 - station - INFO - Charging vehicle 83 with battery 37.565835097474306% in station 33
+2023-11-10 15:35:49,380 - user - INFO - User 447 from station 0 to station 32
+2023-11-10 15:35:49,380 - user - INFO - User 447 requesting vehicle from station 0 at 448
+2023-11-10 15:35:49,380 - user - INFO - User 448 from station 26 to station 10
+2023-11-10 15:35:49,380 - user - INFO - User 448 requesting vehicle from station 26 at 449
+2023-11-10 15:35:49,380 - station - INFO - Station 26 has 5 vehicles
+2023-11-10 15:35:49,380 - user - INFO - User 448 got vehicle 53 with battery 100% from station 26 at 449
+2023-11-10 15:35:49,380 - user - INFO - User 446 with vehicle 196 arrived to station 1 in 2.6832815729997477 using 67.0820393249937% battery
+2023-11-10 15:35:49,380 - user - INFO - User 446 requesting lock in station 1 at 449.68328157299976
+2023-11-10 15:35:49,381 - station - INFO - Station 1 has 10 vehicles
+2023-11-10 15:35:49,381 - user - INFO - User 446 locked vehicle 196 in station 1 at 449.68328157299976
+2023-11-10 15:35:49,381 - user - INFO - User 446 finished
+2023-11-10 15:35:49,381 - station - INFO - Charging interrupted for vehicle 10 at 449.68328157299976
+2023-11-10 15:35:49,381 - station - INFO - Charged vehicle 10 of 31.408893283074324% in station 1
+2023-11-10 15:35:49,381 - station - INFO - Charging interrupted for vehicle 127 at 449.68328157299976
+2023-11-10 15:35:49,381 - station - INFO - Charged vehicle 127 of 25.050414052633652% in station 1
+2023-11-10 15:35:49,381 - station - INFO - Charging vehicle 196 with battery 32.9179606750063% in station 1
+2023-11-10 15:35:49,381 - station - INFO - Charging vehicle 70 with battery 53.93613516789092% in station 1
+2023-11-10 15:35:49,381 - station - INFO - Charging vehicle 168 with battery 38.609078797199295% in station 1
+2023-11-10 15:35:49,381 - user - INFO - User 449 from station 7 to station 25
+2023-11-10 15:35:49,381 - user - INFO - User 449 requesting vehicle from station 7 at 450
+2023-11-10 15:35:49,381 - station - INFO - Charged vehicle 154 in 10.500000000000002 unit of time
+2023-11-10 15:35:49,381 - station - INFO - Charging vehicle 195 with battery 40.0955184355506% in station 18
+2023-11-10 15:35:49,381 - station - INFO - Station 18 has 3 vehicles
+2023-11-10 15:35:49,381 - user - INFO - User 430 got vehicle 154 with battery 100% from station 18 at 450.53912785903645
+2023-11-10 15:35:49,381 - user - INFO - User 450 from station 34 to station 25
+2023-11-10 15:35:49,381 - user - INFO - User 450 requesting vehicle from station 34 at 451
+2023-11-10 15:35:49,381 - user - INFO - User 448 with vehicle 53 arrived to station 10 in 2.1633307652783937 using 54.083269131959845% battery
+2023-11-10 15:35:49,381 - user - INFO - User 448 requesting lock in station 10 at 451.1633307652784
+2023-11-10 15:35:49,381 - station - INFO - Station 10 has 7 vehicles
+2023-11-10 15:35:49,382 - user - INFO - User 448 locked vehicle 53 in station 10 at 451.1633307652784
+2023-11-10 15:35:49,382 - user - INFO - User 448 finished
+2023-11-10 15:35:49,382 - station - INFO - Charging vehicle 53 with battery 45.916730868040155% in station 10
+2023-11-10 15:35:49,382 - user - INFO - User 430 with vehicle 154 arrived to station 7 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,382 - user - INFO - User 430 requesting lock in station 7 at 451.8807686455363
+2023-11-10 15:35:49,382 - station - INFO - Station 7 has 7 vehicles
+2023-11-10 15:35:49,382 - user - INFO - User 430 locked vehicle 154 in station 7 at 451.8807686455363
+2023-11-10 15:35:49,382 - user - INFO - User 430 finished
+2023-11-10 15:35:49,382 - station - INFO - Charging interrupted for vehicle 38 at 451.8807686455363
+2023-11-10 15:35:49,382 - station - INFO - Charged vehicle 38 of 18.16337935620165% in station 7
+2023-11-10 15:35:49,382 - station - INFO - Charging interrupted for vehicle 35 at 451.8807686455363
+2023-11-10 15:35:49,382 - station - INFO - Charged vehicle 35 of 18.16337935620165% in station 7
+2023-11-10 15:35:49,382 - station - INFO - Charging vehicle 154 with battery 66.45898033750315% in station 7
+2023-11-10 15:35:49,382 - station - INFO - Charging vehicle 194 with battery 60.57027443931338% in station 7
+2023-11-10 15:35:49,382 - station - INFO - Charged vehicle 126 in 14.8492424049175 unit of time
+2023-11-10 15:35:49,382 - station - INFO - Station 28 has 5 vehicles
+2023-11-10 15:35:49,382 - user - INFO - User 331 got vehicle 126 with battery 100% from station 28 at 451.9530170716398
+2023-11-10 15:35:49,382 - user - INFO - User 451 from station 32 to station 4
+2023-11-10 15:35:49,382 - user - INFO - User 451 requesting vehicle from station 32 at 452
+2023-11-10 15:35:49,382 - user - INFO - User 452 from station 9 to station 6
+2023-11-10 15:35:49,383 - user - INFO - User 452 requesting vehicle from station 9 at 453
+2023-11-10 15:35:49,383 - user - INFO - User 453 from station 16 to station 9
+2023-11-10 15:35:49,383 - user - INFO - User 453 requesting vehicle from station 16 at 454
+2023-11-10 15:35:49,383 - station - INFO - Charged vehicle 173 in 52.5 unit of time
+2023-11-10 15:35:49,383 - station - INFO - Charging vehicle 201 with battery 38.61006481675672% in station 35
+2023-11-10 15:35:49,383 - station - INFO - Station 35 has 9 vehicles
+2023-11-10 15:35:49,383 - user - INFO - User 390 got vehicle 173 with battery 100% from station 35 at 454.66775447222506
+2023-11-10 15:35:49,383 - station - INFO - Station 35 has 10 vehicles
+2023-11-10 15:35:49,383 - user - INFO - User 389 locked vehicle 187 in station 35 at 454.66775447222506
+2023-11-10 15:35:49,383 - user - INFO - User 389 finished
+2023-11-10 15:35:49,383 - station - INFO - Charging interrupted for vehicle 201 at 454.66775447222506
+2023-11-10 15:35:49,383 - station - INFO - Charged vehicle 201 of 0.0% in station 35
+2023-11-10 15:35:49,383 - station - INFO - Charging vehicle 187 with battery 57.57359312880715% in station 35
+2023-11-10 15:35:49,383 - user - INFO - User 331 with vehicle 126 arrived to station 6 in 3.0 using 75.0% battery
+2023-11-10 15:35:49,383 - user - INFO - User 331 requesting lock in station 6 at 454.9530170716398
+2023-11-10 15:35:49,383 - station - INFO - Station 6 has 1 vehicles
+2023-11-10 15:35:49,383 - user - INFO - User 331 locked vehicle 126 in station 6 at 454.9530170716398
+2023-11-10 15:35:49,383 - user - INFO - User 331 finished
+2023-11-10 15:35:49,383 - station - INFO - Charging vehicle 126 with battery 25.0% in station 6
+2023-11-10 15:35:49,383 - user - INFO - User 454 from station 17 to station 1
+2023-11-10 15:35:49,384 - user - INFO - User 454 requesting vehicle from station 17 at 455
+2023-11-10 15:35:49,384 - station - INFO - Station 17 has 3 vehicles
+2023-11-10 15:35:49,384 - user - INFO - User 454 got vehicle 105 with battery 100% from station 17 at 455
+2023-11-10 15:35:49,384 - user - INFO - User 455 from station 15 to station 24
+2023-11-10 15:35:49,384 - user - INFO - User 455 requesting vehicle from station 15 at 456
+2023-11-10 15:35:49,384 - station - INFO - Charged vehicle 112 in 10.500000000000002 unit of time
+2023-11-10 15:35:49,384 - station - INFO - Station 16 has 9 vehicles
+2023-11-10 15:35:49,384 - user - INFO - User 453 got vehicle 112 with battery 100% from station 16 at 456.30013986627483
+2023-11-10 15:35:49,384 - station - INFO - Charged vehicle 166 in 23.478713763747795 unit of time
+2023-11-10 15:35:49,384 - station - INFO - Charging vehicle 106 with battery 85.48805826642835% in station 13
+2023-11-10 15:35:49,384 - station - INFO - Station 13 has 1 vehicles
+2023-11-10 15:35:49,384 - user - INFO - User 290 got vehicle 166 with battery 100% from station 13 at 456.82035455024766
+2023-11-10 15:35:49,384 - user - INFO - User 456 from station 33 to station 6
+2023-11-10 15:35:49,384 - user - INFO - User 456 requesting vehicle from station 33 at 457
+2023-11-10 15:35:49,384 - user - INFO - User 453 with vehicle 112 arrived to station 9 in 0.8485281374238569 using 21.213203435596427% battery
+2023-11-10 15:35:49,384 - user - INFO - User 453 requesting lock in station 9 at 457.1486680036987
+2023-11-10 15:35:49,384 - user - INFO - User 390 with vehicle 173 arrived to station 9 in 2.6832815729997477 using 67.0820393249937% battery
+2023-11-10 15:35:49,384 - user - INFO - User 390 requesting lock in station 9 at 457.3510360452248
+2023-11-10 15:35:49,384 - user - INFO - User 454 with vehicle 105 arrived to station 1 in 2.6832815729997477 using 67.0820393249937% battery
+2023-11-10 15:35:49,384 - user - INFO - User 454 requesting lock in station 1 at 457.68328157299976
+2023-11-10 15:35:49,384 - user - INFO - User 457 from station 12 to station 11
+2023-11-10 15:35:49,384 - user - INFO - User 457 requesting vehicle from station 12 at 458
+2023-11-10 15:35:49,385 - user - INFO - User 290 with vehicle 166 arrived to station 1 in 1.2 using 30.0% battery
+2023-11-10 15:35:49,385 - user - INFO - User 290 requesting lock in station 1 at 458.02035455024765
+2023-11-10 15:35:49,385 - user - INFO - User 458 from station 21 to station 27
+2023-11-10 15:35:49,385 - user - INFO - User 458 requesting vehicle from station 21 at 459
+2023-11-10 15:35:49,385 - station - INFO - Charged vehicle 101 in 52.5 unit of time
+2023-11-10 15:35:49,385 - station - INFO - Charging vehicle 177 with battery 68.41430967690934% in station 3
+2023-11-10 15:35:49,385 - station - INFO - Station 3 has 9 vehicles
+2023-11-10 15:35:49,385 - user - INFO - User 368 got vehicle 101 with battery 100% from station 3 at 459.658615133325
+2023-11-10 15:35:49,385 - user - INFO - User 459 from station 31 to station 18
+2023-11-10 15:35:49,385 - user - INFO - User 459 requesting vehicle from station 31 at 460
+2023-11-10 15:35:49,385 - user - INFO - User 368 with vehicle 101 arrived to station 10 in 0.8485281374238569 using 21.213203435596427% battery
+2023-11-10 15:35:49,385 - user - INFO - User 368 requesting lock in station 10 at 460.5071432707488
+2023-11-10 15:35:49,385 - station - INFO - Station 10 has 8 vehicles
+2023-11-10 15:35:49,385 - user - INFO - User 368 locked vehicle 101 in station 10 at 460.5071432707488
+2023-11-10 15:35:49,385 - user - INFO - User 368 finished
+2023-11-10 15:35:49,385 - station - INFO - Charging interrupted for vehicle 53 at 460.5071432707488
+2023-11-10 15:35:49,385 - station - INFO - Charged vehicle 53 of 13.348303579243503% in station 10
+2023-11-10 15:35:49,385 - station - INFO - Charging vehicle 101 with battery 78.78679656440357% in station 10
+2023-11-10 15:35:49,385 - user - INFO - User 460 from station 23 to station 35
+2023-11-10 15:35:49,385 - user - INFO - User 460 requesting vehicle from station 23 at 461
+2023-11-10 15:35:49,385 - station - INFO - Station 23 has 1 vehicles
+2023-11-10 15:35:49,386 - user - INFO - User 460 got vehicle 171 with battery 100% from station 23 at 461
+2023-11-10 15:35:49,386 - user - INFO - User 461 from station 1 to station 14
+2023-11-10 15:35:49,386 - user - INFO - User 461 requesting vehicle from station 1 at 462
+2023-11-10 15:35:49,386 - user - INFO - User 460 with vehicle 171 arrived to station 35 in 1.2 using 30.0% battery
+2023-11-10 15:35:49,386 - user - INFO - User 460 requesting lock in station 35 at 462.2
+2023-11-10 15:35:49,386 - station - INFO - Charged vehicle 93 in 23.478713763747795 unit of time
+2023-11-10 15:35:49,386 - station - INFO - Station 21 has 0 vehicles
+2023-11-10 15:35:49,386 - user - INFO - User 403 got vehicle 93 with battery 100% from station 21 at 462.23751479258067
+2023-11-10 15:35:49,386 - user - INFO - User 462 from station 21 to station 2
+2023-11-10 15:35:49,386 - user - INFO - User 462 requesting vehicle from station 21 at 463
+2023-11-10 15:35:49,386 - user - INFO - User 403 with vehicle 93 arrived to station 11 in 1.6970562748477138 using 42.42640687119285% battery
+2023-11-10 15:35:49,386 - user - INFO - User 403 requesting lock in station 11 at 463.9345710674284
+2023-11-10 15:35:49,386 - station - INFO - Station 11 has 3 vehicles
+2023-11-10 15:35:49,386 - user - INFO - User 403 locked vehicle 93 in station 11 at 463.9345710674284
+2023-11-10 15:35:49,386 - user - INFO - User 403 finished
+2023-11-10 15:35:49,386 - station - INFO - Charging vehicle 93 with battery 57.57359312880715% in station 11
+2023-11-10 15:35:49,386 - user - INFO - User 463 from station 4 to station 12
+2023-11-10 15:35:49,386 - user - INFO - User 463 requesting vehicle from station 4 at 464
+2023-11-10 15:35:49,386 - station - INFO - Charged vehicle 189 in 21.000000000000004 unit of time
+2023-11-10 15:35:49,386 - station - INFO - Charging vehicle 28 with battery 89.18090155379357% in station 12
+2023-11-10 15:35:49,386 - station - INFO - Station 12 has 2 vehicles
+2023-11-10 15:35:49,386 - user - INFO - User 351 got vehicle 189 with battery 100% from station 12 at 464.1708615625678
+2023-11-10 15:35:49,387 - user - INFO - User 464 from station 27 to station 23
+2023-11-10 15:35:49,387 - user - INFO - User 464 requesting vehicle from station 27 at 465
+2023-11-10 15:35:49,387 - user - INFO - User 465 from station 0 to station 14
+2023-11-10 15:35:49,387 - user - INFO - User 465 requesting vehicle from station 0 at 466
+2023-11-10 15:35:49,387 - user - INFO - User 351 with vehicle 189 arrived to station 32 in 2.1633307652783937 using 54.083269131959845% battery
+2023-11-10 15:35:49,387 - user - INFO - User 351 requesting lock in station 32 at 466.33419232784615
+2023-11-10 15:35:49,387 - station - INFO - Station 32 has 2 vehicles
+2023-11-10 15:35:49,387 - user - INFO - User 351 locked vehicle 189 in station 32 at 466.33419232784615
+2023-11-10 15:35:49,387 - user - INFO - User 351 finished
+2023-11-10 15:35:49,387 - station - INFO - Charging interrupted for vehicle 132 at 466.33419232784615
+2023-11-10 15:35:49,387 - station - INFO - Charged vehicle 132 of 38.59952212773157% in station 32
+2023-11-10 15:35:49,387 - station - INFO - Charging vehicle 189 with battery 45.916730868040155% in station 32
+2023-11-10 15:35:49,387 - station - INFO - Charged vehicle 106 in 10.15835921350015 unit of time
+2023-11-10 15:35:49,387 - station - INFO - Station 13 has 0 vehicles
+2023-11-10 15:35:49,387 - user - INFO - User 302 got vehicle 106 with battery 100% from station 13 at 466.9787137637478
+2023-11-10 15:35:49,387 - user - INFO - User 466 from station 0 to station 35
+2023-11-10 15:35:49,387 - user - INFO - User 466 requesting vehicle from station 0 at 467
+2023-11-10 15:35:49,387 - station - INFO - Charged vehicle 123 in 54.9492076269057 unit of time
+2023-11-10 15:35:49,388 - station - INFO - Charged vehicle 34 in 21.000000000000004 unit of time
+2023-11-10 15:35:49,388 - station - INFO - Charging vehicle 202 with battery 69.3996933086103% in station 15
+2023-11-10 15:35:49,388 - station - INFO - Station 15 has 7 vehicles
+2023-11-10 15:35:49,388 - user - INFO - User 455 got vehicle 34 with battery 100% from station 15 at 467.40013986627486
+2023-11-10 15:35:49,388 - user - INFO - User 467 from station 6 to station 8
+2023-11-10 15:35:49,388 - user - INFO - User 467 requesting vehicle from station 6 at 468
+2023-11-10 15:35:49,388 - user - INFO - User 302 with vehicle 106 arrived to station 21 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,388 - user - INFO - User 302 requesting lock in station 21 at 468.32035455024766
+2023-11-10 15:35:49,388 - station - INFO - Station 21 has 1 vehicles
+2023-11-10 15:35:49,388 - user - INFO - User 302 locked vehicle 106 in station 21 at 468.32035455024766
+2023-11-10 15:35:49,388 - user - INFO - User 302 finished
+2023-11-10 15:35:49,388 - station - INFO - Charging vehicle 106 with battery 66.45898033750315% in station 21
+2023-11-10 15:35:49,388 - user - INFO - User 468 from station 15 to station 0
+2023-11-10 15:35:49,388 - user - INFO - User 468 requesting vehicle from station 15 at 469
+2023-11-10 15:35:49,388 - user - INFO - User 455 with vehicle 34 arrived to station 24 in 2.1633307652783937 using 54.083269131959845% battery
+2023-11-10 15:35:49,388 - user - INFO - User 455 requesting lock in station 24 at 469.56347063155323
+2023-11-10 15:35:49,388 - station - INFO - Station 24 has 6 vehicles
+2023-11-10 15:35:49,388 - user - INFO - User 455 locked vehicle 34 in station 24 at 469.56347063155323
+2023-11-10 15:35:49,388 - user - INFO - User 455 finished
+2023-11-10 15:35:49,389 - station - INFO - Charging vehicle 34 with battery 45.916730868040155% in station 24
+2023-11-10 15:35:49,389 - station - INFO - Charged vehicle 129 in 52.5 unit of time
+2023-11-10 15:35:49,389 - user - INFO - User 469 from station 29 to station 28
+2023-11-10 15:35:49,389 - user - INFO - User 469 requesting vehicle from station 29 at 470
+2023-11-10 15:35:49,389 - user - INFO - User 470 from station 28 to station 19
+2023-11-10 15:35:49,389 - user - INFO - User 470 requesting vehicle from station 28 at 471
+2023-11-10 15:35:49,389 - station - INFO - Charged vehicle 28 in 7.5733689123445025 unit of time
+2023-11-10 15:35:49,389 - station - INFO - Station 12 has 1 vehicles
+2023-11-10 15:35:49,389 - user - INFO - User 436 got vehicle 28 with battery 100% from station 12 at 471.7442304749123
+2023-11-10 15:35:49,389 - station - INFO - Station 12 has 0 vehicles
+2023-11-10 15:35:49,389 - user - INFO - User 457 got vehicle 203 with battery 100% from station 12 at 471.7442304749123
+2023-11-10 15:35:49,389 - station - INFO - Charged vehicle 158 in 27.613222210420243 unit of time
+2023-11-10 15:35:49,389 - station - INFO - Station 28 has 4 vehicles
+2023-11-10 15:35:49,389 - user - INFO - User 388 got vehicle 158 with battery 100% from station 28 at 471.87987112596005
+2023-11-10 15:35:49,389 - station - INFO - Station 28 has 3 vehicles
+2023-11-10 15:35:49,389 - user - INFO - User 445 got vehicle 46 with battery 100% from station 28 at 471.87987112596005
+2023-11-10 15:35:49,389 - station - INFO - Station 28 has 2 vehicles
+2023-11-10 15:35:49,389 - user - INFO - User 470 got vehicle 118 with battery 100% from station 28 at 471.87987112596005
+2023-11-10 15:35:49,389 - user - INFO - User 471 from station 27 to station 32
+2023-11-10 15:35:49,390 - user - INFO - User 471 requesting vehicle from station 27 at 472
+2023-11-10 15:35:49,390 - station - INFO - Charged vehicle 134 in 33.20391543176799 unit of time
+2023-11-10 15:35:49,390 - user - INFO - User 388 with vehicle 158 arrived to station 35 in 0.8485281374238569 using 21.213203435596427% battery
+2023-11-10 15:35:49,390 - user - INFO - User 388 requesting lock in station 35 at 472.7283992633839
+2023-11-10 15:35:49,390 - user - INFO - User 472 from station 25 to station 20
+2023-11-10 15:35:49,390 - user - INFO - User 472 requesting vehicle from station 25 at 473
+2023-11-10 15:35:49,390 - station - INFO - Station 25 has 4 vehicles
+2023-11-10 15:35:49,390 - user - INFO - User 472 got vehicle 71 with battery 100% from station 25 at 473
+2023-11-10 15:35:49,390 - station - INFO - Charged vehicle 107 in 37.85828839237189 unit of time
+2023-11-10 15:35:49,390 - station - INFO - Charging vehicle 72 with battery 80.60028180500915% in station 9
+2023-11-10 15:35:49,390 - station - INFO - Station 9 has 9 vehicles
+2023-11-10 15:35:49,390 - user - INFO - User 433 got vehicle 107 with battery 100% from station 9 at 473.02161915765026
+2023-11-10 15:35:49,390 - station - INFO - Station 9 has 10 vehicles
+2023-11-10 15:35:49,391 - user - INFO - User 439 locked vehicle 139 in station 9 at 473.02161915765026
+2023-11-10 15:35:49,391 - user - INFO - User 439 finished
+2023-11-10 15:35:49,391 - station - INFO - Charging interrupted for vehicle 72 at 473.02161915765026
+2023-11-10 15:35:49,391 - station - INFO - Charged vehicle 72 of 0.0% in station 9
+2023-11-10 15:35:49,391 - station - INFO - Charging vehicle 139 with battery 52.5658350974743% in station 9
+2023-11-10 15:35:49,391 - user - INFO - User 436 with vehicle 28 arrived to station 1 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,391 - user - INFO - User 436 requesting lock in station 1 at 473.08587126141214
+2023-11-10 15:35:49,391 - user - INFO - User 433 with vehicle 107 arrived to station 10 in 0.6 using 15.0% battery
+2023-11-10 15:35:49,391 - user - INFO - User 433 requesting lock in station 10 at 473.6216191576503
+2023-11-10 15:35:49,391 - station - INFO - Station 10 has 9 vehicles
+2023-11-10 15:35:49,391 - user - INFO - User 433 locked vehicle 107 in station 10 at 473.6216191576503
+2023-11-10 15:35:49,391 - user - INFO - User 433 finished
+2023-11-10 15:35:49,392 - station - INFO - Charging interrupted for vehicle 101 at 473.6216191576503
+2023-11-10 15:35:49,392 - station - INFO - Charged vehicle 101 of 18.734965552716364% in station 10
+2023-11-10 15:35:49,392 - station - INFO - Charging vehicle 107 with battery 85.0% in station 10
+2023-11-10 15:35:49,392 - station - INFO - Charging vehicle 53 with battery 59.26503444728366% in station 10
+2023-11-10 15:35:49,392 - user - INFO - User 470 with vehicle 118 arrived to station 19 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,392 - user - INFO - User 470 requesting lock in station 19 at 473.7772377220611
+2023-11-10 15:35:49,392 - station - INFO - Station 19 has 6 vehicles
+2023-11-10 15:35:49,392 - user - INFO - User 470 locked vehicle 118 in station 19 at 473.7772377220611
+2023-11-10 15:35:49,392 - user - INFO - User 470 finished
+2023-11-10 15:35:49,392 - station - INFO - Charging interrupted for vehicle 172 at 473.7772377220611
+2023-11-10 15:35:49,392 - station - INFO - Charged vehicle 172 of 48.40887729193932% in station 19
+2023-11-10 15:35:49,392 - station - INFO - Charging vehicle 118 with battery 52.5658350974743% in station 19
+2023-11-10 15:35:49,392 - station - INFO - Charging vehicle 110 with battery 64.09350940090242% in station 19
+2023-11-10 15:35:49,393 - user - INFO - User 472 with vehicle 71 arrived to station 20 in 0.8485281374238569 using 21.213203435596427% battery
+2023-11-10 15:35:49,393 - user - INFO - User 472 requesting lock in station 20 at 473.84852813742384
+2023-11-10 15:35:49,393 - station - INFO - Station 20 has 8 vehicles
+2023-11-10 15:35:49,393 - user - INFO - User 472 locked vehicle 71 in station 20 at 473.84852813742384
+2023-11-10 15:35:49,393 - user - INFO - User 472 finished
+2023-11-10 15:35:49,393 - station - INFO - Charging vehicle 71 with battery 78.78679656440357% in station 20
+2023-11-10 15:35:49,393 - user - INFO - User 473 from station 8 to station 33
+2023-11-10 15:35:49,393 - user - INFO - User 473 requesting vehicle from station 8 at 474
+2023-11-10 15:35:49,393 - user - INFO - User 445 with vehicle 46 arrived to station 24 in 2.4 using 60.00000000000001% battery
+2023-11-10 15:35:49,393 - user - INFO - User 445 requesting lock in station 24 at 474.27987112596
+2023-11-10 15:35:49,393 - station - INFO - Station 24 has 7 vehicles
+2023-11-10 15:35:49,393 - user - INFO - User 445 locked vehicle 46 in station 24 at 474.27987112596
+2023-11-10 15:35:49,393 - user - INFO - User 445 finished
+2023-11-10 15:35:49,394 - station - INFO - Charging interrupted for vehicle 34 at 474.27987112596
+2023-11-10 15:35:49,394 - station - INFO - Charged vehicle 34 of 6.737714992009714% in station 24
+2023-11-10 15:35:49,394 - station - INFO - Charging vehicle 46 with battery 39.99999999999999% in station 24
+2023-11-10 15:35:49,394 - user - INFO - User 457 with vehicle 203 arrived to station 11 in 3.059411708155671 using 76.48529270389179% battery
+2023-11-10 15:35:49,394 - user - INFO - User 457 requesting lock in station 11 at 474.80364218306795
+2023-11-10 15:35:49,394 - station - INFO - Station 11 has 4 vehicles
+2023-11-10 15:35:49,394 - user - INFO - User 457 locked vehicle 203 in station 11 at 474.80364218306795
+2023-11-10 15:35:49,394 - user - INFO - User 457 finished
+2023-11-10 15:35:49,394 - station - INFO - Charging interrupted for vehicle 93 at 474.80364218306795
+2023-11-10 15:35:49,394 - station - INFO - Charged vehicle 93 of 15.527244450913635% in station 11
+2023-11-10 15:35:49,394 - station - INFO - Charging vehicle 203 with battery 23.514707296108217% in station 11
+2023-11-10 15:35:49,394 - user - INFO - User 474 from station 31 to station 6
+2023-11-10 15:35:49,394 - user - INFO - User 474 requesting vehicle from station 31 at 475
+2023-11-10 15:35:49,394 - station - INFO - Charged vehicle 155 in 31.499999999999996 unit of time
+2023-11-10 15:35:49,395 - station - INFO - Station 27 has 6 vehicles
+2023-11-10 15:35:49,395 - user - INFO - User 464 got vehicle 155 with battery 100% from station 27 at 475.2708615625678
+2023-11-10 15:35:49,395 - station - INFO - Station 27 has 5 vehicles
+2023-11-10 15:35:49,395 - user - INFO - User 471 got vehicle 116 with battery 100% from station 27 at 475.2708615625678
+2023-11-10 15:35:49,395 - station - INFO - Charged vehicle 154 in 23.478713763747795 unit of time
+2023-11-10 15:35:49,395 - station - INFO - Charging vehicle 38 with battery 70.72921445367595% in station 7
+2023-11-10 15:35:49,395 - station - INFO - Station 7 has 6 vehicles
+2023-11-10 15:35:49,395 - user - INFO - User 443 got vehicle 154 with battery 100% from station 7 at 475.3594824092841
+2023-11-10 15:35:49,395 - user - INFO - User 475 from station 7 to station 28
+2023-11-10 15:35:49,395 - user - INFO - User 475 requesting vehicle from station 7 at 476
+2023-11-10 15:35:49,395 - user - INFO - User 471 with vehicle 116 arrived to station 32 in 0.8485281374238569 using 21.213203435596427% battery
+2023-11-10 15:35:49,395 - user - INFO - User 471 requesting lock in station 32 at 476.11938969999164
+2023-11-10 15:35:49,395 - station - INFO - Station 32 has 3 vehicles
+2023-11-10 15:35:49,396 - user - INFO - User 471 locked vehicle 116 in station 32 at 476.11938969999164
+2023-11-10 15:35:49,396 - user - INFO - User 471 finished
+2023-11-10 15:35:49,396 - station - INFO - Charging interrupted for vehicle 189 at 476.11938969999164
+2023-11-10 15:35:49,396 - station - INFO - Charged vehicle 189 of 13.978853388779267% in station 32
+2023-11-10 15:35:49,396 - station - INFO - Charging vehicle 116 with battery 78.78679656440357% in station 32
+2023-11-10 15:35:49,396 - station - INFO - Charging vehicle 132 with battery 91.16535722520587% in station 32
+2023-11-10 15:35:49,396 - user - INFO - User 464 with vehicle 155 arrived to station 23 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,396 - user - INFO - User 464 requesting lock in station 23 at 476.61250234906765
+2023-11-10 15:35:49,396 - station - INFO - Station 23 has 2 vehicles
+2023-11-10 15:35:49,396 - user - INFO - User 464 locked vehicle 155 in station 23 at 476.61250234906765
+2023-11-10 15:35:49,396 - user - INFO - User 464 finished
+2023-11-10 15:35:49,396 - station - INFO - Charging vehicle 155 with battery 66.45898033750315% in station 23
+2023-11-10 15:35:49,397 - user - INFO - User 476 from station 16 to station 19
+2023-11-10 15:35:49,397 - user - INFO - User 476 requesting vehicle from station 16 at 477
+2023-11-10 15:35:49,397 - station - INFO - Station 16 has 8 vehicles
+2023-11-10 15:35:49,397 - user - INFO - User 476 got vehicle 77 with battery 100% from station 16 at 477
+2023-11-10 15:35:49,397 - user - INFO - User 443 with vehicle 154 arrived to station 28 in 2.545584412271571 using 63.63961030678929% battery
+2023-11-10 15:35:49,397 - user - INFO - User 443 requesting lock in station 28 at 477.9050668215557
+2023-11-10 15:35:49,397 - station - INFO - Station 28 has 3 vehicles
+2023-11-10 15:35:49,397 - user - INFO - User 443 locked vehicle 154 in station 28 at 477.9050668215557
+2023-11-10 15:35:49,397 - user - INFO - User 443 finished
+2023-11-10 15:35:49,397 - station - INFO - Charging vehicle 154 with battery 36.36038969321071% in station 28
+2023-11-10 15:35:49,397 - user - INFO - User 477 from station 13 to station 28
+2023-11-10 15:35:49,397 - user - INFO - User 477 requesting vehicle from station 13 at 478
+2023-11-10 15:35:49,397 - user - INFO - User 476 with vehicle 77 arrived to station 19 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,397 - user - INFO - User 476 requesting lock in station 19 at 478.89736659610105
+2023-11-10 15:35:49,397 - station - INFO - Station 19 has 7 vehicles
+2023-11-10 15:35:49,397 - user - INFO - User 476 locked vehicle 77 in station 19 at 478.89736659610105
+2023-11-10 15:35:49,397 - user - INFO - User 476 finished
+2023-11-10 15:35:49,397 - station - INFO - Charging interrupted for vehicle 118 at 478.89736659610105
+2023-11-10 15:35:49,398 - station - INFO - Charged vehicle 118 of 7.314469820057068% in station 19
+2023-11-10 15:35:49,398 - station - INFO - Charging interrupted for vehicle 110 at 478.89736659610105
+2023-11-10 15:35:49,398 - station - INFO - Charged vehicle 110 of 7.314469820057068% in station 19
+2023-11-10 15:35:49,398 - station - INFO - Charging vehicle 77 with battery 52.5658350974743% in station 19
+2023-11-10 15:35:49,398 - station - INFO - Charging vehicle 172 with battery 86.5622929076744% in station 19
+2023-11-10 15:35:49,398 - user - INFO - User 478 from station 26 to station 21
+2023-11-10 15:35:49,398 - user - INFO - User 478 requesting vehicle from station 26 at 479
+2023-11-10 15:35:49,398 - station - INFO - Station 26 has 4 vehicles
+2023-11-10 15:35:49,398 - user - INFO - User 478 got vehicle 44 with battery 100% from station 26 at 479
+2023-11-10 15:35:49,398 - station - INFO - Charged vehicle 194 in 27.60080789248064 unit of time
+2023-11-10 15:35:49,398 - station - INFO - Charging vehicle 35 with battery 40.79598114280088% in station 7
+2023-11-10 15:35:49,398 - user - INFO - User 478 with vehicle 44 arrived to station 21 in 0.8485281374238569 using 21.213203435596427% battery
+2023-11-10 15:35:49,398 - user - INFO - User 478 requesting lock in station 21 at 479.84852813742384
+2023-11-10 15:35:49,398 - station - INFO - Station 21 has 2 vehicles
+2023-11-10 15:35:49,398 - user - INFO - User 478 locked vehicle 44 in station 21 at 479.84852813742384
+2023-11-10 15:35:49,398 - user - INFO - User 478 finished
+2023-11-10 15:35:49,398 - station - INFO - Charging interrupted for vehicle 106 at 479.84852813742384
+2023-11-10 15:35:49,399 - station - INFO - Charged vehicle 106 of 16.46881941025169% in station 21
+2023-11-10 15:35:49,399 - station - INFO - Charging vehicle 44 with battery 78.78679656440357% in station 21
+2023-11-10 15:35:49,399 - user - INFO - User 479 from station 13 to station 6
+2023-11-10 15:35:49,399 - user - INFO - User 479 requesting vehicle from station 13 at 480
+2023-11-10 15:35:49,399 - user - INFO - User 480 from station 2 to station 13
+2023-11-10 15:35:49,399 - user - INFO - User 480 requesting vehicle from station 2 at 481
+2023-11-10 15:35:49,399 - station - INFO - Station 2 has 4 vehicles
+2023-11-10 15:35:49,399 - user - INFO - User 480 got vehicle 16 with battery 100% from station 2 at 481
+2023-11-10 15:35:49,399 - station - INFO - Charged vehicle 177 in 22.109983226163457 unit of time
+2023-11-10 15:35:49,399 - station - INFO - Station 3 has 8 vehicles
+2023-11-10 15:35:49,399 - user - INFO - User 423 got vehicle 177 with battery 100% from station 3 at 481.76859835948846
+2023-11-10 15:35:49,399 - station - INFO - Station 3 has 7 vehicles
+2023-11-10 15:35:49,399 - user - INFO - User 437 got vehicle 36 with battery 100% from station 3 at 481.76859835948846
+2023-11-10 15:35:49,399 - station - INFO - Charged vehicle 70 in 32.244705382476354 unit of time
+2023-11-10 15:35:49,400 - station - INFO - Charging vehicle 10 with battery 88.98248641188147% in station 1
+2023-11-10 15:35:49,400 - station - INFO - Charged vehicle 131 in 37.85828839237189 unit of time
+2023-11-10 15:35:49,400 - station - INFO - Station 8 has 4 vehicles
+2023-11-10 15:35:49,400 - user - INFO - User 473 got vehicle 131 with battery 100% from station 8 at 481.99248072021805
+2023-11-10 15:35:49,400 - user - INFO - User 481 from station 14 to station 6
+2023-11-10 15:35:49,400 - user - INFO - User 481 requesting vehicle from station 14 at 482
+2023-11-10 15:35:49,400 - station - INFO - Station 14 has 7 vehicles
+2023-11-10 15:35:49,400 - user - INFO - User 481 got vehicle 178 with battery 100% from station 14 at 482
+2023-11-10 15:35:49,400 - station - INFO - Charged vehicle 132 in 6.184249942355892 unit of time
+2023-11-10 15:35:49,400 - station - INFO - Charging vehicle 189 with battery 59.895584256819426% in station 32
+2023-11-10 15:35:49,400 - user - INFO - User 480 with vehicle 16 arrived to station 13 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,400 - user - INFO - User 480 requesting lock in station 13 at 482.34164078649985
+2023-11-10 15:35:49,400 - station - INFO - Station 13 has 1 vehicles
+2023-11-10 15:35:49,401 - user - INFO - User 480 locked vehicle 16 in station 13 at 482.34164078649985
+2023-11-10 15:35:49,401 - user - INFO - User 480 finished
+2023-11-10 15:35:49,401 - station - INFO - Charging vehicle 16 with battery 66.45898033750315% in station 13
+2023-11-10 15:35:49,401 - station - INFO - Charged vehicle 9 in 46.13160578178864 unit of time
+2023-11-10 15:35:49,401 - station - INFO - Charging vehicle 175 with battery 61.31227345311557% in station 4
+2023-11-10 15:35:49,401 - user - INFO - User 482 from station 30 to station 12
+2023-11-10 15:35:49,401 - user - INFO - User 482 requesting vehicle from station 30 at 483
+2023-11-10 15:35:49,401 - station - INFO - Station 30 has 9 vehicles
+2023-11-10 15:35:49,401 - user - INFO - User 482 got vehicle 186 with battery 100% from station 30 at 483
+2023-11-10 15:35:49,401 - user - INFO - User 437 with vehicle 36 arrived to station 7 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,401 - user - INFO - User 437 requesting lock in station 7 at 483.1102391459883
+2023-11-10 15:35:49,401 - station - INFO - Station 7 has 7 vehicles
+2023-11-10 15:35:49,401 - user - INFO - User 437 locked vehicle 36 in station 7 at 483.1102391459883
+2023-11-10 15:35:49,401 - user - INFO - User 437 finished
+2023-11-10 15:35:49,402 - station - INFO - Charging interrupted for vehicle 38 at 483.1102391459883
+2023-11-10 15:35:49,402 - station - INFO - Charged vehicle 38 of 11.072509623863148% in station 7
+2023-11-10 15:35:49,402 - station - INFO - Charging interrupted for vehicle 35 at 483.1102391459883
+2023-11-10 15:35:49,402 - station - INFO - Charged vehicle 35 of 5.183803725673375% in station 7
+2023-11-10 15:35:49,402 - station - INFO - Charging vehicle 36 with battery 66.45898033750315% in station 7
+2023-11-10 15:35:49,402 - user - INFO - User 481 with vehicle 178 arrived to station 6 in 1.3416407864998738 using 33.54101966249685% battery
+2023-11-10 15:35:49,402 - user - INFO - User 481 requesting lock in station 6 at 483.34164078649985
+2023-11-10 15:35:49,402 - station - INFO - Station 6 has 2 vehicles
+2023-11-10 15:35:49,402 - user - INFO - User 481 locked vehicle 178 in station 6 at 483.34164078649985
+2023-11-10 15:35:49,402 - user - INFO - User 481 finished
+2023-11-10 15:35:49,402 - station - INFO - Charging interrupted for vehicle 126 at 483.34164078649985
+2023-11-10 15:35:49,402 - station - INFO - Charged vehicle 126 of 40.55517673551435% in station 6
+2023-11-10 15:35:49,402 - station - INFO - Charging vehicle 178 with battery 66.45898033750315% in station 6
+2023-11-10 15:35:49,403 - station - INFO - Charged vehicle 68 in 60.97467903550461 unit of time
+2023-11-10 15:35:49,403 - user - INFO - User 483 from station 1 to station 31
+2023-11-10 15:35:49,403 - user - INFO - User 483 requesting vehicle from station 1 at 484
+2023-11-10 15:35:49,403 - station - INFO - Charged vehicle 107 in 10.500000000000002 unit of time
+2023-11-10 15:35:49,403 - station - INFO - Charging vehicle 101 with battery 97.52176211711993% in station 10
+2023-11-10 15:35:49,403 - station - INFO - Charged vehicle 187 in 29.698484809835 unit of time
+2023-11-10 15:35:49,403 - station - INFO - Charging vehicle 201 with battery 38.61006481675672% in station 35
+2023-11-10 15:35:49,403 - station - INFO - Station 35 has 9 vehicles
+2023-11-10 15:35:49,403 - user - INFO - User 410 got vehicle 187 with battery 100% from station 35 at 484.36623928206006
+2023-11-10 15:35:49,403 - station - INFO - Station 35 has 10 vehicles
+2023-11-10 15:35:49,403 - user - INFO - User 362 locked vehicle 192 in station 35 at 484.36623928206006
+2023-11-10 15:35:49,403 - user - INFO - User 362 finished
+2023-11-10 15:35:49,404 - station - INFO - Charging interrupted for vehicle 201 at 484.36623928206006
+2023-11-10 15:35:49,404 - station - INFO - Charged vehicle 201 of 0.0% in station 35
+2023-11-10 15:35:49,404 - station - INFO - Charging vehicle 192 with battery 85.0% in station 35
+2023-11-10 15:35:49,404 - user - INFO - User 473 with vehicle 131 arrived to station 33 in 2.473863375370596 using 61.846584384264915% battery
+2023-11-10 15:35:49,404 - user - INFO - User 473 requesting lock in station 33 at 484.4663440955886
+2023-11-10 15:35:49,404 - station - INFO - Station 33 has 6 vehicles
+2023-11-10 15:35:49,404 - user - INFO - User 473 locked vehicle 131 in station 33 at 484.4663440955886
+2023-11-10 15:35:49,404 - user - INFO - User 473 finished
+2023-11-10 15:35:49,404 - station - INFO - Charging interrupted for vehicle 83 at 484.4663440955886
+2023-11-10 15:35:49,404 - station - INFO - Charged vehicle 83 of 52.52691090458963% in station 33
+2023-11-10 15:35:49,404 - station - INFO - Charging vehicle 131 with battery 38.153415615735085% in station 33
+2023-11-10 15:35:49,404 - station - INFO - Charging vehicle 80 with battery 87.28341408785138% in station 33
+2023-11-10 15:35:49,404 - user - INFO - User 482 with vehicle 186 arrived to station 12 in 1.8 using 44.99999999999999% battery
+2023-11-10 15:35:49,404 - user - INFO - User 482 requesting lock in station 12 at 484.8
+2023-11-10 15:35:49,405 - station - INFO - Station 12 has 1 vehicles
+2023-11-10 15:35:49,405 - user - INFO - User 482 locked vehicle 186 in station 12 at 484.8
+2023-11-10 15:35:49,405 - user - INFO - User 482 finished
+2023-11-10 15:35:49,405 - station - INFO - Charging vehicle 186 with battery 55.00000000000001% in station 12
+2023-11-10 15:35:49,405 - user - INFO - User 423 with vehicle 177 arrived to station 35 in 3.2310988842807022 using 80.77747210701756% battery
+2023-11-10 15:35:49,405 - user - INFO - User 423 requesting lock in station 35 at 484.99969724376916
+2023-11-10 15:35:49,405 - user - INFO - User 484 from station 10 to station 27
+2023-11-10 15:35:49,405 - user - INFO - User 484 requesting vehicle from station 10 at 485
+2023-11-10 15:35:49,405 - station - INFO - Station 10 has 8 vehicles
+2023-11-10 15:35:49,405 - user - INFO - User 484 got vehicle 107 with battery 100% from station 10 at 485
+2023-11-10 15:35:49,405 - station - INFO - Charged vehicle 101 in 1.7347665180160443 unit of time
+2023-11-10 15:35:49,405 - user - INFO - User 485 from station 21 to station 24
+2023-11-10 15:35:49,405 - user - INFO - User 485 requesting vehicle from station 21 at 486
+2023-11-10 15:35:49,406 - user - INFO - User 484 with vehicle 107 arrived to station 27 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,406 - user - INFO - User 484 requesting lock in station 27 at 486.89736659610105
+2023-11-10 15:35:49,406 - station - INFO - Station 27 has 6 vehicles
+2023-11-10 15:35:49,406 - user - INFO - User 484 locked vehicle 107 in station 27 at 486.89736659610105
+2023-11-10 15:35:49,406 - user - INFO - User 484 finished
+2023-11-10 15:35:49,406 - station - INFO - Charging vehicle 107 with battery 52.5658350974743% in station 27
+2023-11-10 15:35:49,406 - user - INFO - User 486 from station 28 to station 26
+2023-11-10 15:35:49,406 - user - INFO - User 486 requesting vehicle from station 28 at 487
+2023-11-10 15:35:49,406 - user - INFO - User 410 with vehicle 187 arrived to station 12 in 3.49857113690718 using 87.46427842267951% battery
+2023-11-10 15:35:49,406 - user - INFO - User 410 requesting lock in station 12 at 487.86481041896724
+2023-11-10 15:35:49,406 - station - INFO - Station 12 has 2 vehicles
+2023-11-10 15:35:49,406 - user - INFO - User 410 locked vehicle 187 in station 12 at 487.86481041896724
+2023-11-10 15:35:49,407 - user - INFO - User 410 finished
+2023-11-10 15:35:49,407 - station - INFO - Charging interrupted for vehicle 186 at 487.86481041896724
+2023-11-10 15:35:49,407 - station - INFO - Charged vehicle 186 of 4.378300598524609% in station 12
+2023-11-10 15:35:49,407 - station - INFO - Charging vehicle 187 with battery 12.53572157732049% in station 12
+2023-11-10 15:35:49,407 - user - INFO - User 487 from station 27 to station 18
+2023-11-10 15:35:49,407 - user - INFO - User 487 requesting vehicle from station 27 at 488
+2023-11-10 15:35:49,407 - station - INFO - Charged vehicle 172 in 9.406394964627914 unit of time
+2023-11-10 15:35:49,407 - station - INFO - Charging vehicle 118 with battery 59.88030491753137% in station 19
+2023-11-10 15:35:49,407 - station - INFO - Charged vehicle 71 in 14.8492424049175 unit of time
+2023-11-10 15:35:49,407 - station - INFO - Charged vehicle 202 in 21.42021468397279 unit of time
+2023-11-10 15:35:49,407 - station - INFO - Station 15 has 6 vehicles
+2023-11-10 15:35:49,407 - user - INFO - User 468 got vehicle 202 with battery 100% from station 15 at 488.82035455024766
+2023-11-10 15:35:49,407 - user - INFO - User 488 from station 13 to station 17
+2023-11-10 15:35:49,407 - user - INFO - User 488 requesting vehicle from station 13 at 489
+2023-11-10 15:35:49,408 - station - INFO - Charged vehicle 10 in 7.712259511682973 unit of time
+2023-11-10 15:35:49,408 - station - INFO - Charging vehicle 127 with battery 66.18934631211437% in station 1
+2023-11-10 15:35:49,408 - user - INFO - User 489 from station 30 to station 2
+2023-11-10 15:35:49,408 - user - INFO - User 489 requesting vehicle from station 30 at 490
+2023-11-10 15:35:49,408 - station - INFO - Station 30 has 8 vehicles
+2023-11-10 15:35:49,408 - user - INFO - User 489 got vehicle 68 with battery 100% from station 30 at 490
+2023-11-10 15:35:49,408 - station - INFO - Charged vehicle 116 in 14.8492424049175 unit of time
+2023-11-10 15:35:49,408 - station - INFO - Station 32 has 2 vehicles
+2023-11-10 15:35:49,408 - user - INFO - User 264 got vehicle 116 with battery 100% from station 32 at 490.96863210490915
+2023-11-10 15:35:49,408 - user - INFO - User 468 with vehicle 202 arrived to station 0 in 2.1633307652783937 using 54.083269131959845% battery
+2023-11-10 15:35:49,408 - user - INFO - User 468 requesting lock in station 0 at 490.98368531552603
+2023-11-10 15:35:49,408 - user - INFO - User 490 from station 20 to station 1
+2023-11-10 15:35:49,408 - user - INFO - User 490 requesting vehicle from station 20 at 491
+2023-11-10 15:35:49,408 - station - INFO - Station 20 has 7 vehicles
+2023-11-10 15:35:49,409 - user - INFO - User 490 got vehicle 71 with battery 100% from station 20 at 491
+2023-11-10 15:35:49,409 - user - INFO - User 491 from station 7 to station 33
+2023-11-10 15:35:49,409 - user - INFO - User 491 requesting vehicle from station 7 at 492
+2023-11-10 15:35:49,409 - user - INFO - User 264 with vehicle 116 arrived to station 30 in 1.2 using 30.0% battery
+2023-11-10 15:35:49,409 - user - INFO - User 264 requesting lock in station 30 at 492.16863210490914
+2023-11-10 15:35:49,409 - station - INFO - Station 30 has 9 vehicles
+2023-11-10 15:35:49,409 - user - INFO - User 264 locked vehicle 116 in station 30 at 492.16863210490914
+2023-11-10 15:35:49,409 - user - INFO - User 264 finished
+2023-11-10 15:35:49,409 - station - INFO - Charging vehicle 116 with battery 70.0% in station 30
+2023-11-10 15:35:49,409 - station - INFO - Charged vehicle 195 in 41.933137095114574 unit of time
+2023-11-10 15:35:49,409 - station - INFO - Charged vehicle 168 in 42.973644841960486 unit of time
+2023-11-10 15:35:49,409 - user - INFO - User 490 with vehicle 71 arrived to station 1 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,409 - user - INFO - User 490 requesting lock in station 1 at 492.89736659610105
+2023-11-10 15:35:49,409 - user - INFO - User 492 from station 28 to station 34
+2023-11-10 15:35:49,410 - user - INFO - User 492 requesting vehicle from station 28 at 493
+2023-11-10 15:35:49,410 - user - INFO - User 489 with vehicle 68 arrived to station 2 in 3.2310988842807022 using 80.77747210701756% battery
+2023-11-10 15:35:49,410 - user - INFO - User 489 requesting lock in station 2 at 493.2310988842807
+2023-11-10 15:35:49,410 - station - INFO - Station 2 has 5 vehicles
+2023-11-10 15:35:49,410 - user - INFO - User 489 locked vehicle 68 in station 2 at 493.2310988842807
+2023-11-10 15:35:49,410 - user - INFO - User 489 finished
+2023-11-10 15:35:49,410 - station - INFO - Charging vehicle 68 with battery 19.222527892982445% in station 2
+2023-11-10 15:35:49,410 - station - INFO - Charged vehicle 80 in 8.90161013850403 unit of time
+2023-11-10 15:35:49,410 - station - INFO - Charging vehicle 83 with battery 90.09274600206393% in station 33
+2023-11-10 15:35:49,410 - user - INFO - User 493 from station 21 to station 23
+2023-11-10 15:35:49,410 - user - INFO - User 493 requesting vehicle from station 21 at 494
+2023-11-10 15:35:49,410 - station - INFO - Charged vehicle 44 in 14.8492424049175 unit of time
+2023-11-10 15:35:49,410 - station - INFO - Charging vehicle 106 with battery 82.92779974775483% in station 21
+2023-11-10 15:35:49,410 - station - INFO - Station 21 has 1 vehicles
+2023-11-10 15:35:49,411 - user - INFO - User 406 got vehicle 44 with battery 100% from station 21 at 494.69777054234135
+2023-11-10 15:35:49,411 - station - INFO - Charged vehicle 192 in 10.500000000000002 unit of time
+2023-11-10 15:35:49,411 - station - INFO - Charging vehicle 201 with battery 38.61006481675672% in station 35
+2023-11-10 15:35:49,411 - station - INFO - Station 35 has 9 vehicles
+2023-11-10 15:35:49,411 - user - INFO - User 417 got vehicle 192 with battery 100% from station 35 at 494.86623928206006
+2023-11-10 15:35:49,411 - station - INFO - Station 35 has 10 vehicles
+2023-11-10 15:35:49,411 - user - INFO - User 460 locked vehicle 171 in station 35 at 494.86623928206006
+2023-11-10 15:35:49,411 - user - INFO - User 460 finished
+2023-11-10 15:35:49,411 - station - INFO - Charging interrupted for vehicle 201 at 494.86623928206006
+2023-11-10 15:35:49,411 - station - INFO - Charged vehicle 201 of 0.0% in station 35
+2023-11-10 15:35:49,411 - station - INFO - Charging vehicle 171 with battery 70.0% in station 35
+2023-11-10 15:35:49,411 - user - INFO - User 494 from station 34 to station 12
+2023-11-10 15:35:49,411 - user - INFO - User 494 requesting vehicle from station 34 at 495
+2023-11-10 15:35:49,412 - user - INFO - User 417 with vehicle 192 arrived to station 34 in 0.6 using 15.0% battery
+2023-11-10 15:35:49,412 - user - INFO - User 417 requesting lock in station 34 at 495.4662392820601
+2023-11-10 15:35:49,412 - station - INFO - Charged vehicle 94 in 59.39696961966999 unit of time
+2023-11-10 15:35:49,412 - station - INFO - Station 4 has 9 vehicles
+2023-11-10 15:35:49,412 - user - INFO - User 463 got vehicle 94 with battery 100% from station 4 at 495.61143671961304
+2023-11-10 15:35:49,412 - station - INFO - Station 4 has 10 vehicles
+2023-11-10 15:35:49,412 - user - INFO - User 383 locked vehicle 159 in station 4 at 495.61143671961304
+2023-11-10 15:35:49,412 - user - INFO - User 383 finished
+2023-11-10 15:35:49,412 - station - INFO - Charging interrupted for vehicle 175 at 495.61143671961304
+2023-11-10 15:35:49,412 - station - INFO - Charged vehicle 175 of 18.950519768401854% in station 4
+2023-11-10 15:35:49,412 - station - INFO - Charging vehicle 159 with battery 52.5658350974743% in station 4
+2023-11-10 15:35:49,412 - user - INFO - User 495 from station 29 to station 19
+2023-11-10 15:35:49,412 - user - INFO - User 495 requesting vehicle from station 29 at 496
+2023-11-10 15:35:49,413 - user - INFO - User 406 with vehicle 44 arrived to station 35 in 1.6970562748477138 using 42.42640687119285% battery
+2023-11-10 15:35:49,413 - user - INFO - User 406 requesting lock in station 35 at 496.3948268171891
+2023-11-10 15:35:49,413 - station - INFO - Charged vehicle 196 in 46.95742752749559 unit of time
+2023-11-10 15:35:49,413 - station - INFO - Station 1 has 9 vehicles
+2023-11-10 15:35:49,413 - user - INFO - User 373 got vehicle 196 with battery 100% from station 1 at 496.64070910049537
+2023-11-10 15:35:49,413 - station - INFO - Station 1 has 10 vehicles
+2023-11-10 15:35:49,413 - user - INFO - User 454 locked vehicle 105 in station 1 at 496.64070910049537
+2023-11-10 15:35:49,413 - user - INFO - User 454 finished
+2023-11-10 15:35:49,413 - station - INFO - Charging interrupted for vehicle 127 at 496.64070910049537
+2023-11-10 15:35:49,413 - station - INFO - Charged vehicle 127 of 10.0006609047661% in station 1
+2023-11-10 15:35:49,413 - station - INFO - Charging vehicle 105 with battery 32.9179606750063% in station 1
+2023-11-10 15:35:49,413 - station - INFO - Station 1 has 9 vehicles
+2023-11-10 15:35:49,413 - user - INFO - User 393 got vehicle 105 with battery 32.9179606750063% from station 1 at 496.64070910049537
+2023-11-10 15:35:49,414 - station - INFO - Station 1 has 10 vehicles
+2023-11-10 15:35:49,414 - user - INFO - User 290 locked vehicle 166 in station 1 at 496.64070910049537
+2023-11-10 15:35:49,414 - user - INFO - User 290 finished
+2023-11-10 15:35:49,414 - station - INFO - Charging interrupted for vehicle 105 at 496.64070910049537
+2023-11-10 15:35:49,414 - station - INFO - Charged vehicle 105 of 0.0% in station 1
+2023-11-10 15:35:49,414 - station - INFO - Charging vehicle 166 with battery 70.0% in station 1
+2023-11-10 15:35:49,414 - station - INFO - Charging vehicle 127 with battery 76.19000721688047% in station 1
+2023-11-10 15:35:49,414 - station - INFO - Station 1 has 9 vehicles
+2023-11-10 15:35:49,414 - user - INFO - User 404 got vehicle 166 with battery 70.0% from station 1 at 496.64070910049537
+2023-11-10 15:35:49,414 - station - INFO - Station 1 has 10 vehicles
+2023-11-10 15:35:49,414 - user - INFO - User 436 locked vehicle 28 in station 1 at 496.64070910049537
+2023-11-10 15:35:49,414 - user - INFO - User 436 finished
+2023-11-10 15:35:49,415 - station - INFO - Charging interrupted for vehicle 166 at 496.64070910049537
+2023-11-10 15:35:49,415 - station - INFO - Charged vehicle 166 of 0.0% in station 1
+2023-11-10 15:35:49,415 - station - INFO - Charging interrupted for vehicle 127 at 496.64070910049537
+2023-11-10 15:35:49,415 - station - INFO - Charged vehicle 127 of 0.0% in station 1
+2023-11-10 15:35:49,415 - station - INFO - Charging vehicle 28 with battery 66.45898033750315% in station 1
+2023-11-10 15:35:49,415 - station - INFO - Station 1 has 9 vehicles
+2023-11-10 15:35:49,415 - user - INFO - User 416 got vehicle 28 with battery 66.45898033750315% from station 1 at 496.64070910049537
+2023-11-10 15:35:49,415 - station - INFO - Station 1 has 10 vehicles
+2023-11-10 15:35:49,415 - user - INFO - User 490 locked vehicle 71 in station 1 at 496.64070910049537
+2023-11-10 15:35:49,415 - user - INFO - User 490 finished
+2023-11-10 15:35:49,415 - station - INFO - Charging interrupted for vehicle 28 at 496.64070910049537
+2023-11-10 15:35:49,415 - station - INFO - Charged vehicle 28 of 0.0% in station 1
+2023-11-10 15:35:49,415 - station - INFO - Charging vehicle 71 with battery 52.5658350974743% in station 1
+2023-11-10 15:35:49,416 - station - INFO - Charging vehicle 127 with battery 76.19000721688047% in station 1
+2023-11-10 15:35:49,416 - station - INFO - Station 1 has 9 vehicles
+2023-11-10 15:35:49,416 - user - INFO - User 421 got vehicle 71 with battery 52.5658350974743% from station 1 at 496.64070910049537
+2023-11-10 15:35:49,416 - station - INFO - Station 1 has 8 vehicles
+2023-11-10 15:35:49,416 - user - INFO - User 429 got vehicle 10 with battery 100% from station 1 at 496.64070910049537
+2023-11-10 15:35:49,416 - user - INFO - User 496 from station 7 to station 29
+2023-11-10 15:35:49,416 - user - INFO - User 496 requesting vehicle from station 7 at 497
+2023-11-10 15:35:49,416 - user - INFO - User 497 from station 12 to station 8
+2023-11-10 15:35:49,416 - user - INFO - User 497 requesting vehicle from station 12 at 498
+2023-11-10 15:35:49,416 - user - INFO - User 463 with vehicle 94 arrived to station 12 in 2.6832815729997477 using 67.0820393249937% battery
+2023-11-10 15:35:49,416 - user - INFO - User 463 requesting lock in station 12 at 498.2947182926128
+2023-11-10 15:35:49,416 - station - INFO - Station 12 has 3 vehicles
+2023-11-10 15:35:49,416 - user - INFO - User 463 locked vehicle 94 in station 12 at 498.2947182926128
+2023-11-10 15:35:49,416 - user - INFO - User 463 finished
+2023-11-10 15:35:49,417 - station - INFO - Charging interrupted for vehicle 187 at 498.2947182926128
+2023-11-10 15:35:49,417 - station - INFO - Charged vehicle 187 of 14.899868390922233% in station 12
+2023-11-10 15:35:49,417 - station - INFO - Charging vehicle 94 with battery 32.9179606750063% in station 12
+2023-11-10 15:35:49,417 - station - INFO - Charging vehicle 186 with battery 59.37830059852461% in station 12
+2023-11-10 15:35:49,417 - user - INFO - User 373 with vehicle 196 arrived to station 10 in 1.8973665961010275 using 47.4341649025257% battery
+2023-11-10 15:35:49,417 - user - INFO - User 373 requesting lock in station 10 at 498.5380756965964
+2023-11-10 15:35:49,417 - user - INFO - User 404 with vehicle 166 arrived to station 20 in 1.8973665961010275 using 47.434164902525694% battery
+2023-11-10 15:35:49,417 - user - INFO - User 404 requesting lock in station 20 at 498.5380756965964
+2023-11-10 15:35:49,417 - station - INFO - Station 10 has 9 vehicles
+2023-11-10 15:35:49,417 - user - INFO - User 373 locked vehicle 196 in station 10 at 498.5380756965964
+2023-11-10 15:35:49,417 - user - INFO - User 373 finished
+2023-11-10 15:35:49,417 - station - INFO - Charging interrupted for vehicle 53 at 498.5380756965964
+2023-11-10 15:35:49,417 - station - INFO - Charged vehicle 53 of 35.59493791278019% in station 10
+2023-11-10 15:35:49,418 - station - INFO - Charging vehicle 196 with battery 52.5658350974743% in station 10
+2023-11-10 15:35:49,418 - station - INFO - Station 20 has 8 vehicles
+2023-11-10 15:35:49,418 - user - INFO - User 404 locked vehicle 166 in station 20 at 498.5380756965964
+2023-11-10 15:35:49,418 - user - INFO - User 404 finished
+2023-11-10 15:35:49,418 - station - INFO - Charging vehicle 166 with battery 22.565835097474302% in station 20
+2023-11-10 15:35:49,418 - user - INFO - User 498 from station 35 to station 21
+2023-11-10 15:35:49,418 - user - INFO - User 498 requesting vehicle from station 35 at 499
+2023-11-10 15:35:49,418 - user - INFO - User 416 with vehicle 28 arrived to station 24 in 2.473863375370596 using 61.846584384264915% battery
+2023-11-10 15:35:49,418 - user - INFO - User 416 requesting lock in station 24 at 499.11457247586594
+2023-11-10 15:35:49,418 - station - INFO - Station 24 has 8 vehicles
+2023-11-10 15:35:49,418 - user - INFO - User 416 locked vehicle 28 in station 24 at 499.11457247586594
+2023-11-10 15:35:49,418 - user - INFO - User 416 finished
+2023-11-10 15:35:49,418 - station - INFO - Charging interrupted for vehicle 46 at 499.11457247586594
+2023-11-10 15:35:49,419 - station - INFO - Charged vehicle 46 of 35.47814478557987% in station 24
+2023-11-10 15:35:49,419 - station - INFO - Charging vehicle 28 with battery 4.612395953238235% in station 24
+2023-11-10 15:35:49,419 - station - INFO - Charging vehicle 34 with battery 52.65444586004987% in station 24
+2023-11-10 15:35:49,419 - user - INFO - User 429 with vehicle 10 arrived to station 33 in 3.2310988842807022 using 80.77747210701756% battery
+2023-11-10 15:35:49,419 - user - INFO - User 429 requesting lock in station 33 at 499.87180798477607
+2023-11-10 15:35:49,419 - station - INFO - Station 33 has 7 vehicles
+2023-11-10 15:35:49,419 - user - INFO - User 429 locked vehicle 10 in station 33 at 499.87180798477607
+2023-11-10 15:35:49,419 - user - INFO - User 429 finished
+2023-11-10 15:35:49,419 - station - INFO - Charging interrupted for vehicle 131 at 499.87180798477607
+2023-11-10 15:35:49,419 - station - INFO - Charged vehicle 131 of 22.007805555982063% in station 33
+2023-11-10 15:35:49,419 - station - INFO - Charging interrupted for vehicle 83 at 499.87180798477607
+2023-11-10 15:35:49,419 - station - INFO - Charged vehicle 83 of 9.291219643833415% in station 33
+2023-11-10 15:35:49,419 - station - INFO - Charging vehicle 10 with battery 19.222527892982445% in station 33

@@ -27,14 +27,14 @@ The `vehicle.json` file serves as a dictionary with keys representing the names 
 The `simulation.json` file is a dictionary with five keys:
 
 ### 1. Map
-- **Type**: A string indicating the class name used for generating the map. Refer to the classes in the [map section](#mappy) section.
-- **Parameters**: A dictionary containing parameters specific to the map class. Refer to the [map section](#mappy) section for details on each class.
+- **Type**: A string indicating the class name used for generating the map. Refer to the classes in the [map section](#mappy).
+- **Parameters**: A dictionary containing parameters specific to the map class. Refer to the [map section](#mappy) for details on each class.
 
 ### 2. Station
 - **Capacity per Time**: Capacity charged by the station per unit of time.
 - **Max Concurrent Charging**: Maximum number of vehicles that can be charged simultaneously.
-- **Station Storage**: A string indicating the class name used for station storage. Refer to the classes in the [station storage section](#station_storagepy) section.
-- **Storage Parameters**: A dictionary containing parameters specific to the station storage class. Refer to the [station storage section](#station_storagepy) section for details on each class.
+- **Station Storage**: A string indicating the class name used for station storage. Refer to the classes in the [station storage section](#station_storagepy).
+- **Storage Parameters**: A dictionary containing parameters specific to the station storage class. Refer to the [station storage section](#station_storagepy) for details on each class.
 
 ### 3. Vehicle
 - **Type**: A list containing the names of classes used for vehicles. Refer to the classes in the [vehicle section](#vehiclepy).

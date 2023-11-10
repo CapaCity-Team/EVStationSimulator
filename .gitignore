@@ -16,5 +16,5 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Environment
-venv/
+env/
 .env/
