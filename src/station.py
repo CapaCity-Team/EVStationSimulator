@@ -8,10 +8,10 @@ import logging
 logger = logging.getLogger(__name__)
 
 class Station:
-    def __init__(self, env: simpy.Environment, station_id: int, position: tuple, charging_time: float, max_concurrent_charging: int, vehicles: StationStorage):
+    def __init__(self, env: simpy.Environment, station_id: int, position: tuple, capacity_per_time: float, max_concurrent_charging: int, vehicles: StationStorage):
         self.id = station_id
         
-        self.charging_time = charging_time
+        self.capacity_per_time = capacity_per_time
         self.max_concurrent_charging = max_concurrent_charging
     
         self.vehicles = vehicles
@@ -26,7 +26,7 @@ class Station:
             logger.info("Charging vehicle {} with battery {}% in station {}".format(vehicle.id, vehicle.battery*100, self.id))
 
             # Calculate the time needed to fully charge the vehicle
-            time = self.charging_time * vehicle.capacity_left()
+            time = vehicle.capacity_left() / self.capacity_per_time
             
             yield self.env.timeout(time)
             
@@ -46,7 +46,7 @@ class Station:
             # Calculate the time the vehicle has been charging
             charged_time = self.env.now - now
             before = vehicle.battery
-            vehicle.charge(charged_time / self.charging_time / vehicle.max_capacity)
+            vehicle.charge(charged_time * self.capacity_per_time / vehicle.max_capacity)
             logger.info("Charged vehicle {} of {}% in station {}".format(vehicle.id, (vehicle.battery-before)*100, self.id))
 
         # Remove the vehicle from the list of charging vehicles
@@ -73,6 +73,10 @@ class Station:
         # Request a vehicle to the station
         yield from self.vehicles.lock(vehicle)
         # Check if the station needs to reschedule charging 
+        
+        logger.info("Station {} has {} vehicles".format(self.id, self.vehicles.count()))
+        assert self.vehicles.count() <= self.vehicles.capacity, "Station {} has {} vehicles".format(self.id, self.vehicles.count())
+        
         if self.vehicles.need_reschedule():
             self.stop_charging()
             self.start_charging()
@@ -80,11 +84,14 @@ class Station:
     def request_unlock(self, user):
         # Request a vehicle from the station
         yield from self.vehicles.unlock(user)
+
+        logger.info("Station {} has {} vehicles".format(self.id, self.vehicles.count()))
+        assert self.vehicles.count() <= self.vehicles.capacity, "Station {} has {} vehicles".format(self.id, self.vehicles.count())
     
     def distance(self, station):
         # Calculate the Euclidean distance between two stations
         return ((self.position[0] - station.position[0])**2 + (self.position[1] - station.position[1])**2)**0.5
     
-    def add_vehicle(self, vehicle: Vehicle):
+    def deploy(self, vehicles: list):
         # used in deployment phase
-        self.vehicles.add_vehicle(vehicle)
+        self.vehicles.deploy(vehicles)

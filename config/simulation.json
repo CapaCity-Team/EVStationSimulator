@@ -9,12 +9,10 @@
     },
     
     "Station": {
-        "Charging Time": 1,
+        "Capacity per Time": 1,
         "Max Concurrent Charging": 3,
         
-        "Station Storage": "StationStorageLIFO",
-        "Charging Policy": "LIFO",
-
+        "Station Storage": "LIFO",
         "Storage Parameters":{
             "Capacity": 10
         }

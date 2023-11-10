@@ -37,7 +37,6 @@ def main(env: Environment, config_data: dict):
     # caricamento classi
     try:
         import vehicle
-        import charging_policy
         import station_storage
         import map
         import deployment
@@ -47,9 +46,6 @@ def main(env: Environment, config_data: dict):
 
         # caricamento classe di storage
         storage = getattr(station_storage, config_data["Station"]["Station Storage"])
-
-        # caricamento politica di ricarica
-        policy = getattr(charging_policy, config_data["Station"]["Charging Policy"])
 
         # caricamento configurazione veicoli
         vehicle_cls = []
@@ -75,9 +71,9 @@ def main(env: Environment, config_data: dict):
             env = env,
             station_id = i,
             position = position, 
-            charging_time = config_data["Station"]["Charging Time"],
+            capacity_per_time = config_data["Station"]["Capacity per Time"],
             max_concurrent_charging = config_data["Station"]["Max Concurrent Charging"],
-            vehicles = storage(env, policy(), config_data["Station"]["Storage Parameters"])
+            vehicles = storage(env, config_data["Station"]["Storage Parameters"])
             )
         for i, position in enumerate(positions)
         ]
