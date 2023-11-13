@@ -72,7 +72,7 @@ class LIFO(StationStorage):
         #     "Capacity": int
         # }
         
-        self.capacity = params["Capacity"]
+        self.capacity = params["capacity"]
         
         # Create a store to keep track of the number of available slots
         # The number of items corresponds to the number of occupied slots

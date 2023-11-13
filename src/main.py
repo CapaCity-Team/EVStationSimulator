@@ -34,28 +34,32 @@ with open(path_result, "w") as f:
     print(",".join(column_names), file=f)
 
 def main(env: Environment, config_data: dict):
-    # caricamento classi
+    # caricamento dinamico funzioni e moduli specificati nel file di configurazione
     try:
-        import vehicle
-        import station_storage
-        import map
-        import deployment
+        # caricamento funzione di generazione posizioni stazioni
+        generate_station_positions = getattr(__import__("station_deployment", 
+                                                        fromlist=[config_data["station"]["deployment"]["type"]]
+                                                        ),
+                                            config_data["station"]["deployment"]["type"])
 
-        # caricamento classe di mappa
-        map_type = getattr(map, config_data["Map"]["Type"])
-
-        # caricamento classe di storage
-        storage = getattr(station_storage, config_data["Station"]["Station Storage"])
+        # caricamento classe di storage per stazioni
+        storage = getattr(__import__("station_storage", 
+                                     fromlist=[config_data["station"]["storage"]["type"]]
+                                     ),
+                        config_data["station"]["storage"]["type"])
 
         # caricamento configurazione veicoli
+        vehicle = __import__("vehicle", fromlist=config_data["vehicles"]["type"])
+        
         vehicle_cls = []
-        for v in config_data["Vehicles"]["Type"]:
+        for v in config_data["vehicles"]["type"]:
             cls = getattr(vehicle, v)
             vehicle_cls.append(cls)
             cls.load_config(os.path.join(os.path.dirname(__file__),"../config/vehicle.json"))
 
         # caricamento funzione di deploy veicoli
-        deploy_vehicles = getattr(deployment, config_data["Vehicles"]["Deploy Vehicles"])
+        deploy_vehicles = getattr(__import__("vehicle_deployment", fromlist=[config_data["vehicles"]["deployment"]["type"]]),
+                                  config_data["vehicles"]["deployment"]["type"])
 
     except AttributeError:
         raise Exception(f'Invalid configuration file')
@@ -63,7 +67,7 @@ def main(env: Environment, config_data: dict):
         raise e
 
     # generazione posizioni stazioni
-    positions = map_type(config_data["Map"]["Parameters"]).generate()
+    positions = generate_station_positions(config_data["station"]["deployment"]["parameters"])
 
     # creazione stazioni
     stations = [
@@ -71,19 +75,19 @@ def main(env: Environment, config_data: dict):
             env = env,
             station_id = i,
             position = position, 
-            capacity_per_time = config_data["Station"]["Capacity per Time"],
-            max_concurrent_charging = config_data["Station"]["Max Concurrent Charging"],
-            vehicles = storage(env, config_data["Station"]["Storage Parameters"])
+            capacity_per_time = config_data["station"]["charge_per_time"],
+            max_concurrent_charging = config_data["station"]["max_concurrent_charging"],
+            vehicles = storage(env, config_data["station"]["storage"]["parameters"])
             )
         for i, position in enumerate(positions)
         ]
 
     # creazione e positionamento veicoli
-    deploy_vehicles(stations, vehicle_cls, config_data["Vehicles"]["Deploy Parameters"])
+    deploy_vehicles(stations, vehicle_cls, config_data["vehicles"]["deployment"]["parameters"])
     
     # inizializzazione utenti
     users = []
-    for i in range(config_data["Users"]["Number"]):
+    for i in range(config_data["users"]["number"]):
         p = randint(0,len(stations)-1)
         a = randint(0,len(stations)-1)
         while a == p:
@@ -92,7 +96,7 @@ def main(env: Environment, config_data: dict):
     
     # avvio simulazione
     for user in users:
-        yield env.timeout(config_data["Users"]["Interarrival Time"])
+        yield env.timeout(config_data["users"]["interarrival_time"])
         env.process(user.run())
     
 def analyze_results():
@@ -151,7 +155,7 @@ if __name__ == "__main__":
     # inizializzazione ambiente
     env = Environment()
 
-    # caricamento configurazione
+    # caricamento file di configurazione
     try:
         config_file = os.path.join(os.path.dirname(__file__),"../config/simulation.json")
         with open(config_file, 'r') as file:
@@ -167,7 +171,7 @@ if __name__ == "__main__":
     env.process(main(env, config_data))
     
     # esecuzione simulazione
-    env.run(until=config_data["Run Time"])
+    env.run(until=config_data["run_time"])
 
     # analisi risultati
     analyze_results()

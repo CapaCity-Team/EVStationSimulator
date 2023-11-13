@@ -4,6 +4,9 @@ from abc import ABC, abstractmethod
 class ConfigFileNotFound(Exception):
     pass
 
+class NegativeBatteryValue(Exception):
+    pass
+
 class Vehicle(ABC):
     def __init__(self, vehicle_id):
         # Initialize the Vehicle with a unique ID and a default battery level of 1
@@ -31,6 +34,11 @@ class Vehicle(ABC):
     def move(self, distance: float):
         # Move the vehicle by a specified distance, update battery level, and return time taken
         self.battery -= distance * self.energy_consumption
+
+        if self.battery < 0:
+            # Raise a custom exception if the battery level becomes negative
+            raise NegativeBatteryValue(f'Vehicle {self.id} battery level is negative')
+
         return distance / self.velocity
 
     def capacity(self):

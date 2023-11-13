@@ -6,48 +6,53 @@
 
 ## Code
 - [main.py](#mainpy)
-- [map.py](#mappy)
 - [station.py](#stationpy)
 - [station_storage.py](#station_storagepy)
+- [station_deployment.py](#station_deploymentpy)
 - [vehicle.py](#vehiclepy)
-- [deployment.py](#deploymentpy)
+- [vehicle_deployment.py](#vehicle_deploymentpy)
 - [user.py](#userpy)
 
 # Configuration Files Details
 
-## vehicle.json
+## `vehicle.json`
 The `vehicle.json` file serves as a dictionary with keys representing the names of vehicles and values specifying their parameters. Each vehicle has the following parameters:
 
 - **BATTERY_CAPACITY**: Amount of energy the vehicle's battery can store.
 - **ENERGY_CONSUMPTION**: Energy consumption per unit of distance traveled.
-- **VELOCITY**: Distance the vehicle travel per unit of time.
+- **VELOCITY**: Distance the vehicle travels per unit of time.
 
-## simulation.json
+## `simulation.json`
 
-The `simulation.json` file is a dictionary with five keys:
+The `simulation.json` file is a dictionary with four keys:
 
-### 1. Map
-- **Type**: A string indicating the class name used for generating the map. Refer to the classes in the [map section](#mappy).
-- **Parameters**: A dictionary containing parameters specific to the map class. Refer to the [map section](#mappy) for details on each class.
+### 1. `station`
+- **charge_per_time**: Capacity charged by the station per unit of time.
+- **max_concurrent_charging**: Maximum number of vehicles that can be charged simultaneously.
+- **storage**: {
+  - **type**: A string indicating the name of the function used for generating stations. Refer to the functions in the [station storage section](#station_storagepy).
+  - **parameters**: A dictionary containing parameters specific to the station storage class. Refer to the [station storage section](#station_storagepy) for details on each class.
+}
+- **deployment**: {
+  - **type**: A string indicating the name of the function used for deploying stations. Refer to the functions in the [station deployment section](#station_deploymentpy).
+  - **parameters**: A dictionary containing parameters specific to the deployment function. Refer to the [station deployment section](#station_deploymentpy) for details on each function.
+}
 
-### 2. Station
-- **Capacity per Time**: Capacity charged by the station per unit of time.
-- **Max Concurrent Charging**: Maximum number of vehicles that can be charged simultaneously.
-- **Station Storage**: A string indicating the class name used for station storage. Refer to the classes in the [station storage section](#station_storagepy).
-- **Storage Parameters**: A dictionary containing parameters specific to the station storage class. Refer to the [station storage section](#station_storagepy) for details on each class.
+### 2. `vehicles`
+- **type**: A list containing the names of classes used for vehicles. Refer to the classes in the [vehicle section](#vehiclepy).
+- **deployment**: {
+  - **type**: A string indicating the name of the function used for deploying vehicles. Refer to the functions in the [deployment section](#vehicle_deploymentpy).
+  - **parameters**: A dictionary containing parameters specific to the deployment function. Refer to the [deployment section](#vehicle_deploymentpy) for details on each function.
+}
 
-### 3. Vehicle
-- **Type**: A list containing the names of classes used for vehicles. Refer to the classes in the [vehicle section](#vehiclepy).
-- **Deploy Vehicles**: A string indicating the name of the function used for deploying vehicles. Refer to the functions in the [deployment section](#deploymentpy).
-- **Deploy Parameters**: A dictionary containing parameters specific to the deployment function. Refer to the [deployment section](#deploymentpy) for details on each function.
+### 3. `users`
+- **number**: The number of users generated in the simulation.
+- **interarrival_time**: The time between the generation of each user.
 
-### 4. Users
-- **Number**: The number of users generated in the simulation.
-- **Interarrival Time**: The time between the generation of each user.
-
-### 5. Run Time
+### 4. `run_time`
 - The time duration of the simulation.
 
+---
 
 # Customizing Simulation
 
@@ -63,38 +68,64 @@ To personalize the simulation, follow these steps:
 
 ## Adding a New Vehicle
 
-1. Create a New Vehicle Class:
+1. Create a new vehicle class:
    - In the `vehicle.py` file, create a new vehicle class by copying an existing one and changing the name.
 
 2. Update `vehicle.json`:
    - Add a new key to the `vehicle.json` dictionary with the name of the new vehicle and its parameters.
 
-## Adding a New Map
+## Adding a New Station Deployment Function
 
-1. Create a New Map Class:
-   - In the `map.py` file, create a new map class.
+1. Create a new station deployment function:
+   - In the `station_deployment.py` file, create a new station deployment function.
+   - The function takes a dictionary of parameters as input and returns a list of tuples containing the station x and y coordinates.
+     Example:
+     ```python
+     def deploy_func_name(params: dict) -> list:
+         # code
+     ```
 
 2. Update `simulation.json`:
-   - Change the "Type" key to the name of the new map class in the `simulation.json` file.
-   - Add the parameters of the new class to the "Parameters" dictionary in `simulation.json`.
+   - Open `simulation.json` file.
+   - Find the "deployment" dictionary in the "station" dictionary.
+   - Change the "type" to the name of the new function.
+   - Change the "parameters" to the parameters of the new function.
 
 ## Adding a New Station Storage
 
-1. Create a New Station Storage Class:
+1. Create a new station storage class:
    - In the `station_storage.py` file, create a new station storage class.
+   - The class takes a dictionary of parameters as input.
+     Example:
+     ```python
+     class NewStationStorage(StationStorage):
+         def __init__(self, env: simpy.Environment, params: dict):
+             # code
+     ```
+   - Implement all the abstract methods defined in the `StationStorage` class following the instructions in the [station storage section](#station_storagepy).
 
 2. Update `simulation.json`:
-   - Change the "Station Storage" key to the name of the new station storage class in the `simulation.json` file.
-   - Add the parameters of the new class to the "Storage Parameters" dictionary in `simulation.json`.
+   - Open `simulation.json` file.
+   - Find the "storage" dictionary in the "station" dictionary.
+   - Change the "type" to the name of the new class.
+   - Change the "parameters" to the parameters of the class.
 
-## Adding a New Deployment
+## Adding a New Vehicle Deployment
 
-1. Create a New Deployment Function:
+1. Create a new deployment function:
    - In the `deployment.py` file, create a new deployment function.
+   - The function takes a list of stations, a list of vehicle types, and a dictionary of parameters as input and returns nothing.
+     Example:
+     ```python
+     def deploy_func_name(stations: list, vehicle_type: list, parameters: dict):
+         # code
+     ```
 
 2. Update `simulation.json`:
-   - Change the "Deploy Vehicles" key to the name of the new deployment function in the `simulation.json` file.
-   - Add the parameters of the new function to the "Deploy Parameters" dictionary in `simulation.json`.
+   - Open `simulation.json` file.
+   - Find the "deployment" dictionary in the "vehicles" dictionary.
+   - Change the "type" to the name of the new function.
+   - Change the "parameters" to the parameters of the new function.
 
 ---
 
@@ -117,24 +148,6 @@ To personalize the simulation, follow these steps:
   4. Saves the results in a CSV file in the "data/simulation_results" folder.
   5. Conducts data analysis.
   6. Plots the results.
-
----
-
-## map.py
-
-- **Description:**
-  - Contains map classes; all classes inherit from the map class and must implement the `generate` function.
-
-- **Warning:**
-  - The `__init__` method requires the following parameters:
-    - `env`: simpy.Environment
-    - `params`: dict
-  - Will always be called with these parameters and only these parameters.
-  - Additional parameters must be added to the `params` dict.
-
-- **Generate Function:**
-  - Takes no parameters.
-  - Returns a list of tuples, where each tuple represents x and y coordinates of a station.
 
 ---
 
@@ -268,6 +281,40 @@ This file contains the station storage classes. All station storage classes inhe
 
 ---
 
+# station_deployment.py
+
+This file contains deployment functions. All deployment functions take a dictionary of parameters as input and return a list of tuples containing the station x and y coordinates.
+
+### `grid(params: dict) -> list`:
+**type:** "grid"
+**parameters:** {
+    rows: int
+    columns: int
+    width: float
+}
+
+Deploy a grid of stations with the specified number of rows and columns. The distance between each node is specified by the width parameter.
+
+### `square_random(params: dict) -> list`:
+**type:** "square_random"
+**parameters:** {
+    size: float
+    number: int
+}
+
+Sample a specified number of points from a square of the specified size.
+
+### `circle_random(params: dict) -> list`:
+**type:** "circle_random"
+**parameters:** {
+    radius: float
+    number: int
+}
+
+Sample a specified number of points from a circle of the specified radius.
+
+---
+
 # vehicle.py
 
 This file contains the vehicle classes. All vehicle classes inherit from the vehicle class and must implement the following three property functions.
@@ -335,7 +382,7 @@ This file contains the vehicle classes. All vehicle classes inherit from the veh
 
 ---
 
-# deployment.py
+# vehicle_deployment.py
 
 This file contains deployment functions.
 
@@ -356,6 +403,22 @@ def deploy_func_name(stations: list, vehicle_type: list, parameters: dict):
 
 - **Returns:**
   - Does not return anything.
+
+### `uniform(stations: list, vehicle_type: list, parameters: dict):`
+**type:** "uniform"
+**parameters:** {
+    number: int
+}
+
+Deploy a specified number of vehicles to each station.
+
+### `capacity_based(stations: list, vehicle_type: list, parameters: dict):`
+**type:** "capacity_based"
+**parameters:** {
+    multiplier: float
+}
+
+Deploy vehicles to stations based on the station's capacity. The number of vehicles deployed to a station is equal to the station's capacity multiplied by the multiplier parameter.
 
 ---
 

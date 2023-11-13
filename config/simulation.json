@@ -1,35 +1,40 @@
 {
-    "Map": {
-        "Type": "Grid",
-        "Parameters": {
-            "Rows": 6,
-            "Columns": 6,
-            "Width": 3
-        }
-    },
-    
-    "Station": {
-        "Capacity per Time": 1,
-        "Max Concurrent Charging": 3,
+    "station": {
+        "charge_per_time": 1,
+        "max_concurrent_charging": 3,
         
-        "Station Storage": "LIFO",
-        "Storage Parameters":{
-            "Capacity": 10
+        "storage":{
+            "type": "LIFO",
+            "parameters":{
+                "capacity": 10
+            }
+        },
+
+        "deployment": {
+            "type": "grid",
+            "parameters": {
+                "rows": 6,
+                "columns": 6,
+                "width": 3
+            }
         }
     },
 
-    "Vehicles": {
-        "Type": ["Scooter"],
-        "Deploy Vehicles": "uniform_distribution",
-        "Deploy Parameters": {
-            "Vehicles per Station": 6
+    "vehicles": {
+        "type": ["Scooter"],
+        
+        "deployment": {
+            "type": "uniform",
+            "parameters": {
+                "vehicles_per_station": 6
+            }
         }
     },
 
-    "Users": {
-        "Number": 500,
-        "Interarrival Time": 1
+    "users": {
+        "number": 500,
+        "interarrival_time": 1
     },
     
-    "Run Time": 500
+    "run_time": 500
 }
