@@ -30,19 +30,19 @@ The `simulation.json` file is a dictionary with four keys:
 - **charge_per_time**: Capacity charged by the station per unit of time.
 - **max_concurrent_charging**: Maximum number of vehicles that can be charged simultaneously.
 - **storage**: {
-  - **type**: A string indicating the name of the function used for generating stations. Refer to the functions in the [station storage section](#station_storagepy).
-  - **parameters**: A dictionary containing parameters specific to the station storage class. Refer to the [station storage section](#station_storagepy) for details on each class.
+  - **type**: A string indicating the name of the function used for generating stations. Refer to the functions in the [station storage](#station_storagepy) section.
+  - **parameters**: A dictionary containing parameters specific to the station storage class. Refer to the [station storage](#station_storagepy) section for details on each class.
 }
 - **deployment**: {
-  - **type**: A string indicating the name of the function used for deploying stations. Refer to the functions in the [station deployment section](#station_deploymentpy).
-  - **parameters**: A dictionary containing parameters specific to the deployment function. Refer to the [station deployment section](#station_deploymentpy) for details on each function.
+  - **type**: A string indicating the name of the function used for deploying stations. Refer to the functions in the [station deployment](#station_deploymentpy) section.
+  - **parameters**: A dictionary containing parameters specific to the deployment function. Refer to the [station deployment](#station_deploymentpy) section for details on each function.
 }
 
 ### 2. `vehicles`
-- **type**: A list containing the names of classes used for vehicles. Refer to the classes in the [vehicle section](#vehiclepy).
+- **type**: A list containing the names of classes used for vehicles. Refer to the classes in the [vehicle](#vehiclepy) section.
 - **deployment**: {
-  - **type**: A string indicating the name of the function used for deploying vehicles. Refer to the functions in the [deployment section](#vehicle_deploymentpy).
-  - **parameters**: A dictionary containing parameters specific to the deployment function. Refer to the [deployment section](#vehicle_deploymentpy) for details on each function.
+  - **type**: A string indicating the name of the function used for deploying vehicles. Refer to the functions in the [deployment](#vehicle_deploymentpy) section.
+  - **parameters**: A dictionary containing parameters specific to the deployment function. Refer to the [deployment](#vehicle_deploymentpy) section for details on each function.
 }
 
 ### 3. `users`

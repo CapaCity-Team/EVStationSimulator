@@ -28,7 +28,7 @@ To run the simulation, follow these steps:
    ```
 ## Configuration
 
-You can configure various aspects of the simulation in the `config.json` file. Refer to the [documentation](https://capacity-team.github.io/ElecStationSim/) for more details.
+You can configure various aspects of the simulation in the `config.json` file. Refer to the [documentation](https://capacity-team.github.io/ElecStationSim/docs/user.md) for more details.
 
 ## Results and Analysis
 
