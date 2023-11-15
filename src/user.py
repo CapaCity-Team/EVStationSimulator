@@ -1,18 +1,19 @@
 import simpy
 from station import Station
+from utils import get_directory_path
 
 import logging, os
 
 # Obtain a reference to the loggers configured in the main script
 logger = logging.getLogger(__name__)
-path_result = os.path.join(os.path.dirname(__file__), "../data/simulation_result/result.csv")
 
 class User:
-    def __init__(self, env: simpy.Environment, id: int, from_station: Station, to_station: Station):
-        self.env = env
+    env = None
+    def __init__(self, id: int, from_station: Station, to_station: Station, velocity: float):
         self.id = id
         self.from_station = from_station
         self.to_station = to_station
+        self.velocity = velocity
         self.vehicle = None
 
     def run(self):
@@ -29,7 +30,10 @@ class User:
         logger.info("User {} got vehicle {} with battery {}% from station {} at {}".format(self.id, self.vehicle.id, battery, self.from_station.id, self.env.now))
 
         distance = self.from_station.distance(self.to_station)
-        time = self.vehicle.move(distance)
+        self.vehicle.move(distance)
+        
+        time = distance / self.velocity
+        
         yield self.env.timeout(time)
 
         battery_used = battery - self.vehicle.battery*100
@@ -50,7 +54,7 @@ class User:
             print("User {} total time is 0".format(self.id))
 
 
-        with open(path_result, "a") as file:
+        with open(os.path.join(get_directory_path(),"result.csv"), "a") as file:
             # ["User ID", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]
             print("{},{},{},{},{},{},{},{},{}".format(self.id, self.from_station.id, self.to_station.id, self.vehicle.id, unlock_time, lock_time, total_time, battery_used, distance),
                 file=file,

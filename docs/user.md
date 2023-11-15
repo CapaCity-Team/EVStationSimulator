@@ -46,8 +46,13 @@ The `simulation.json` file is a dictionary with four keys:
 }
 
 ### 3. `users`
-- **number**: The number of users generated in the simulation.
-- **interarrival_time**: The time between the generation of each user.
+- **generation**: A list containing the generation detail for new users across the simulation. Refer to the [generation](#generation) section for details.
+- **mean_distance**: Mean distance traveled by users.
+- **std_distance**: Standard deviation of the distance traveled by users.
+- **mean_velocity**: Mean velocity of users.
+- **std_velocity**: Standard deviation of the velocity of users.
+
+Each user is generated with a random distance to travel and velocity based on the mean and standard deviation specified in the `users` dictionary.
 
 ### 4. `run_time`
 - The time duration of the simulation.
@@ -448,3 +453,16 @@ This file contains the `User` class.
   - Does not return anything.
 
 ---
+
+# generation
+
+The `generation` list within the `users` dictionary in the `simulation.json` file provides details about user generation throughout the simulation. Here is the structure of each element in the list:
+
+1. **Start Time (`start`):** Start time of the period in units of simulation time.
+2. **End Time (`end`):** End time of the period in units of simulation time.
+3. **Distribution (`distribution`):** Type of distribution, either "uniform" or "normal."
+4. **Number of Users (`number`):** Number of users to be generated during the specified period.
+
+Each element in the list represents a unique period for user generation. Elements can overlap or reuse the same time period, as each is evaluated separately. The total number of users generated is the sum of the users generated in each individual element.
+
+Feel free to add as many elements as needed to the list, customizing the user generation pattern as required for your simulation.

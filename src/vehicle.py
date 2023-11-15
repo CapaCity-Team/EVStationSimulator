@@ -24,28 +24,21 @@ class Vehicle(ABC):
     def energy_consumption(self):
         # Abstract property representing the energy consumption of the vehicle
         pass
-    
-    @property
-    @abstractmethod
-    def velocity(self):
-        # Abstract property representing the velocity of the vehicle
-        pass
 
     def move(self, distance: float):
-        # Move the vehicle by a specified distance, update battery level, and return time taken
-        self.battery -= distance * self.energy_consumption
+        # Move the vehicle by a specified distance, update battery level
+        self.battery -= distance * self.energy_consumption / self.max_capacity
 
         if self.battery < 0:
+            print(self.battery, distance)
             # Raise a custom exception if the battery level becomes negative
             raise NegativeBatteryValue(f'Vehicle {self.id} battery level is negative')
 
-        return distance / self.velocity
-
-    def capacity(self):
+    def capacity_left(self):
         # Calculate the current capacity of the vehicle based on battery level
         return self.max_capacity * self.battery
     
-    def capacity_left(self):
+    def capacity_used(self):
         # Calculate the remaining capacity of the vehicle based on battery level
         return (1 - self.battery) * self.max_capacity
 
@@ -96,11 +89,6 @@ class Scooter(Vehicle):
     def energy_consumption(self):
         # Override the abstract property to provide Scooter-specific energy consumption
         return self.ENERGY_CONSUMPTION
-    
-    @property
-    def velocity(self):
-        # Override the abstract property to provide Scooter-specific velocity
-        return self.VELOCITY
 
     
 class Bike(Vehicle):
@@ -124,8 +112,3 @@ class Bike(Vehicle):
     def energy_consumption(self):
         # Override the abstract property to provide Bike-specific energy consumption
         return self.ENERGY_CONSUMPTION
-    
-    @property
-    def velocity(self):
-        # Override the abstract property to provide Bike-specific velocity
-        return self.VELOCITY

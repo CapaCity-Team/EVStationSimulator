@@ -26,7 +26,7 @@ class Station:
             logger.info("Charging vehicle {} with battery {}% in station {}".format(vehicle.id, vehicle.battery*100, self.id))
 
             # Calculate the time needed to fully charge the vehicle
-            time = vehicle.capacity_left() / self.capacity_per_time
+            time = vehicle.capacity_used() / self.capacity_per_time
             
             yield self.env.timeout(time)
             
@@ -74,7 +74,7 @@ class Station:
         yield from self.vehicles.lock(vehicle)
         # Check if the station needs to reschedule charging 
         
-        logger.info("Station {} has {} vehicles".format(self.id, self.vehicles.count()))
+        logger.info("Station {} has {} vehicles at {}".format(self.id, self.vehicles.count(), self.env.now))
         assert self.vehicles.count() <= self.vehicles.capacity, "Station {} has {} vehicles".format(self.id, self.vehicles.count())
         
         if self.vehicles.need_reschedule():
@@ -85,7 +85,7 @@ class Station:
         # Request a vehicle from the station
         yield from self.vehicles.unlock(user)
 
-        logger.info("Station {} has {} vehicles".format(self.id, self.vehicles.count()))
+        logger.info("Station {} has {} vehicles at {}".format(self.id, self.vehicles.count(), self.env.now))
         assert self.vehicles.count() <= self.vehicles.capacity, "Station {} has {} vehicles".format(self.id, self.vehicles.count())
     
     def distance(self, station):

@@ -1,21 +1,21 @@
 {
     "station": {
-        "charge_per_time": 1,
+        "charge_per_time": 100,
         "max_concurrent_charging": 3,
         
         "storage":{
             "type": "LIFO",
             "parameters":{
-                "capacity": 10
+                "capacity": 22
             }
         },
 
         "deployment": {
             "type": "grid",
             "parameters": {
-                "rows": 6,
-                "columns": 6,
-                "width": 2
+                "rows": 18,
+                "columns": 18,
+                "width": 1
             }
         }
     },
@@ -26,15 +26,21 @@
         "deployment": {
             "type": "uniform",
             "parameters": {
-                "vehicles_per_station": 6
+                "vehicles_per_station": 15
             }
         }
     },
 
     "users": {
-        "number": 500,
-        "interarrival_time": 1
+        "generation": [
+            [0, 1080, "uniform", 5786],
+            [600, 840, "normal", 1714]
+        ],
+        "mean_distance": 3.02,
+        "std_distance": 0.5,
+        "mean_velocity": 0.33,
+        "std_velocity": 0.05
     },
     
-    "run_time": 500
+    "run_time": 1500
 }
