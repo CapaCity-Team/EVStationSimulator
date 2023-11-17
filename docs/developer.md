@@ -36,18 +36,77 @@ The codebase is organized into the following directories:
 ## Code Documentation
 
 ### Main
+[Source Code](../src/main.py) contains the main function for the simulation. It is responsible for parsing the simulation configuration file, initializing the simulation, and running the simulation.
 
-The `main.py` file contains the main function for the simulation. It is responsible for parsing the simulation configuration file, initializing the simulation, and running the simulation.
+- **Functionality:**
+  - Runs the entire simulation and performs data analysis.
 
-
-
-
+- **Steps:**
+  1. Reads the configuration files.
+  2. Initializes the simulation, including:
+     - Generating station positions.
+     - Generating stations.
+     - Generating and deploying vehicles.
+     - Generating users.
+  3. Runs the simulation.
+  4. Saves the results in a CSV file in the "data/simulation_results" folder.
+  5. Conducts data analysis.
+  6. Plots the results.
 
 ---
 
 ### Station
+[source](../src/station.py ':include :type=code python') contains the `Station` class.
 
-The `station.py` file contains the `Station` class, which represents a charging station. The file contains the following functions:
+- **Description**:
+    The `Station` class acts as a wrapper for the station storage and is responsible for charging vehicles and interacting with the users.
+
+- **Methods**:
+    - `__init__(self, env: simpy.Environment, station_id: int, position: tuple, capacity_per_time: float, max_concurrent_charging: int, vehicles: StationStorage)`:
+        - **Description**: Initializes the station with a unique ID, a position, a capacity per unit of time, a maximum number of vehicles that can be charged simultaneously, and a station storage.
+        - **Parameters**:
+            - `env`: The simpy environment.
+            - `station_id`: The station ID.
+            - `position`: The station position.
+            - `capacity_per_time`: The capacity charged by the station per unit of time.
+            - `max_concurrent_charging`: The maximum number of vehicles that can be charged simultaneously.
+            - `vehicles`: The station storage.
+        - **Returns**: Does not return anything.
+    - `charge(self, vehicle: Vehicle, now: float)`:
+        - **Description**: Performs the charging process for a vehicle.
+        - **Parameters**:
+            - `vehicle`: The vehicle to charge.
+            - `now`: The current time.
+        - **Returns**: Does not return anything.
+    - `charge_next_vehicle(self)`:
+        - **Description**: Calls `charge` for the next vehicle in the queue.
+        - **Returns**: Does not return anything.
+    - `stop_charging(self)`:
+        - **Description**: Interrupts the charging process for all vehicles.
+        - **Returns**: Does not return anything.
+    - `start_charging(self)`:
+        - **Description**: Starts the charging process for however many vehicles can be charged simultaneously.
+        - **Returns**: Does not return anything.
+    - `request_lock(self, vehicle: Vehicle)`:
+        - **Description**: Requests a lock for a vehicle. It is a blocking function that waits until there is a slot available.
+        - **Parameters**:
+            - `vehicle`: The vehicle to lock.
+        - **Returns**: Does not return anything.
+    - `request_unlock(self, user)`:
+        - **Description**: Requests an unlock for a vehicle and assigns it to a user. It is a blocking function that waits until there is a vehicle available.
+        - **Parameters**:
+            - `user`: The user to assign the vehicle to.
+        - **Returns**: Does not return anything.
+    - `distance(self, station) -> float`:
+        - **Description**: calc the distance between this station and the station passed as a parameter.
+        - **Parameters**:
+            - `station`: The station to calculate the distance to.
+        - **Returns**: The distance between this station and the station passed as a parameter.
+    - `deploy(self, vehicles: list)`:
+        - **Description**: Deploys the vehicles to the station.
+        - **Parameters**:
+            - `vehicles`: List of vehicles to deploy.
+        - **Returns**: Does not return anything.
 
 ---
 
