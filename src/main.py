@@ -1,13 +1,15 @@
+from simpy import Environment
 from user import User
 from station import Station
-from utils import setup_logger, find_index_nearest_point, create_directory_path, get_directory_path
-import numpy as np
-
-from simpy import Environment
+from utils import setup_logger, create_directory_path, load_config, find_index_nearest_point
 from random import randint
 import os, json
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-def main(env: Environment, config_data: dict):
+def simulation(env: Environment, config_data: dict):
     print("Setting up simulation...", end="\n\t")
     print("Loading configuration...", end=" ")
     # caricamento dinamico funzioni e moduli specificati nel file di configurazione
@@ -119,29 +121,32 @@ def main(env: Environment, config_data: dict):
     for i in range(len(ordered_users)-1, 0, -1):
         ordered_users[i][1] -= ordered_users[i-1][1]
         
-    print("generated", end="\n\t")
+    print("generated")
 
+    print("Finished setup\n")
 
     print("Starting simulation...", end=" ")
     # avvio simulazione
     for user, timeout in ordered_users:
         yield env.timeout(timeout)
         env.process(user.run())
-    
-def analyze_results(config):
-    import pandas as pd
-    import matplotlib.pyplot as plt
-    import seaborn as sns
 
+def analyze_results(dir_path, config):
     print("Loading results...", end=" ")
 
-    dir_path = get_directory_path()
     df = pd.read_csv(os.path.join(dir_path, "result.csv"))
 
     print("loaded", end="\n\t")
 
     number_of_users = sum([arr[3] for arr in config["users"]["generation"]])
-    print("terminated the excution {}".format(df["User ID"].count(), number_of_users), end="\n\t")
+    print("{} out of {} users terminated the execution".format(df["User ID"].count(), number_of_users), end="\n\t")
+
+    avg_lock_time = df["Lock Time"].mean()
+    print("Average lock time: {}".format(avg_lock_time), end="\n\t")
+    avg_unlock_time = df["Unlock Time"].mean()
+    print("Average unlock time: {}".format(avg_unlock_time), end="\n\t")
+    avg_distance = df["Distance"].mean()
+    print("Average distance: {}".format(avg_distance), end="\n\t")
 
     # Column names:
     # ["User ID", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]
@@ -189,21 +194,12 @@ def analyze_results(config):
 
     print("plotted")
 
-if __name__ == "__main__":
+def main():
     # inizializzazione ambiente
     env = Environment()
 
     # caricamento file di configurazione
-    try:
-        config_file = os.path.join(os.path.dirname(__file__),"../config/simulation.json")
-        with open(config_file, 'r') as file:
-            config_data = json.load(file)
-    except FileNotFoundError:
-        raise Exception(f'File {config_file} not found')
-    except json.decoder.JSONDecodeError:
-        raise Exception(f'File {config_file} is not a valid JSON file')
-    except Exception as e:
-        raise e
+    config_data = load_config(os.path.join(os.path.dirname(__file__),"../config/simulation.json"))
 
     # crea cartella per i risultati della simulazione
     sim_path = create_directory_path()
@@ -213,7 +209,7 @@ if __name__ == "__main__":
         json.dump(config_data, f)
 
     # setup logger
-    root_logger = setup_logger(os.path.join(sim_path, "log.log"))
+    setup_logger(os.path.join(sim_path, "log.log"))
 
     # crea file per i risultati della simulazione
     result_path = os.path.join(sim_path, "result.csv")
@@ -223,14 +219,18 @@ if __name__ == "__main__":
         print(",".join(column_names), file=f)
 
     # avvio simulazione
-    env.process(main(env, config_data))
-
+    env.process(simulation(env, config_data))
+    
     # esecuzione simulazione
     env.run(until=config_data["run_time"])
 
-    print("Simulation finished")
+    print("Simulation finished\n")
 
     print("Analyzing results...", end="\n\t")
     # analisi risultati
-    analyze_results(config_data)
+    analyze_results(sim_path, config_data)
     print("analyzed")
+
+
+if __name__ == "__main__":
+    main()

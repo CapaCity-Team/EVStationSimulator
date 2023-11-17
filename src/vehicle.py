@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 class ConfigFileNotFound(Exception):
     pass
 
-class NegativeBatteryValue(Exception):
+class NegativeBatteryLevel(Exception):
     pass
 
 class Vehicle(ABC):
@@ -30,9 +30,8 @@ class Vehicle(ABC):
         self.battery -= distance * self.energy_consumption / self.max_capacity
 
         if self.battery < 0:
-            print(self.battery, distance)
             # Raise a custom exception if the battery level becomes negative
-            raise NegativeBatteryValue(f'Vehicle {self.id} battery level is negative')
+            raise NegativeBatteryLevel(f'Vehicle {self.id} battery level is negative')
 
     def capacity_left(self):
         # Calculate the current capacity of the vehicle based on battery level
@@ -74,7 +73,6 @@ class Scooter(Vehicle):
     # Class-level attributes for configuring the Scooter's behavior
     BATTERY_CAPACITY = None
     ENERGY_CONSUMPTION = None
-    VELOCITY = None
 
     def __init__(self, scooter_id):
         # Initialize Scooter using the base class constructor
@@ -97,7 +95,6 @@ class Bike(Vehicle):
     # Class-level attributes for configuring the Bike's behavior
     BATTERY_CAPACITY = None
     ENERGY_CONSUMPTION = None
-    VELOCITY = None
 
     def __init__(self, bike_id):
         # Initialize Bike using the base class constructor

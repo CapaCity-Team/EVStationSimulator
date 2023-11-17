@@ -1,4 +1,4 @@
-import math, logging, os
+import math, logging, os, json
 
 # Default directory path
 DEFAULT_DIRECTORY_PATH = None
@@ -44,4 +44,16 @@ def setup_logger(log_filename):
         if isinstance(handler, logging.StreamHandler):
             root_logger.removeHandler(handler)
 
+def load_config(config_path):
+    try:
+        with open(config_path, 'r') as file:
+            config_data = json.load(file)
+    except FileNotFoundError:
+        raise Exception(f'File {config_path} not found')
+    except json.decoder.JSONDecodeError:
+        raise Exception(f'File {config_path} is not a valid JSON file')
+    except Exception as e:
+        raise e
+    
+    return config_data
 

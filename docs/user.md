@@ -12,45 +12,67 @@
 - [vehicle.py](#vehiclepy)
 - [vehicle_deployment.py](#vehicle_deploymentpy)
 - [user.py](#userpy)
+- [generation](#generation)
 
 # Configuration Files Details
 
 ## `vehicle.json`
-The `vehicle.json` file serves as a dictionary with keys representing the names of vehicles and values specifying their parameters. Each vehicle has the following parameters:
+[vehicle.json](../config/vehicle.json) is a dictionary with the names of vehicles as keys. Each vehicle has the following parameters:
 
 - **BATTERY_CAPACITY**: Amount of energy the vehicle's battery can store.
 - **ENERGY_CONSUMPTION**: Energy consumption per unit of distance traveled.
-- **VELOCITY**: Distance the vehicle travels per unit of time.
 
 ## `simulation.json`
 
-The `simulation.json` file is a dictionary with four keys:
+[simulation.json](../config/simulation.json) is the main configuration file for the simulation. It is a dictionary with the following keys:
 
 ### 1. `station`
 - **charge_per_time**: Capacity charged by the station per unit of time.
 - **max_concurrent_charging**: Maximum number of vehicles that can be charged simultaneously.
-- **storage**: {
-  - **type**: A string indicating the name of the function used for generating stations. Refer to the functions in the [station storage](#station_storagepy) section.
-  - **parameters**: A dictionary containing parameters specific to the station storage class. Refer to the [station storage](#station_storagepy) section for details on each class.
-}
-- **deployment**: {
-  - **type**: A string indicating the name of the function used for deploying stations. Refer to the functions in the [station deployment](#station_deploymentpy) section.
-  - **parameters**: A dictionary containing parameters specific to the deployment function. Refer to the [station deployment](#station_deploymentpy) section for details on each function.
-}
+- **storage**: dictionary with the following keys:
+  - **type**: string indicating the name of the function used for generating stations. Refer to the functions in the [station storage](#station_storagepy) section.
+  - **parameters**: dictionary containing parameters specific to the station storage class. Refer to the [station storage](#station_storagepy) section for details on each class.
+
+- **deployment**: dictionary with the following keys:
+  - **type**: string indicating the name of the function used for deploying stations. Refer to the functions in the [station deployment](#station_deploymentpy) section.
+  - **parameters**: dictionary containing parameters specific to the deployment function. Refer to the [station deployment](#station_deploymentpy) section for details on each function.
+
 
 ### 2. `vehicles`
-- **type**: A list containing the names of classes used for vehicles. Refer to the classes in the [vehicle](#vehiclepy) section.
-- **deployment**: {
-  - **type**: A string indicating the name of the function used for deploying vehicles. Refer to the functions in the [deployment](#vehicle_deploymentpy) section.
-  - **parameters**: A dictionary containing parameters specific to the deployment function. Refer to the [deployment](#vehicle_deploymentpy) section for details on each function.
-}
+- **type:** list containing the names of classes used for vehicles. Refer to the classes in the [vehicle](#vehiclepy) section.
+- **deployment:** dictionary with the following keys:
+  - **type:** string indicating the name of the function used for deploying vehicles. Refer to the functions in the [deployment](#vehicle_deploymentpy) section.
+  - **parameters:** dictionary containing parameters specific to the deployment function. Refer to the [deployment](#vehicle_deploymentpy) section for details on each function.
 
 ### 3. `users`
-- **generation**: A list containing the generation detail for new users across the simulation. Refer to the [generation](#generation) section for details.
-- **mean_distance**: Mean distance traveled by users.
-- **std_distance**: Standard deviation of the distance traveled by users.
-- **mean_velocity**: Mean velocity of users.
-- **std_velocity**: Standard deviation of the velocity of users.
+- **generation:** A list containing the generation details for new users across the simulation. Each element represents a period of time during which users are generated in the specified distribution and number.
+
+  Each element in the list is a list of four elements:
+  
+  ```
+  [
+    [start_time, end_time, distribution, number]
+  ]
+  ```
+
+  - **start_time**: start time of the period in units of simulation time.
+  - **end_time**: end time of the period in units of simulation time.
+  - **distribution**: type of distribution, either "uniform" or "normal."
+  - **number**: number of users to be generated during the specified period.
+
+  Example:
+  ```json
+  [
+    [0, 100, "uniform", 10],
+    [100, 200, "normal", 20]
+  ]
+  ```
+  **NOTE**: Can used overlapping time periods, as each element is evaluated separately and then summed together.
+
+- **mean_distance:** Mean distance traveled by users.
+- **std_distance:** Standard deviation of the distance traveled by users.
+- **mean_velocity:** Mean velocity of users.
+- **std_velocity:** Standard deviation of the velocity of users.
 
 Each user is generated with a random distance to travel and velocity based on the mean and standard deviation specified in the `users` dictionary.
 
@@ -66,15 +88,15 @@ To personalize the simulation, follow these steps:
 ## Configuration Files
 
 1. **Adjusting Overall Simulation Settings:**
-   - Modify parameters in `simulation.json` for global simulation configurations.
+   - Modify parameters in [simulation.json](../config/simulation.json) for global simulation configurations.
 
 2. **Customizing Individual Vehicle Characteristics:**
-   - Adjust parameters in `vehicle.json` for each vehicle's specific characteristics.
+   - Adjust parameters in [vehicle.json](../config/vehicle.json) for each vehicle's specific characteristics.
 
 ## Adding a New Vehicle
 
 1. Create a new vehicle class:
-   - In the `vehicle.py` file, create a new vehicle class by copying an existing one and changing the name.
+   - In the `vehicle.py` file, create a new vehicle class by copying an existing one and changing the name. Refer to the [vehicle](#vehiclepy) section for details.
 
 2. Update `vehicle.json`:
    - Add a new key to the `vehicle.json` dictionary with the name of the new vehicle and its parameters.
@@ -138,13 +160,14 @@ To personalize the simulation, follow these steps:
 
 ## main.py
 
+[Source Code](../src/main.py) is responsible for executing the simulation and conducting data analysis.
+
 - **Functionality:**
   - Runs the entire simulation and performs data analysis.
 
 - **Steps:**
   1. Reads the configuration files.
   2. Initializes the simulation, including:
-     - Creating a map.
      - Generating station positions.
      - Generating stations.
      - Generating and deploying vehicles.
@@ -217,7 +240,7 @@ This file contains the `Station` class.
         
 # station_storage.py
 
-This file contains the station storage classes. All station storage classes inherit from the station storage class.
+[Souce Code](../src/station_storage.py) contains the station storage classes. All station storage classes inherit from the station storage class.
 
 ## Station Storage Classes
 
@@ -288,7 +311,7 @@ This file contains the station storage classes. All station storage classes inhe
 
 # station_deployment.py
 
-This file contains deployment functions. All deployment functions take a dictionary of parameters as input and return a list of tuples containing the station x and y coordinates.
+[Souce Code](../src/station_deployment.py) contains deployment functions. All deployment functions take a dictionary of parameters as input and return a list of tuples containing the station x and y coordinates.
 
 ### `grid(params: dict) -> list`:
 **type:** "grid"
@@ -322,7 +345,7 @@ Sample a specified number of points from a circle of the specified radius.
 
 # vehicle.py
 
-This file contains the vehicle classes. All vehicle classes inherit from the vehicle class and must implement the following three property functions.
+[Souce Code](../src/vehicle.py) contains the vehicle classes. All vehicle classes inherit from the vehicle class and must implement the following three property functions.
 
 ### Initialization
 
@@ -340,28 +363,25 @@ This file contains the vehicle classes. All vehicle classes inherit from the veh
 
 - Description: Returns the energy consumption of the vehicle.
 
-#### `@property velocity(self):`
-
-- Description: Returns the velocity of the vehicle.
-
 ### Movement
 
 #### `move(self, distance: float) -> float:`
 
-- Description: Moves the vehicle by a specified distance, updates the battery level, and returns the time taken.
-- Returns: The time taken to move the vehicle by the specified distance.
+- Description: Moves the vehicle by a specified distance, updates the battery level.
+- Returns: Does not return anything.
+- Raises: NegativeBatteryLevel exception if the battery level becomes negative.
 
 ### Battery and Charging
 
-#### `capacity(self) -> float:`
-
-- Description: Calculates the current capacity of the vehicle based on the battery level.
-- Returns: The current capacity of the vehicle.
-
 #### `capacity_left(self) -> float:`
 
-- Description: Calculates the remaining capacity of the vehicle based on the battery level.
-- Returns: The remaining capacity of the vehicle.
+- Description: Calculates the capacity left in the vehicle based on the battery level.
+- Returns: The capacity left in the vehicle.
+
+#### `capacity_used(self) -> float:`
+
+- Description: Calculates the capacity used by the vehicle based on the battery level.
+- Returns: The capacity used by the vehicle.
 
 #### `is_charged(self) -> bool:`
 
@@ -389,7 +409,7 @@ This file contains the vehicle classes. All vehicle classes inherit from the veh
 
 # vehicle_deployment.py
 
-This file contains deployment functions.
+[Souce Code](../src/vehicle_deployment.py) contains deployment functions.
 
 All deployment functions must follow this format:
 
@@ -429,7 +449,7 @@ Deploy vehicles to stations based on the station's capacity. The number of vehic
 
 # user.py
 
-This file contains the `User` class.
+[Souce Code](../src/user.py) contains the `User` class.
 
 ## `User` Class
 
@@ -439,6 +459,7 @@ This file contains the `User` class.
 - `id`: int
 - `from_station`: Station
 - `to_station`: Station
+- `velocity`: float
 
 ### Method:
 
@@ -453,16 +474,3 @@ This file contains the `User` class.
   - Does not return anything.
 
 ---
-
-# generation
-
-The `generation` list within the `users` dictionary in the `simulation.json` file provides details about user generation throughout the simulation. Here is the structure of each element in the list:
-
-1. **Start Time (`start`):** Start time of the period in units of simulation time.
-2. **End Time (`end`):** End time of the period in units of simulation time.
-3. **Distribution (`distribution`):** Type of distribution, either "uniform" or "normal."
-4. **Number of Users (`number`):** Number of users to be generated during the specified period.
-
-Each element in the list represents a unique period for user generation. Elements can overlap or reuse the same time period, as each is evaluated separately. The total number of users generated is the sum of the users generated in each individual element.
-
-Feel free to add as many elements as needed to the list, customizing the user generation pattern as required for your simulation.

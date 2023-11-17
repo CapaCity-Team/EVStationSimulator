@@ -6,7 +6,7 @@
         "storage":{
             "type": "LIFO",
             "parameters":{
-                "capacity": 22
+                "capacity": 30
             }
         },
 
