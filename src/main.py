@@ -3,7 +3,7 @@ from user import User
 from station import Station
 from utils import setup_logger, create_directory_path, load_config, find_index_nearest_point
 from random import randint
-import os, json
+import os, json, shutil
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -138,18 +138,108 @@ def analyze_results(dir_path, config):
 
     print("loaded", end="\n\t")
 
-    number_of_users = sum([arr[3] for arr in config["users"]["generation"]])
-    print("{} out of {} users terminated the execution".format(df["User ID"].count(), number_of_users), end="\n\t")
-
-    avg_lock_time = df["Lock Time"].mean()
-    print("Average lock time: {}".format(avg_lock_time), end="\n\t")
-    avg_unlock_time = df["Unlock Time"].mean()
-    print("Average unlock time: {}".format(avg_unlock_time), end="\n\t")
-    avg_distance = df["Distance"].mean()
-    print("Average distance: {}".format(avg_distance), end="\n\t")
-
     # Column names:
     # ["User ID", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]
+
+    print("Calculating statistics...", end=" ")
+
+    # calculate statistics
+    number_of_users = sum([arr[3] for arr in config["users"]["generation"]])
+    number_of_completed_trips = len(df)
+    
+    # about lock time
+    avg_lock_time = df["Lock Time"].mean()
+    max_lock_time = df["Lock Time"].max()
+    min_lock_time = df["Lock Time"].min()
+    median_lock_time = df["Lock Time"].median()
+    mode_lock_time = df["Lock Time"].mode()[0]
+    variance_lock_time = df["Lock Time"].var()
+
+    # about unlock time
+    avg_unlock_time = df["Unlock Time"].mean()
+    max_unlock_time = df["Unlock Time"].max()
+    min_unlock_time = df["Unlock Time"].min()
+    median_unlock_time = df["Unlock Time"].median()
+    mode_unlock_time = df["Unlock Time"].mode()[0]
+    variance_unlock_time = df["Unlock Time"].var()
+
+    # about distance
+    avg_distance = df["Distance"].mean()
+    max_distance = df["Distance"].max()
+    min_distance = df["Distance"].min()
+    median_distance = df["Distance"].median()
+    mode_distance = df["Distance"].mode()[0]
+    variance_distance = df["Distance"].var()
+
+    # about departures per station
+    group = df.groupby("From Station").count()["User ID"]
+    avg_departures_per_station = group.mean()
+    max_departures_per_station = group.max()
+    min_departures_per_station = group.min()
+    median_departures_per_station = group.median()
+    mode_departures_per_station = group.mode()[0]
+    variance_departures_per_station = group.var()
+    
+    # about arrivals per station
+    group = df.groupby("To Station").count()["User ID"]
+    avg_arrivals_per_station = group.mean()
+    max_arrivals_per_station = group.max()
+    min_arrivals_per_station = group.min()
+    median_arrivals_per_station = group.median()
+    mode_arrivals_per_station = group.mode()[0]
+    variance_arrivals_per_station = group.var()
+
+    # about use of vehicles
+    group = df.groupby("Vehicle ID").count()["User ID"]
+    avg_trips_per_vehicle = group.mean()
+    max_trips_per_vehicle = group.max()
+    min_trips_per_vehicle = group.min()
+    median_trips_per_vehicle = group.median()
+    mode_trips_per_vehicle = group.mode()[0]
+    variance_trips_per_vehicle = group.var()
+
+    # save this statistics in a file
+    with open(os.path.join(dir_path, "statistics.txt"), "w") as f:
+        print("Number of users: {}".format(number_of_users), file=f)
+        print("Number of completed trips: {}".format(number_of_completed_trips), file=f)
+        print("Average lock time: {}".format(avg_lock_time), file=f)
+        print("Maximum lock time: {}".format(max_lock_time), file=f)
+        print("Minimum lock time: {}".format(min_lock_time), file=f)
+        print("Median lock time: {}".format(median_lock_time), file=f)
+        print("Mode lock time: {}".format(mode_lock_time), file=f)
+        print("Variance lock time: {}".format(variance_lock_time), file=f)
+        print("Average unlock time: {}".format(avg_unlock_time), file=f)
+        print("Maximum unlock time: {}".format(max_unlock_time), file=f)
+        print("Minimum unlock time: {}".format(min_unlock_time), file=f)
+        print("Median unlock time: {}".format(median_unlock_time), file=f)
+        print("Mode unlock time: {}".format(mode_unlock_time), file=f)
+        print("Variance unlock time: {}".format(variance_unlock_time), file=f)
+        print("Average distance: {}".format(avg_distance), file=f)
+        print("Maximum distance: {}".format(max_distance), file=f)
+        print("Minimum distance: {}".format(min_distance), file=f)
+        print("Median distance: {}".format(median_distance), file=f)
+        print("Mode distance: {}".format(mode_distance), file=f)
+        print("Variance distance: {}".format(variance_distance), file=f)
+        print("Average departures per station: {}".format(avg_departures_per_station), file=f)
+        print("Maximum departures per station: {}".format(max_departures_per_station), file=f)
+        print("Minimum departures per station: {}".format(min_departures_per_station), file=f)
+        print("Median departures per station: {}".format(median_departures_per_station), file=f)
+        print("Mode departures per station: {}".format(mode_departures_per_station), file=f)
+        print("Variance departures per station: {}".format(variance_departures_per_station), file=f)
+        print("Average arrivals per station: {}".format(avg_arrivals_per_station), file=f)
+        print("Maximum arrivals per station {}".format(max_arrivals_per_station), file=f)
+        print("Minimum arrivals per station: {}".format(min_arrivals_per_station), file=f)
+        print("Median arrivals per station: {}".format(median_arrivals_per_station), file=f)
+        print("Mode arrivals per station: {}".format(mode_arrivals_per_station), file=f)
+        print("Variance arrivals per station: {}".format(variance_arrivals_per_station), file=f)
+        print("Average trips per vehicle: {}".format(avg_trips_per_vehicle), file=f)
+        print("Maximum trips per vehicle: {}".format(max_trips_per_vehicle), file=f)
+        print("Minimum trips per vehicle: {}".format(min_trips_per_vehicle), file=f)
+        print("Median trips per vehicle: {}".format(median_trips_per_vehicle), file=f)
+        print("Mode trips per vehicle: {}".format(mode_trips_per_vehicle), file=f)
+        print("Variance trips per vehicle: {}".format(variance_trips_per_vehicle), file=f)
+
+    print("calculated", end="\n\t")
     
     print("Plotting results...", end=" ")
     # plot unlock time
@@ -204,9 +294,9 @@ def main():
     # crea cartella per i risultati della simulazione
     sim_path = create_directory_path()
 
-    # save configuration files
-    with open(os.path.join(sim_path, "config.json"), "w") as f:
-        json.dump(config_data, f)
+    # make a copy of the configuration files
+    shutil.copyfile(os.path.join(os.path.dirname(__file__),"../config/simulation.json"), os.path.join(sim_path, "simulation.json"))
+    shutil.copyfile(os.path.join(os.path.dirname(__file__),"../config/vehicle.json"), os.path.join(sim_path, "vehicle.json"))
 
     # setup logger
     setup_logger(os.path.join(sim_path, "log.log"))

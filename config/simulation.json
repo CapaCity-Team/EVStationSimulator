@@ -4,9 +4,10 @@
         "max_concurrent_charging": 3,
         
         "storage":{
-            "type": "LIFO",
+            "type": "DualStack",
             "parameters":{
-                "capacity": 30
+                "stack1_size": 15,
+                "stack2_size": 15
             }
         },
 

@@ -1,0 +1,47 @@
+{
+    "station": {
+        "charge_per_time": 100,
+        "max_concurrent_charging": 3,
+        
+        "storage":{
+            "type": "DualStack",
+            "parameters":{
+                "stack1_size": 15,
+                "stack2_size": 15
+            }
+        },
+
+        "deployment": {
+            "type": "grid",
+            "parameters": {
+                "rows": 18,
+                "columns": 18,
+                "width": 1
+            }
+        }
+    },
+
+    "vehicles": {
+        "type": ["Scooter"],
+        
+        "deployment": {
+            "type": "uniform",
+            "parameters": {
+                "vehicles_per_station": 15
+            }
+        }
+    },
+
+    "users": {
+        "generation": [
+            [0, 1080, "uniform", 5786],
+            [600, 840, "normal", 1714]
+        ],
+        "mean_distance": 3.02,
+        "std_distance": 0.5,
+        "mean_velocity": 0.33,
+        "std_velocity": 0.05
+    },
+    
+    "run_time": 1500
+}

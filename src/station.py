@@ -75,9 +75,9 @@ class Station:
         # Check if the station needs to reschedule charging 
         
         logger.info("Station {} has {} vehicles at {}".format(self.id, self.vehicles.count(), self.env.now))
-        assert self.vehicles.count() <= self.vehicles.capacity, "Station {} has {} vehicles".format(self.id, self.vehicles.count())
+        assert self.vehicles.count() <= self.vehicles.max_capacity(), "Station {} has {} vehicles".format(self.id, self.vehicles.count())
         
-        if self.vehicles.need_reschedule():
+        if len(self.charging_vehicles) < self.max_concurrent_charging or self.vehicles.need_reschedule(self.charging_vehicles):
             self.stop_charging()
             self.start_charging()
     
@@ -86,7 +86,7 @@ class Station:
         yield from self.vehicles.unlock(user)
 
         logger.info("Station {} has {} vehicles at {}".format(self.id, self.vehicles.count(), self.env.now))
-        assert self.vehicles.count() <= self.vehicles.capacity, "Station {} has {} vehicles".format(self.id, self.vehicles.count())
+        assert self.vehicles.count() <= self.vehicles.max_capacity(), "Station {} has {} vehicles".format(self.id, self.vehicles.count())
     
     def distance(self, station):
         # Calculate the Euclidean distance between two stations

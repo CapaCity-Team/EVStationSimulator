@@ -1,38 +1,68 @@
-# ElecStationSim
-
-![Demo](demo.gif)
+# EVStationSimulator
 
 ## Overview
 
-This GitHub repository contains a simulation of an electric vehicle charging station network. In this simulation, electric vehicles move between stations and get charged. Each vehicle consumes energy while moving, and each station has a maximum number of vehicles it can accommodate and a certain power to charge the vehicles. The simulation uses real data to generate user requests for traveling from one station to another. This data is based on historical usage patterns. At the end of the simulation, various performance metrics are measured, including user wait times, station utilization, and overall system efficiency.
+Welcome to EVStationSimulator, a simulation of a charging network for electric vehicles. This project aims to simulate the dynamics of electric vehicle charging stations, allowing users to explore and analyze the behavior of charging networks under various conditions. The simulation incorporates real data to generate authentic user travel requests, providing a realistic representation of electric vehicle charging scenarios.
 
-## Getting Started
+### Simulation Outputs
 
-To run the simulation, follow these steps:
+At the conclusion of the simulation, various performance metrics are computed, including user wait times, station utilization rates, and overall system efficiency. These metrics offer valuable insights for assessing the effectiveness of charging station networks.
+
+## Installation
+
+To get started with EVStationSimulator, follow these steps:
 
 1. Clone the repository to your local machine:
-   ```shell
-   git clone https://github.com/CapaCity-Team/ElecStationSim.git
-   ```
+
+    ```bash
+    git clone https://github.com/CapaCity-Team/EVStationSimulator.git
+    ```
+
 2. Navigate to the project directory:
-   ```shell
-   cd ElecStationSim
-   ```
+
+    ```bash
+    cd EVStationSimulator
+    ```
+
 3. Install the required dependencies:
-   ```shell
-   pip install -r requirements.txt
-   ```
-4. Run the simulation:
-   ```shell
-    python main.py
-   ```
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+Run the simulation using the following command:
+
+```bash
+python main.py
+```
+
+This will initiate the simulation. After the simulation is complete, the results and analysis will be saved in the [results](data/simulation_result) folder. Each simulation run will be saved in a separate folder with an incremented count, for example:
+- `data/simulation_result/simulation_0`
+- `data/simulation_result/simulation_1`
+- and so on.
+
 ## Configuration
 
-You can configure various aspects of the simulation in the `config.json` file. Refer to the [documentation](docs/user.md) for more details.
+Customize the simulation by adjusting parameters in the `simulation.json` and `vehicle.json` file. Refer to the [Configuration Guide](docs/configuration.md) for detailed information on available options.
 
-## Results and Analysis
+**TO DO**
+```
+You can also use the [Configuration Generator](https://capacity-team.github.io/EVStationSimulator/) to generate a configuration file with your desired parameters.
+```
+If you need to modify the simulation code, refer to the [Developer Guide](docs/developer.md) for detailed information on the code structure and how to make changes.
 
-After running the simulation, the results and performance metrics will be displayed in the console and plotted. You can analyze these metrics to evaluate the efficiency of the electric vehicle charging network.
+## Documentation Structure
+
+This documentation is organized into the following sections:
+
+1. [Installation](docs/installation.md): Step-by-step instructions for installing EVStationSimulator.
+2. [Usage](docs/usage.md): Details on how to run and interact with the simulation.
+3. [Configuration Guide](docs/configuration.md): In-depth information on configuring simulation parameters.
+4. [Developer Guide](docs/developer.md): Detailed insights into the code structure and how to make changes.
+
+Feel free to navigate to specific sections based on your interests or needs.
 
 ## Contributing
 
