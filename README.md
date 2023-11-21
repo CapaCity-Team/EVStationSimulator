@@ -47,10 +47,8 @@ This will initiate the simulation. After the simulation is complete, the results
 
 Customize the simulation by adjusting parameters in the `simulation.json` and `vehicle.json` file. Refer to the [Configuration Guide](docs/configuration.md) for detailed information on available options.
 
-**TO DO**
-```
-You can also use the [Configuration Generator](https://capacity-team.github.io/EVStationSimulator/) to generate a configuration file with your desired parameters.
-```
+You can also use the [Configuration Generator](conf_generator/generator.md) to generate a configuration file with your desired parameters.
+
 If you need to modify the simulation code, refer to the [Developer Guide](docs/developer.md) for detailed information on the code structure and how to make changes.
 
 ## Documentation Structure

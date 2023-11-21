@@ -139,7 +139,7 @@ def analyze_results(dir_path, config):
     print("loaded", end="\n\t")
 
     # Column names:
-    # ["User ID", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]
+    # ["User ID", "Start Time", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]
 
     print("Calculating statistics...", end=" ")
 
@@ -242,6 +242,11 @@ def analyze_results(dir_path, config):
     print("calculated", end="\n\t")
     
     print("Plotting results...", end=" ")
+    # plot a fig with time on the x from 0 to config["run_time"] and on the y the number of users
+    plt.figure()
+    sns.histplot(data=df, x="Start Time", bins=100)
+    plt.savefig(os.path.join(dir_path, "start_time.png"))
+
     # plot unlock time
     plt.figure()
     sns.histplot(data=df, x="Unlock Time", bins=100)
@@ -304,7 +309,7 @@ def main():
     # crea file per i risultati della simulazione
     result_path = os.path.join(sim_path, "result.csv")
     
-    column_names = ["User ID", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]
+    column_names = ["User ID", "Start Time", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]
     with open(result_path, "w") as f:
         print(",".join(column_names), file=f)
 

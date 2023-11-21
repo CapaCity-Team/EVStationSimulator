@@ -241,10 +241,8 @@ To customize the simulation behavior, modify the values within the configuration
 
 ## Configuration Generator
 
-TO DO
-```
-For ease of use, you can use the [Configuration Generator](https://capacity-team.github.io/EVStationSimulator/) to generate configuration files with your desired parameters.
-```
+
+For ease of use, you can use the [Configuration Generator](../conf_generator/generator.md) to generate configuration files with your desired parameters.
 
 ## Example Configuration
 
