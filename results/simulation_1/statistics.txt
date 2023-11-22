@@ -1,0 +1,67 @@
+
+Number of users: 10000
+Number of completed trips: 10000
+
+Average distance: 3.707246940430713
+Maximum distance: 21.2602916254693
+Minimum distance: 1.0
+Median distance: 2.8284271247461903
+Mode distance: 2.8284271247461903
+Variance distance: 8.78639876254337
+
+Average velocity: 0.2792372202757815
+Maximum velocity: 0.4839145885226744
+Minimum velocity: 0.0829560102690023
+Median velocity: 0.2788419640113945
+Mode velocity: 0.0829560102690023
+Variance velocity: 0.0025223380200706975
+
+Average lock time: 0.0
+Maximum lock time: 0.0
+Minimum lock time: 0.0
+Median lock time: 0.0
+Mode lock time: 0.0
+Variance lock time: 0.0
+
+Average unlock time: 0.2338196208970941
+Maximum unlock time: 33.92946142612561
+Minimum unlock time: 0.0
+Median unlock time: 0.0
+Mode unlock time: 0.0
+Variance unlock time: 1.8084618492508664
+
+Average trip time: 13.743490342872407
+Maximum trip time: 122.1345175327424
+Minimum trip time: 3.303984033700999
+Median trip time: 10.508638091758506
+Mode trip time: 3.303984033700999
+Variance trip time: 132.39268535934497
+
+Average total time (unlock + trip + lock): 13.977309963769498
+Maximum total time: 122.1345175327424
+Minimum total time: 3.303984033700999
+Median total time: 10.670440061027847
+Mode total time: 3.303984033700999
+Variance total time: 132.6653895456405
+
+Average departures per station: 30.864197530864196
+Maximum departures per station: 56
+Minimum departures per station: 16
+Median departures per station: 30.0
+Mode departures per station: 18
+Variance departures per station: 88.09914765126322
+
+Average arrivals per station: 30.864197530864196
+Maximum arrivals per station 55
+Minimum arrivals per station: 6
+Median arrivals per station: 34.0
+Mode arrivals per station: 7
+Variance arrivals per station: 169.53568015900316
+
+Average trips per vehicle: 4.541326067211626
+Maximum trips per vehicle: 14
+Minimum trips per vehicle: 1
+Median trips per vehicle: 4.0
+Mode trips per vehicle: 5
+Variance trips per vehicle: 6.161171889088479
+

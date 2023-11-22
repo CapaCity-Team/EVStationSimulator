@@ -1,0 +1,12 @@
+
+Description:
+Grid 18x18, each point is 700 meters away from the others
+- Number of stations: 324
+- Vehicle per station: 15
+- Station Storage: {'type': 'LIFO', 'parameters': {'capacity': 30}}
+- Number of users: 10000
+- Vehicle autonomy: 16867.469879518074 meters
+- Charging time: 5.0 minutes
+- Simultanous charging: 1
+- No Degeneration flag: True
+

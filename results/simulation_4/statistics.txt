@@ -1,0 +1,67 @@
+
+Number of users: 10000
+Number of completed trips: 10000
+
+Average distance: 3.725531197215402
+Maximum distance: 22.02271554554524
+Minimum distance: 1.0
+Median distance: 2.8284271247461903
+Mode distance: 2.8284271247461903
+Variance distance: 9.320349333508123
+
+Average velocity: 0.28045702955493196
+Maximum velocity: 0.4587096702082033
+Minimum velocity: 0.0994945827757727
+Median velocity: 0.28017377306072944
+Mode velocity: 0.0994945827757727
+Variance velocity: 0.0025326579821504944
+
+Average lock time: 0.0
+Maximum lock time: 0.0
+Minimum lock time: 0.0
+Median lock time: 0.0
+Mode lock time: 0.0
+Variance lock time: 0.0
+
+Average unlock time: 0.05944547490061813
+Maximum unlock time: 10.720320194690885
+Minimum unlock time: 0.0
+Median unlock time: 0.0
+Mode unlock time: 0.0
+Variance unlock time: 0.20466345354427673
+
+Average trip time: 13.76175966073933
+Maximum trip time: 150.22527182187002
+Minimum trip time: 2.982230953409612
+Median trip time: 10.42875484641094
+Mode trip time: 2.982230953409612
+Variance trip time: 139.80997995549976
+
+Average total time (unlock + trip + lock): 13.821205135639948
+Maximum total time: 150.22527182187002
+Minimum total time: 2.982230953409612
+Median total time: 10.491720789913188
+Mode total time: 2.982230953409612
+Variance total time: 139.64597277941203
+
+Average departures per station: 30.864197530864196
+Maximum departures per station: 56
+Minimum departures per station: 17
+Median departures per station: 30.0
+Mode departures per station: 18
+Variance departures per station: 84.68738294538088
+
+Average arrivals per station: 30.864197530864196
+Maximum arrivals per station 55
+Minimum arrivals per station: 6
+Median arrivals per station: 34.0
+Mode arrivals per station: 7
+Variance arrivals per station: 163.7709742766502
+
+Average trips per vehicle: 4.555808656036446
+Maximum trips per vehicle: 14
+Minimum trips per vehicle: 1
+Median trips per vehicle: 4.0
+Mode trips per vehicle: 4
+Variance trips per vehicle: 6.471245870389943
+

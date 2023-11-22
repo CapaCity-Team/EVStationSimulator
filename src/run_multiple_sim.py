@@ -47,8 +47,8 @@ def main():
             [720, 960, 1837]
 
         ],
-        "mean_distance": 3.3,
-        "std_distance": 0.6,
+        "mean_distance": 2.8,
+        "std_distance": 0.5,
         "mean_velocity": 0.28,
         "std_velocity": 0.05
     },
