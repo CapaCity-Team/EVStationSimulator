@@ -55,7 +55,7 @@ class User:
 
 
         with open(os.path.join(get_directory_path(),"result.csv"), "a") as file:
-            # ["User ID", "Start Time", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance"]
-            print("{},{},{},{},{},{},{},{},{},{}".format(self.id, start_time, self.from_station.id, self.to_station.id, self.vehicle.id, unlock_time, lock_time, total_time, battery_used, distance),
+            # ["User ID", "Start Time", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance", "Velocity"]
+            print("{},{},{},{},{},{},{},{},{},{},{}".format(self.id, start_time, self.from_station.id, self.to_station.id, self.vehicle.id, unlock_time, lock_time, total_time, battery_used, distance, self.velocity),
                 file=file,
                 flush=True)

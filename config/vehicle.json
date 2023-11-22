@@ -1,7 +1,7 @@
 {
     "Scooter": {
         "BATTERY_CAPACITY" : 1000,
-        "ENERGY_CONSUMPTION" : 37.5
+        "ENERGY_CONSUMPTION" : 41.5
     },
 
     "Bike": {

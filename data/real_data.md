@@ -4,7 +4,7 @@
 - Average distance per ride: 2.3 km
 - Average duration per ride: 11.5 minutes
 - Average electric scooter range: 20-30 km per charge
-- Service operates 365 days a year from 6:00 AM to 12:00 AM
+- Service operates 365 days a year from 6:00 AM to 12:00 PM
 - BikeMi has 325 stations with 5430 bicycles (4280 classic, 1000 e-bikes, 150 pedal-assisted with child seat)
 - [BikeMi Website](https://bikemi.com/)
 

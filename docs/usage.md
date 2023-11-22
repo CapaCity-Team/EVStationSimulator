@@ -52,7 +52,7 @@ To run the simulation, follow these steps:
 
 ## Viewing Results
 
-After the simulation is complete, the results and performance metrics are stored in the [results](../data/simulation_result) folder. Each simulation run is saved in a separate folder with an incremented count (e.g., `data/simulation_result/simulation_0`, `data/simulation_result/simulation_1`, etc.).
+After the simulation is complete, the results and performance metrics are stored in the [results](../results) folder. Each simulation run is saved in a separate folder with an incremented count (e.g., `results/simulation_0`, `results/simulation_1`, etc.).
 
 the directory structure looks like this:
 

@@ -10,9 +10,9 @@ def create_directory_path():
     # se non esiste nessuna cartella per i risultati, crea la cartella result_0
     # altrimenti crea la cartella result_n+1
     i = 0
-    while os.path.exists(os.path.join(os.path.dirname(__file__), "../data/simulation_result/simulation_{}".format(i))):
+    while os.path.exists(os.path.join(os.path.dirname(__file__), "../results/simulation_{}".format(i))):
         i += 1
-    path = os.path.join(os.path.dirname(__file__), "../data/simulation_result/simulation_{}".format(i))
+    path = os.path.join(os.path.dirname(__file__), "../results/simulation_{}".format(i))
     os.makedirs(path)
     
     DEFAULT_DIRECTORY_PATH = path
