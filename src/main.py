@@ -1,9 +1,9 @@
 from simpy import Environment
 from user import User
 from station import Station
-from utils import setup_logger, create_directory_path, load_config, find_index_nearest_point
+from utils import setup_logger, create_directory_path, load_config, find_index_nearest_k_points
 from random import randint
-import os, json, shutil
+import os, json, shutil, sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -96,10 +96,13 @@ def simulation(env: Environment, config_data: dict):
             [720, 960, 18, 6, 1837]
 
         ],
-        "mean_distance": 3.3,
-        "std_distance": 0.6,
-        "mean_velocity": 0.28,
-        "std_velocity": 0.05
+        
+        "average_distance": 10,
+        "min_distance": 10,
+        "max_distance": 10,
+        "average_speed": 10,
+        "min_speed": 10,
+        "max_speed": 10
     }
     """
 
@@ -111,14 +114,28 @@ def simulation(env: Environment, config_data: dict):
         for sample in np.around(np.random.normal(0, 1, int(number)), decimals=5):
             user_start_times.append(start + ((sample + 3)/3)*(end-start))
 
-    distance = np.random.normal(config_data["users"]["mean_distance"], config_data["users"]["std_distance"], len(user_start_times))
-    assert np.all(distance > 0), "Distance is negative"
+    # Generate an array of distances with a normal distribution
+    distance = np.random.normal(0, 1, len(user_start_times))/3
+    distance = np.where(distance < -3.3, -3.3, distance)
+    distance = np.where(distance > 3.3, 3.3, distance)
+    distance /= 3.3
+    distance = np.where(distance < 0,
+                        distance * (config_data["users"]["mean_distance"] - config_data["users"]["min_distance"]) + config_data["users"]["mean_distance"],
+                        distance * (config_data["users"]["max_distance"] - config_data["users"]["mean_distance"]) + config_data["users"]["mean_distance"]) 
 
-    velocity = np.random.normal(config_data["users"]["mean_velocity"], config_data["users"]["std_velocity"], len(user_start_times))
-    assert np.all(velocity > 0), "Velocity is negative"
+    # Generate an array of velocities with a normal distribution
+    velocity = np.random.normal(0, 1, len(user_start_times))
+    velocity = np.where(velocity < -3.3, -3.3, velocity)
+    velocity = np.where(velocity > 3.3, 3.3, velocity)
+    velocity /= 3.3
+    velocity = np.where(velocity < 0,
+                        velocity * (config_data["users"]["mean_velocity"] - config_data["users"]["min_velocity"]) + config_data["users"]["mean_velocity"],
+                        velocity * (config_data["users"]["max_velocity"] - config_data["users"]["mean_velocity"]) + config_data["users"]["mean_velocity"])
     
+    # Order the start times
     ordered_times = sorted(user_start_times)
 
+    # Calculate the time between each user
     for i in range(len(ordered_times)-1, 0, -1):
         ordered_times[i] -= ordered_times[i-1]
 
@@ -135,9 +152,11 @@ def simulation(env: Environment, config_data: dict):
         v_max = config_data["station_capacity"]
         starting_v = config_data["v_per_station"]
         max_tries = config_data["tries"]
-        user_to_redistribute = config_data["redistribution"] - 1
+        user_to_redistribute = config_data["redistribution"] - 1 # -1 because the first user is redistributed before the redistribution loop
+        max_distance = config_data["users"]["max_distance"]
+        min_distance = config_data["users"]["min_distance"]
         
-        v = np.full( len(stations), starting_v)
+        v = np.full(len(stations), starting_v)
         redistribution = 0
         for i in range(len(ordered_times)):
             if redistribution > 0:
@@ -162,7 +181,7 @@ def simulation(env: Environment, config_data: dict):
             else:
                 tries = 0
                 while True:
-                    if tries > 5000:
+                    if tries > max_tries:
                         # prossimi x utenti andranno da stazzioni piene a stazioni vuote
                         redistribution = user_to_redistribute
 
@@ -185,12 +204,18 @@ def simulation(env: Environment, config_data: dict):
                         while v[p] <= 4:
                             p = randint(0,len(stations)-1)
 
-                        a = find_index_nearest_point(center = positions[p], radius = distance[i], points = positions)
+                        points = find_index_nearest_k_points(center = positions[p], radius = distance[i], points = positions, k = 5)
                         
-                        if p == a or v[a] >= v_max - 4:
+                        for point in points:
+                            if p == point or v[point] >= v_max - 4 or stations[p].distance(stations[point]) > max_distance or stations[p].distance(stations[point]) < min_distance:
+                                continue
+                            else:
+                                a = point
+                                break
+                        else:
                             tries += 1
                             continue
-                    
+
                     v[p] -= 1
                     v[a] += 1
                     users.append([User(i, stations[p], stations[a], velocity[i]), ordered_times[i]])
@@ -199,9 +224,16 @@ def simulation(env: Environment, config_data: dict):
         for i in range(len(ordered_times)):
             p = randint(0,len(stations)-1)
 
-            a = find_index_nearest_point(center = positions[p], radius = distance[i], points = positions)
+            point = find_index_nearest_k_points(center = positions[p], radius = distance[i], points = positions, k = 5)
 
-            assert p != a, "User {} has same start and end station".format(i)
+            for point in points:
+                if p == point or stations[p].distance(stations[point]) > max_distance or stations[p].distance(stations[point]) < min_distance:
+                    continue
+                else:
+                    a = point
+                    break
+            else:
+                raise Exception("No suitable point found")
 
             users.append([User(i, stations[p], stations[a], velocity[i]), ordered_times[i]])
        
@@ -453,22 +485,148 @@ Variance trips per vehicle: {}
     print("plotted")
 
 def main():
-    # inizializzazione ambiente
-    env = Environment()
-
-    # caricamento file di configurazione
-    config_data = load_config(os.path.join(os.path.dirname(__file__),"../config/simulation.json"))
-
     # crea cartella per i risultati della simulazione
     sim_path = create_directory_path()
+    
+    args = sys.argv[1:]
+    if len(args) > 0:
+        if "-s" in args or "--simplified" in args:
+            print("Running simplified simulation")
+            # load simplified configuration
+            simplified_config = load_config(os.path.join(os.path.dirname(__file__),"../config/simplified.json"))
 
-    # write brief description of the simulation and the configuration used
-    ## WARNING: assumptions are made on the structure of the configuration file
-    # TODO: make this more general
-    with open(os.path.join(sim_path, "description.txt"), "w") as f:
-        print(
-"""
-Description:
+            # use simplified configuration as description
+            with open(os.path.join(sim_path, "description.txt"), "w") as f:
+                shutil.copyfile(os.path.join(os.path.dirname(__file__),"../config/simplified.json"), os.path.join(sim_path, "description.txt"))
+
+            # modify vehicle.json
+            with open(os.path.join(os.path.dirname(__file__),"../config/vehicle.json"), "r") as f:
+                vehicle_data = json.load(f)
+                vehicle_data["Scooter"]["BATTERY_CAPACITY"] = 1000
+                vehicle_data["Scooter"]["ENERGY_CONSUMPTION"] = 1000/simplified_config["vehicle"]["autonomy"]
+
+            with open(os.path.join(os.path.dirname(__file__),"../config/vehicle.json"), "w") as f:
+                json.dump(vehicle_data, f, indent=4)
+
+            # create configuration files for the simplified configuration
+            configuration = """{
+    "station": {
+        "charge_per_time": CHARGE_PER_TIME,
+        "max_concurrent_charging": MAX_CONCURRENT_CHARGING,
+        
+        "storage":{
+            "type": "TYPE",
+            "parameters": PARAMETERS
+        },
+
+        "deployment": {
+            "type": "grid",
+            "parameters": {
+                "rows": ROWS,
+                "columns": COLUMNS,
+                "width": WIDTH
+            }
+        }
+    },
+
+    "vehicles": {
+        "type": ["Scooter"],
+        
+        "deployment": {
+            "type": "uniform",
+            "parameters": {
+                "vehicles_per_station": VEHICLES_PER_STATION
+            }
+        }
+    },
+
+    "users": {
+        "linear": LINEAR,
+        "normal": NORMAL,
+        "mean_distance": MEAN_DISTANCE,
+        "max_distance": MAX_DISTANCE,
+        "min_distance": MIN_DISTANCE,
+        "mean_velocity": MEAN_VELOCITY,
+        "max_velocity": MAX_VELOCITY,
+        "min_velocity": MIN_VELOCITY
+    },
+    
+    "no_degeneration": NO_DEGENERATION,
+    "v_per_station": VEHICLES_PER_STATION,
+    "station_capacity": STATION_CAPACITY,
+    "tries": 5000,
+    "redistribution": REDISTRIBUTION,
+
+    "run_time": RUN_TIME
+}"""
+
+            radice = simplified_config["stations"]["number"]**0.5
+            if radice - int(radice) < 0.5:
+                radice = int(radice)
+            else:
+                radice = int(radice) + 1
+
+            storage = {"capacity": simplified_config["stations"]["capacity"]} if simplified_config["stations"]["type"] == "LIFO" else {"stack1_size": simplified_config["stations"]["capacity"]//2,"stack2_size": simplified_config["stations"]["capacity"]//2}
+
+            linear = [
+                [0, 60, 245/10000*simplified_config["users"]["number"]],
+                [60, 90, 139/10000*simplified_config["users"]["number"]],
+                [90, 120, 155/10000*simplified_config["users"]["number"]],
+                [120, 150, 171/10000*simplified_config["users"]["number"]],
+                [150, 180, 188/10000*simplified_config["users"]["number"]],
+                [180, 1080, 6122/10000*simplified_config["users"]["number"]]
+            ]
+            normal = [
+                [60, 180, 857/10000*simplified_config["users"]["number"]],
+                [420, 540, 286/10000*simplified_config["users"]["number"]],
+                [720, 960, 1837/10000*simplified_config["users"]["number"]]
+            ]
+
+            placeholders = ["VEHICLES_PER_STATION", "CHARGE_PER_TIME", "MAX_CONCURRENT_CHARGING", "ROWS", "COLUMNS", "WIDTH", "TYPE", "PARAMETERS", "LINEAR", "NORMAL", "MEAN_DISTANCE", "MAX_DISTANCE", "MIN_DISTANCE", "MEAN_VELOCITY", "MAX_VELOCITY", "MIN_VELOCITY", "NO_DEGENERATION", "STATION_CAPACITY", "REDISTRIBUTION", "RUN_TIME"]
+            substitutions= [simplified_config["stations"]["vehicles_per_station"],
+                            1000/simplified_config["stations"]["recharge_time"],
+                            simplified_config["stations"]["max_simultaneous_recharge"],
+                            radice,
+                            radice,
+                            simplified_config["stations"]["distance"],
+                            simplified_config["stations"]["type"],
+                            str(storage).replace("'", '"'),
+                            linear,
+                            normal,
+                            simplified_config["users"]["average_distance"],
+                            simplified_config["users"]["max_distance"],
+                            simplified_config["users"]["min_distance"],
+                            simplified_config["vehicle"]["average_speed"],
+                            simplified_config["vehicle"]["max_speed"],
+                            simplified_config["vehicle"]["min_speed"],
+                            str(simplified_config["no_degeneration"]).lower(),
+                            simplified_config["stations"]["capacity"],
+                            simplified_config["users"]["number"]//10,
+                            simplified_config["run_time"]]
+            
+            # replace placeholders
+            for i in range(len(placeholders)):
+                configuration = configuration.replace(placeholders[i], str(substitutions[i]))
+
+            # write configuration to file
+            with open(os.path.join(os.path.dirname(__file__), "../config/simulation.json"), "w") as f:
+                print(configuration, file=f)
+
+            # caricamento file di configurazione
+            config_data = load_config(os.path.join(os.path.dirname(__file__),"../config/simulation.json"))
+        
+        if "-log" in args or "--log" in args:
+            setup_logger(os.path.join(sim_path, "log.log"))
+    else:
+        # caricamento file di configurazione
+        config_data = load_config(os.path.join(os.path.dirname(__file__),"../config/simulation.json"))
+
+        # write brief description of the simulation and the configuration used
+        ## WARNING: assumptions are made on the structure of the configuration file
+        # TODO: make this more general
+        with open(os.path.join(sim_path, "description.txt"), "w") as f:
+            print(
+"""Description (WARNING SOME ASSUMPTION MADE ON THE STRUCTURE OF THE CONFIGURATION FILE):
 Grid 18x18, each point is 700 meters away from the others
 - Number of stations: 324
 - Vehicle per station: {}
@@ -493,15 +651,15 @@ Grid 18x18, each point is 700 meters away from the others
     shutil.copyfile(os.path.join(os.path.dirname(__file__),"../config/simulation.json"), os.path.join(sim_path, "conf/simulation.json"))
     shutil.copyfile(os.path.join(os.path.dirname(__file__),"../config/vehicle.json"), os.path.join(sim_path, "conf/vehicle.json"))
 
-    # setup logger
-    setup_logger(os.path.join(sim_path, "log.log"))
-
     # crea file per i risultati della simulazione
     result_path = os.path.join(sim_path, "result.csv")
 
     column_names = ["User ID", "Start Time", "From Station", "To Station", "Vehicle ID", "Unlock Time", "Lock Time", "Total Time", "Battery Used", "Distance", "Velocity"]
     with open(result_path, "w") as f:
         print(",".join(column_names), file=f)
+
+    # inizializzazione ambiente
+    env = Environment()
 
     # avvio simulazione
     env.process(simulation(env, config_data))

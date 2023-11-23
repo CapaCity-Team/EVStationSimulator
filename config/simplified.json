@@ -1,0 +1,27 @@
+{
+    "stations": {
+        "number": 324,
+        "recharge_time": 15,
+        "max_simultaneous_recharge": 3,
+        "capacity": 30,
+        "type": "DualStack",
+        "distance": 1,
+        "vehicles_per_station": 15
+    },
+    "vehicle": {
+        "autonomy": 7,
+        "average_speed": 0.3,
+        "min_speed": 0.1,
+        "max_speed": 0.5
+    },
+    "users": {
+        "number": 10000,
+        "average_distance": 3.5,
+        "min_distance": 1,
+        "max_distance": 6.0
+    },
+
+    "no_degeneration": true,
+
+    "run_time": 2000
+}

@@ -1,11 +1,7 @@
 import simpy
 from station import Station
-from utils import get_directory_path
-
-import logging, os
-
-# Obtain a reference to the loggers configured in the main script
-logger = logging.getLogger(__name__)
+from utils import get_directory_path, log
+import os
 
 class User:
     env = None
@@ -19,15 +15,15 @@ class User:
     def run(self):
         start_time = self.env.now
 
-        logger.info("User {} from station {} to station {}".format(self.id, self.from_station.id, self.to_station.id))
-        logger.info("User {} requesting vehicle from station {} at {}".format(self.id, self.from_station.id, self.env.now))
+        log("User {} from station {} to station {}".format(self.id, self.from_station.id, self.to_station.id))
+        log("User {} requesting vehicle from station {} at {}".format(self.id, self.from_station.id, self.env.now))
 
         request_time = self.env.now
         yield from self.from_station.request_unlock(self)
         unlock_time = self.env.now - request_time
 
         battery = self.vehicle.battery*100
-        logger.info("User {} got vehicle {} with battery {}% from station {} at {}".format(self.id, self.vehicle.id, battery, self.from_station.id, self.env.now))
+        log("User {} got vehicle {} with battery {}% from station {} at {}".format(self.id, self.vehicle.id, battery, self.from_station.id, self.env.now))
 
         distance = self.from_station.distance(self.to_station)
         self.vehicle.move(distance)
@@ -38,16 +34,16 @@ class User:
 
         battery_used = battery - self.vehicle.battery*100
 
-        logger.info("User {} with vehicle {} arrived to station {} in {} using {}% battery".format(self.id, self.vehicle.id, self.to_station.id, time, battery_used))
+        log("User {} with vehicle {} arrived to station {} in {} using {}% battery".format(self.id, self.vehicle.id, self.to_station.id, time, battery_used))
 
-        logger.info("User {} requesting lock in station {} at {}".format(self.id, self.to_station.id, self.env.now))
+        log("User {} requesting lock in station {} at {}".format(self.id, self.to_station.id, self.env.now))
  
         request_time = self.env.now
         yield from self.to_station.request_lock(self.vehicle)
         lock_time = self.env.now - request_time
         
-        logger.info("User {} locked vehicle {} in station {} at {}".format(self.id, self.vehicle.id, self.to_station.id, self.env.now))
-        logger.info("User {} finished".format(self.id))
+        log("User {} locked vehicle {} in station {} at {}".format(self.id, self.vehicle.id, self.to_station.id, self.env.now))
+        log("User {} finished".format(self.id))
 
         total_time = self.env.now - start_time
         if total_time <= 0:

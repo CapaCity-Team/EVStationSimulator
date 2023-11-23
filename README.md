@@ -38,9 +38,9 @@ Run the simulation using the following command:
 python main.py
 ```
 
-This will initiate the simulation. After the simulation is complete, the results and analysis will be saved in the [results](data/simulation_result) folder. Each simulation run will be saved in a separate folder with an incremented count, for example:
-- `data/simulation_result/simulation_0`
-- `data/simulation_result/simulation_1`
+This will initiate the simulation. After the simulation is complete, the results and analysis will be saved in the [results](results) folder. Each simulation run will be saved in a separate folder with an incremented count, for example:
+- `results/simulation_0`
+- `results/simulation_1`
 - and so on.
 
 ## Configuration

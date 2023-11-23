@@ -22,12 +22,23 @@ def create_directory_path():
 def get_directory_path():
     return DEFAULT_DIRECTORY_PATH
 
-def find_index_nearest_point(center: tuple, radius: float, points: list):
+def find_index_nearest_k_points(center: tuple, radius: float, points: list, k: int):
     # Find the index of the point in the list of points that is closest to the circle defined by the center and the radius
     distances = [abs(math.dist(center, point) - radius) for point in points]
-    return distances.index(min(distances))
+    # Sort the distances and get the first k indexes
+    return sorted(range(len(distances)), key=lambda k: distances[k])[:k]
+
+# Logging
+LOGGER = None
+
+def log(message, level=logging.INFO):
+    global LOGGER
+    if LOGGER is not None:
+        LOGGER.log(level, message)
 
 def setup_logger(log_filename):
+    global LOGGER
+
     # Set the log level for the root logger
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
@@ -36,13 +47,13 @@ def setup_logger(log_filename):
     file_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
 
     # Get the root logger and add the file handler
-    root_logger = logging.getLogger()
-    root_logger.addHandler(file_handler)
+    LOGGER = logging.getLogger()
+    LOGGER.addHandler(file_handler)
 
     # Remove the console handler to disable console output
-    for handler in root_logger.handlers:
+    for handler in LOGGER.handlers:
         if isinstance(handler, logging.StreamHandler):
-            root_logger.removeHandler(handler)
+            LOGGER.removeHandler(handler)
 
 def load_config(config_path):
     try:

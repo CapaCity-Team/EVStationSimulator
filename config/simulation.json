@@ -1,14 +1,11 @@
 {
     "station": {
-        "charge_per_time": 200.0,
-        "max_concurrent_charging": 10,
+        "charge_per_time": 66.66666666666667,
+        "max_concurrent_charging": 3,
         
         "storage":{
             "type": "DualStack",
-            "parameters": {
-            "stack1_size": 15,
-            "stack2_size": 15
-        }
+            "parameters": {"stack1_size": 15, "stack2_size": 15}
         },
 
         "deployment": {
@@ -33,24 +30,14 @@
     },
 
     "users": {
-        "linear": [
-            [0, 60, 245],
-            [60, 90, 139],
-            [90, 120, 155],
-            [120, 150, 171],
-            [150, 180, 188],
-            [180, 1080, 6122]
-        ],
-        "normal":[
-            [60, 180, 857],
-            [420, 540, 286],
-            [720, 960, 1837]
-
-        ],
-        "mean_distance": 2.8,
-        "std_distance": 0.5,
-        "mean_velocity": 0.28,
-        "std_velocity": 0.05
+        "linear": [[0, 60, 245.0], [60, 90, 139.0], [90, 120, 155.0], [120, 150, 171.0], [150, 180, 188.0], [180, 1080, 6122.0]],
+        "normal": [[60, 180, 857.0], [420, 540, 286.0], [720, 960, 1837.0]],
+        "mean_distance": 3.5,
+        "max_distance": 6.0,
+        "min_distance": 1,
+        "mean_velocity": 0.3,
+        "max_velocity": 0.5,
+        "min_velocity": 0.1
     },
     
     "no_degeneration": true,
@@ -59,5 +46,5 @@
     "tries": 5000,
     "redistribution": 1000,
 
-    "run_time": 5000
+    "run_time": 2000
 }
