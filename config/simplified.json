@@ -3,7 +3,7 @@
         "number": 100,
         "recharge_time": 20,
         "max_simultaneous_recharge": 3,
-        "capacity": 12,
+        "capacity": 12, 
         "type": "DualStack",
         "distance": 1,
         "vehicles_per_station": 6

@@ -1,0 +1,67 @@
+
+Number of users: 10000
+Number of completed trips: 10000
+
+Average distance: 3.6771653052414046
+Maximum distance: 22.67156809750927
+Minimum distance: 1.0
+Median distance: 2.8284271247461903
+Mode distance: 2.8284271247461903
+Variance distance: 8.664721790107901
+
+Average velocity: 0.278799359151068
+Maximum velocity: 0.4792170609497765
+Minimum velocity: 0.0801659432958672
+Median velocity: 0.2784491645691471
+Mode velocity: 0.0801659432958672
+Variance velocity: 0.0024749888570138024
+
+Average lock time: 0.0
+Maximum lock time: 0.0
+Minimum lock time: 0.0
+Median lock time: 0.0
+Mode lock time: 0.0
+Variance lock time: 0.0
+
+Average unlock time: 0.0003341683724061511
+Maximum unlock time: 0.5567702259439784
+Minimum unlock time: 0.0
+Median unlock time: 0.0
+Mode unlock time: 0.0
+Variance unlock time: 0.00012009888175934256
+
+Average trip time: 13.677271657605502
+Maximum trip time: 187.11187548357952
+Minimum trip time: 2.804062441702968
+Median trip time: 10.405082396890577
+Mode trip time: 2.804062441702968
+Variance trip time: 135.48834631087763
+
+Average total time (unlock + trip + lock): 13.677605825977906
+Maximum total time: 187.11187548357952
+Minimum total time: 2.804062441702968
+Median total time: 10.405082396890577
+Mode total time: 2.804062441702968
+Variance total time: 135.48500360241837
+
+Average departures per station: 30.864197530864196
+Maximum departures per station: 53
+Minimum departures per station: 14
+Median departures per station: 31.0
+Mode departures per station: 18
+Variance departures per station: 84.58211978748614
+
+Average arrivals per station: 30.864197530864196
+Maximum arrivals per station 58
+Minimum arrivals per station: 6
+Median arrivals per station: 34.0
+Mode arrivals per station: 7
+Variance arrivals per station: 172.11772350265642
+
+Average trips per vehicle: 2.3623907394283012
+Maximum trips per vehicle: 7
+Minimum trips per vehicle: 1
+Median trips per vehicle: 2.0
+Mode trips per vehicle: 1
+Variance trips per vehicle: 1.5354661166628036
+

@@ -269,8 +269,8 @@ def analyze_results(dir_path, config):
 
     # non completed trips id
     non_completed_trips = set(range(number_of_users)) - set(df["User ID"])
-    print("Non completed trips: {}".format(non_completed_trips))
-    exit()
+    #print("Non completed trips: {}".format(non_completed_trips))
+    #exit()
 
     # about distance
     avg_distance = df["Distance"].mean()
