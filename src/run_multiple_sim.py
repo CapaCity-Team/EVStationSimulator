@@ -32,7 +32,7 @@ def main():
     with open(os.path.join(os.path.dirname(__file__), "../config/simplified.json"), "r") as f:
         simplified_config = json.load(f)
 
-    storage_types = ["LIFO", "DualStack"]
+    storage_types = ["DualStack"]
     charging_times = [20, 10, 5]
     max_concurrent_charging = [1, 3, 6]
 

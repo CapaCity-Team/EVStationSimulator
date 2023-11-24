@@ -1,6 +1,6 @@
 {
     "stations": {
-        "number": 100,
+        "number": 4,
         "recharge_time": 20,
         "max_simultaneous_recharge": 3,
         "capacity": 12,
@@ -15,7 +15,7 @@
         "max_speed": 0.5
     },
     "users": {
-        "number": 1000,
+        "number": 10,
         "average_distance": 3.5,
         "min_distance": 1,
         "max_distance": 6.0

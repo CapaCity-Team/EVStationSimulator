@@ -1,8 +1,10 @@
-from simpy import Environment
+from simulation.env import Environment
+from simulation.process import Process
+
 from user import User
 from station import Station
 from utils import setup_logger, create_directory_path, load_config, find_index_nearest_k_points
-from random import randint
+import random
 import os, json, shutil, sys
 import numpy as np
 import pandas as pd
@@ -106,6 +108,9 @@ def simulation(env: Environment, config_data: dict):
     }
     """
 
+    np.random.seed(42)
+    random.seed(42)
+
     user_start_times = []
     for start, end, number in config_data["users"]["linear"]:
         user_start_times.extend(list(np.random.uniform(start, end, int(number))))
@@ -113,6 +118,7 @@ def simulation(env: Environment, config_data: dict):
     for start, end, number in config_data["users"]["normal"]:
         for sample in np.around(np.random.normal(0, 1, int(number)), decimals=5):
             user_start_times.append(start + ((sample + 3)/3)*(end-start))
+    user_start_times.sort()
 
     # Generate an array of distances with a normal distribution
     distance = np.random.normal(0, 1, len(user_start_times))/3
@@ -132,15 +138,11 @@ def simulation(env: Environment, config_data: dict):
                         velocity * (config_data["users"]["mean_velocity"] - config_data["users"]["min_velocity"]) + config_data["users"]["mean_velocity"],
                         velocity * (config_data["users"]["max_velocity"] - config_data["users"]["mean_velocity"]) + config_data["users"]["mean_velocity"])
     
-    # Order the start times
-    ordered_times = sorted(user_start_times)
-
-    # Calculate the time between each user
-    for i in range(len(ordered_times)-1, 0, -1):
-        ordered_times[i] -= ordered_times[i-1]
 
     users = []
-
+    max_distance = config_data["users"]["max_distance"]
+    min_distance = config_data["users"]["min_distance"]
+    
     if(config_data["no_degeneration"]):
         """
         "no_degeneration": true,
@@ -153,12 +155,10 @@ def simulation(env: Environment, config_data: dict):
         starting_v = config_data["v_per_station"]
         max_tries = config_data["tries"]
         user_to_redistribute = config_data["redistribution"] - 1 # -1 because the first user is redistributed before the redistribution loop
-        max_distance = config_data["users"]["max_distance"]
-        min_distance = config_data["users"]["min_distance"]
         
         v = np.full(len(stations), starting_v)
         redistribution = 0
-        for i in range(len(ordered_times)):
+        for i in range(len(user_start_times)):
             if redistribution > 0:
                 # Find the maximum value
                 max_value = np.max(v)
@@ -176,7 +176,7 @@ def simulation(env: Environment, config_data: dict):
 
                 v[p] -= 1
                 v[a] += 1
-                users.append([User(i, stations[p], stations[a], velocity[i]), ordered_times[i]])
+                users.append([User(i, stations[p], stations[a], velocity[i]), user_start_times[i]])
                 redistribution -= 1
             else:
                 tries = 0
@@ -192,17 +192,21 @@ def simulation(env: Environment, config_data: dict):
                         max_indices = np.where(v == max_value)[0]
                         p = np.random.choice(max_indices)
 
-                        # Find the minimum value
-                        min_value = np.min(v)
-
-                        # Find the indices of all occurrences of the minimum value
-                        min_indices = np.where(v == min_value)[0]
-                        a = np.random.choice(min_indices)
+                        # find the minimum value near tha station p
+                        points = find_index_nearest_k_points(center = positions[p], radius = distance[i], points = positions, k = 20)
+                        for point in points:
+                            if p == point or v[point] >= v_max - 4 or stations[p].distance(stations[point]) > max_distance or stations[p].distance(stations[point]) < min_distance:
+                                continue
+                            else:
+                                a = point
+                                break
+                        else:
+                            raise Exception("No suitable point found")
 
                     else:
-                        p = randint(0,len(stations)-1)
+                        p = random.randint(0,len(stations)-1)
                         while v[p] <= 4:
-                            p = randint(0,len(stations)-1)
+                            p = random.randint(0,len(stations)-1)
 
                         points = find_index_nearest_k_points(center = positions[p], radius = distance[i], points = positions, k = 5)
                         
@@ -218,13 +222,13 @@ def simulation(env: Environment, config_data: dict):
 
                     v[p] -= 1
                     v[a] += 1
-                    users.append([User(i, stations[p], stations[a], velocity[i]), ordered_times[i]])
+                    users.append([User(i, stations[p], stations[a], velocity[i]), user_start_times[i]])
                     break
     else:
-        for i in range(len(ordered_times)):
-            p = randint(0,len(stations)-1)
+        for i in range(len(user_start_times)):
+            p = random.randint(0,len(stations)-1)
 
-            point = find_index_nearest_k_points(center = positions[p], radius = distance[i], points = positions, k = 5)
+            points = find_index_nearest_k_points(center = positions[p], radius = distance[i], points = positions, k = 5)
 
             for point in points:
                 if p == point or stations[p].distance(stations[point]) > max_distance or stations[p].distance(stations[point]) < min_distance:
@@ -235,17 +239,17 @@ def simulation(env: Environment, config_data: dict):
             else:
                 raise Exception("No suitable point found")
 
-            users.append([User(i, stations[p], stations[a], velocity[i]), ordered_times[i]])
+            users.append([User(i, stations[p], stations[a], velocity[i]), user_start_times[i]])
        
     print("generated")
 
-    print("Finished setup\n")
-
-    print("Starting simulation...", end=" ")
     # avvio simulazione
-    for user, timeout in users:
-        yield env.timeout(timeout)
-        env.process(user.run())
+    for user, start_time in users:
+        p = Process(start_time, user.run())
+        user.process = p
+        env.add_process(p)
+
+    print("Finished setup\n")
 
 def analyze_results(dir_path, config):
     print("Loading results...", end=" ")
@@ -262,6 +266,11 @@ def analyze_results(dir_path, config):
     # calculate statistics
     number_of_users = sum([int(arr[2]) for arr in config["users"]["linear"]]) + sum([int(arr[2]) for arr in config["users"]["normal"]])
     number_of_completed_trips = len(df)
+
+    # non completed trips id
+    non_completed_trips = set(range(number_of_users)) - set(df["User ID"])
+    print("Non completed trips: {}".format(non_completed_trips))
+    exit()
 
     # about distance
     avg_distance = df["Distance"].mean()
@@ -662,10 +671,12 @@ Grid 18x18, each point is 700 meters away from the others
     env = Environment()
 
     # avvio simulazione
-    env.process(simulation(env, config_data))
+    simulation(env, config_data)
     
+    print("Starting simulation...", end=" ")
+
     # esecuzione simulazione
-    env.run(until=config_data["run_time"])
+    env.run()
 
     print("Simulation finished\n")
 

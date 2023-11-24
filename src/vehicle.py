@@ -30,6 +30,9 @@ class Vehicle(ABC):
         self.battery -= distance * self.energy_consumption / self.max_capacity
 
         if self.battery < 0:
+            print(distance*self.energy_consumption/self.max_capacity)
+            print(self.battery)
+            print(self.battery + distance*self.energy_consumption/self.max_capacity)
             # Raise a custom exception if the battery level becomes negative
             raise NegativeBatteryLevel(f'Vehicle {self.id} battery level is negative')
 

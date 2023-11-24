@@ -1,4 +1,7 @@
-import simpy
+from simulation.env import Environment
+from simulation.resources import Lock, Slots
+from simulation.process import Process
+
 from abc import ABC, abstractmethod
 from vehicle import Vehicle
 
@@ -21,14 +24,6 @@ class StationStorage(ABC):
         pass
 
     @abstractmethod
-    def add_vehicle(self, vehicle: Vehicle):
-        pass
-
-    @abstractmethod
-    def pop_vehicle(self) -> Vehicle:
-        pass
-
-    @abstractmethod
     def next_vehicle_to_charge(self, charging_vehicles: list):
         pass
 
@@ -36,17 +31,25 @@ class StationStorage(ABC):
     def need_reschedule(self):
         # Check if the station storage needs to reschedule the charging of vehicles
         pass
-
+    
     @abstractmethod
-    def lock(self, vehicle):
-        # Wait for a slot to be available and add the vehicle to the station storage
-        # Must be implemented as a generator and yield once
+    def request_lock(self, process: Process):
+        # Wait for a slot to be available
         pass
-
+    
     @abstractmethod
-    def unlock(self, user):
-        # Wait for a vehicle to be available and remove it from the station storage
-        # Must be implemented as a generator and yield once
+    def lock(self, vehicle: Vehicle):
+        # add the vehicle to the station storage
+        pass
+    
+    @abstractmethod
+    def request_unlock(self, process: Process):
+        # Wait for a vehicle to be available
+        pass
+    
+    @abstractmethod
+    def unlock(self) -> Vehicle:
+        # return the available vehicle
         pass
 
     @abstractmethod
@@ -72,48 +75,23 @@ class LIFO(StationStorage):
     # Charging is rescheduled every time a vehicle is added to the station storage
     # The next vehicle to charge is the last vehicle in the list that needs charging
     
-    def __init__(self, env: simpy.Environment, params: dict):
+    def __init__(self, env: Environment, params: dict):
         # params: {
         #     "Capacity": int
         # }
         
         self.capacity = params["capacity"]
+
+        self.slots = Slots(env, capacity=self.capacity)
         
-        # Create a store to keep track of the number of available slots
-        # The number of items corresponds to the number of occupied slots
-        # for example, if there are 2 items in the store then there are 2 occupied slots and capacity - 2 available slots
-        self.slots = simpy.Store(env, capacity=self.capacity)
-        
-        # Create a store to keep track of the number of available vehicles
-        # The number of items corresponds to the number of available vehicles
-        # for example, if there are 2 items in the store then there are 2 available vehicles
-        self.available_vehicles = simpy.Store(env)
+        self.available_vehicles = Lock(env)
         
         self.vehicles = []
 
     def charged(self, vehicle: Vehicle):
         # If the vehicle is the last one in the list then the last slot is charged so is available
         if self.vehicles and self.vehicles[-1] == vehicle:
-            self.available_vehicles.put("vehicle")
-
-    def add_vehicle(self, vehicle: Vehicle):
-        self.vehicles.append(vehicle)
-
-        if vehicle.is_charged():
-            # If the vehicle is fully charged then the last slot is available
-            if len(self.available_vehicles.items) == 0:
-                self.available_vehicles.put("vehicle")
-        else:
-            # If the vehicle is not fully charged then the last slot is not available
-            if len(self.available_vehicles.items) == 1:
-                self.available_vehicles.get()        
-
-    def pop_vehicle(self) -> Vehicle:
-        v = self.vehicles.pop()
-        # If the last slot is fully charged then there is an available vehicle
-        if self.vehicles and self.vehicles[-1].is_charged():
-            self.available_vehicles.put("vehicle")
-        return v
+            self.available_vehicles.release()    
 
     def next_vehicle_to_charge(self, charging_vehicles: list):
         # Select the last vehicle in the list that needs charging
@@ -129,17 +107,33 @@ class LIFO(StationStorage):
         # so the charging needs to be rescheduled
         return True
     
-    def lock(self, vehicle):
-        # Wait for a slot to be available and add the vehicle to the station storage
-        yield self.slots.put("vehicle")
-        self.add_vehicle(vehicle)
+    def request_lock(self, process):
+        # Wait for a slot to be available
+        return self.slots.request(process)
 
-    def unlock(self, user):
-        # Wait for a vehicle to be available and remove it from the station storage
-        yield self.available_vehicles.get()
-        self.slots.get()
-        v = self.pop_vehicle()
-        user.vehicle = v
+    def lock(self, vehicle: Vehicle):
+        self.vehicles.append(vehicle)
+
+        if vehicle.is_charged():
+            # If the vehicle is fully charged then the last slot is available
+            self.available_vehicles.release()
+        else:
+            # If the vehicle is not fully charged then the last slot is not available
+            self.available_vehicles.block() 
+
+    def request_unlock(self, process):
+        # Wait for a vehicle to be available
+        return self.available_vehicles.request(process)
+    
+    def unlock(self) -> Vehicle:
+        v = self.vehicles.pop()
+        # return true if some process is waiting for a slot
+        if not self.slots.release():
+            # if some process is waiting for a slot then the last slot is not available
+            # If the last slot is fully charged then there is an available vehicle
+            if self.vehicles and self.vehicles[-1].is_charged():
+                self.available_vehicles.release()
+        return v
 
     def count(self):
         # Return the number of vehicles currently stored in the station storage
@@ -152,11 +146,12 @@ class LIFO(StationStorage):
         # Add the vehicles to the station storage and use a slot for each vehicle
         for v in vehicles:
             self.vehicles.append(v)
-            self.slots.put("vehicle")
 
         if self.vehicles and self.vehicles[-1].is_charged():
             # If the last vehicle is fully charged then there is an available vehicle
-            self.available_vehicles.put("vehicle")
+            self.available_vehicles.release()
+
+        self.slots.initial(self.capacity - len(vehicles))
 
     def max_capacity(self):
         # Return the maximum number of vehicles that can be stored in the station storage
@@ -168,7 +163,7 @@ class DualStack(StationStorage):
     # Vehicles are stored in two lists, one is used to insert vehicles and the other is used to remove vehicles
     # The lists are swapped when the first list is empty or the second list is full
 
-    def __init__(self, env: simpy.Environment, params: dict):
+    def __init__(self, env: Environment, params: dict):
         # params: {
         #     "stack1_size": int,
         #     "stack2_size": int
@@ -177,15 +172,12 @@ class DualStack(StationStorage):
         self.stack1_size = params["stack1_size"]
         self.stack2_size = params["stack2_size"]
 
-        # Create a store to keep track of the number of available slots
         # The number of items corresponds to the number of occupied slots
         # for example, if there are 2 items in the store then there are 2 occupied slots and capacity - 2 available slots
-        self.slots = simpy.Store(env, capacity=self.stack1_size + self.stack2_size)
+        self.slots = Slots(env, capacity=self.stack1_size + self.stack2_size)
 
-        # Create a store to keep track of the number of available vehicles
-        # The number of items corresponds to the number of available vehicles
-        # for example, if there are 2 items in the store then there are 2 available vehicles
-        self.available_vehicles = simpy.Store(env)
+        # locked when the last slot is not available
+        self.available_vehicles = Lock(env)
 
         self.stack1 = []
         self.stack2 = []
@@ -200,16 +192,14 @@ class DualStack(StationStorage):
         # If the last vehicle in the remove stack is fully charged then there is an available vehicle
         # Otherwise the last vehicle is not available
         if self.remove_stack and self.remove_stack[-1].is_charged():
-            if len(self.available_vehicles.items) == 0:
-                self.available_vehicles.put("vehicle")
+            self.available_vehicles.release()
         else:
-            if len(self.available_vehicles.items) == 1:
-                self.available_vehicles.get()
+            self.available_vehicles.block()
 
     def charged(self, vehicle: Vehicle):
         # If the vehicle is the last one in the remove stack then the last slot is charged so is available
         if self.remove_stack and self.remove_stack[-1] == vehicle:
-            self.available_vehicles.put("vehicle")
+            self.available_vehicles.release()
 
     def next_vehicle_to_charge(self, charging_vehicles: list):
         # first check in the remove stack
@@ -235,54 +225,69 @@ class DualStack(StationStorage):
         # Return the number of vehicles currently stored in the station storage
         return len(self.stack1) + len(self.stack2)
     
-    def add_vehicle(self, vehicle: Vehicle):
-        # Add the vehicle to the insert stack
+    def request_lock(self, process: Process):
+        # Wait for a slot to be available
+        return self.slots.request(process)
+
+    def lock(self, vehicle: Vehicle):
+        # add the vehicle to the station storage
         self.insert_stack.append(vehicle)
 
         # If the insert stack is full then swap the stacks
         size = self.stack1_size if self.insert_stack == self.stack1 else self.stack2_size
         if len(self.insert_stack) == size:
             self.swap_stacks()
+            if vehicle.is_charged():
+                # If the vehicle is fully charged then the last slot is available
+                self.available_vehicles.release()
+            else:
+                # If the vehicle is not fully charged then the last slot is not available
+                self.available_vehicles.block()
 
-    def pop_vehicle(self) -> Vehicle:
+    def request_unlock(self, process: Process):
+        # Wait for a vehicle to be available
+        return self.available_vehicles.request(process)
+
+    def unlock(self) -> Vehicle:
+        # return the available vehicle
         v = self.remove_stack.pop()
+        
+        self.slots.release()
         
         if len(self.remove_stack) == 0:
             # If the remove stack is empty then swap the stacks
             self.swap_stacks()
         elif self.remove_stack[-1].is_charged():
             # If the last vehicle in the remove stack is fully charged then there is an available vehicle
-            self.available_vehicles.put("vehicle")
+            self.available_vehicles.release()
 
         return v
-    
-    def lock(self, vehicle):
-        # Wait for a slot to be available and add the vehicle to the station storage
-        yield self.slots.put("vehicle")
-        self.add_vehicle(vehicle)
-
-    def unlock(self, user):
-        # Wait for a vehicle to be available and remove it from the station storage
-        yield self.available_vehicles.get()
-        self.slots.get()
-        v = self.pop_vehicle()
-        user.vehicle = v
 
     def deploy(self, vehicles: list):
         # Deploy a list of vehicles to the station storage
         # Used in the deployment phase to initialize the station storage
+        # divide the vehicles in the two stacks
+        # the most full stack is the remove stack
+        # the other stack is the insert stack
 
         if len(vehicles) > self.stack1_size + self.stack2_size:
             raise ValueError("The number of vehicles to deploy must be less than the capacity of the station storage")
-        
-        # Add the vehicles to the insert stack and use a slot for each vehicle
-        for v in vehicles:
-            self.add_vehicle(v)
-            self.slots.put("vehicle")
 
-        if self.insert_stack and self.insert_stack[-1].is_charged() and len(self.available_vehicles.items) == 0:
-            # If the last vehicle in the insert stack is fully charged then there is an available vehicle
-            self.available_vehicles.put("vehicle")
+        first_half = vehicles[:len(vehicles)//2]
+        second_half = vehicles[len(vehicles)//2:]
+        for v in first_half:
+            self.stack1.append(v)
+        for v in second_half:
+            self.stack2.append(v)
+
+        self.insert_stack = self.stack1
+        self.remove_stack = self.stack2
+
+        self.slots.initial(self.stack1_size + self.stack2_size - len(vehicles))
+
+        if self.remove_stack and self.remove_stack[-1].is_charged():
+            # If the last vehicle in the remove stack is fully charged then there is an available vehicle
+            self.available_vehicles.release()
 
     def max_capacity(self):
         # Return the maximum number of vehicles that can be stored in the station storage

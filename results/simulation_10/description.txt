@@ -1,0 +1,11 @@
+Description (WARNING SOME ASSUMPTION MADE ON THE STRUCTURE OF THE CONFIGURATION FILE):
+Grid 18x18, each point is 700 meters away from the others
+- Number of stations: 324
+- Vehicle per station: 6
+- Station Storage: {'type': 'DualStack', 'parameters': {'stack1_size': 6, 'stack2_size': 6}}
+- Number of users: 7
+- Vehicle autonomy: 16867.469879518074 meters
+- Charging time: 20.0 minutes
+- Simultanous charging: 3
+- No Degeneration flag: True
+
