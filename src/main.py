@@ -11,7 +11,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def simulation(env: Environment, config_data: dict):
+def simulation(env: Environment, config_data: dict, seed: int):
     print("Setting up simulation...", end="\n\t")
     print("Loading configuration...", end=" ")
     # caricamento dinamico funzioni e moduli specificati nel file di configurazione
@@ -51,7 +51,12 @@ def simulation(env: Environment, config_data: dict):
 
     print("Generating stations...", end=" ")
     # generazione posizioni stazioni
-    positions = generate_station_positions(config_data["station"]["deployment"]["parameters"])
+    positions = generate_station_positions(config_data["station"]["deployment"]["parameters"], seed)
+
+    # plot station positions
+    # plt.figure()
+    # plt.scatter([p[0] for p in positions], [p[1] for p in positions])
+    # plt.savefig(os.path.join(os.path.dirname(__file__), "../pitch_plot/stations.png"))
 
     # creazione stazioni
     stations = [
@@ -81,35 +86,6 @@ def simulation(env: Environment, config_data: dict):
 
     # fornisce accesso alla variabile env all'interno della classe User
     User.env = env
-
-    """"
-    "users": {
-        "linear": [
-            [0, 60, 245],
-            [60, 90, 340],
-            [90, 120, 380],
-            [120, 150, 420],
-            [150, 180, 460],
-            [180, 1080, 15000]
-        ],
-        "normal":[
-            [60, 180, 8, 2.66, 857],
-            [420, 540, 14, 4.33, 286],
-            [720, 960, 18, 6, 1837]
-
-        ],
-        
-        "average_distance": 10,
-        "min_distance": 10,
-        "max_distance": 10,
-        "average_speed": 10,
-        "min_speed": 10,
-        "max_speed": 10
-    }
-    """
-
-    np.random.seed(42)
-    random.seed(42)
 
     user_start_times = []
     for start, end, number in config_data["users"]["linear"]:
@@ -182,6 +158,11 @@ def simulation(env: Environment, config_data: dict):
                 tries = 0
                 while True:
                     if tries > max_tries:
+                        print("######################")
+                        print("######################")
+                        print("###### WARNING #######")
+                        print("######################")
+                        print("######################")
                         # prossimi x utenti andranno da stazzioni piene a stazioni vuote
                         redistribution = user_to_redistribute
 
@@ -268,9 +249,9 @@ def analyze_results(dir_path, config):
     number_of_completed_trips = len(df)
 
     # non completed trips id
-    non_completed_trips = set(range(number_of_users)) - set(df["User ID"])
-    #print("Non completed trips: {}".format(non_completed_trips))
-    #exit()
+    # non_completed_trips = set(range(number_of_users)) - set(df["User ID"])
+    # print("Non completed trips: {}".format(non_completed_trips))
+    # exit()
 
     # about distance
     avg_distance = df["Distance"].mean()
@@ -428,9 +409,12 @@ Variance trips per vehicle: {}
     avg_arrivals_per_station, max_arrivals_per_station, min_arrivals_per_station, median_arrivals_per_station, mode_arrivals_per_station, variance_arrivals_per_station,
     avg_trips_per_vehicle, max_trips_per_vehicle, min_trips_per_vehicle, median_trips_per_vehicle, mode_trips_per_vehicle, variance_trips_per_vehicle
 ), file=f)
-        
-    print("calculated", end="\n\t")
     
+    # print("calculated")
+    # return
+
+    print("calculated", end="\n\t")
+
     print("Plotting results...", end=" ")
     
     # create a directory for the plots
@@ -494,12 +478,32 @@ Variance trips per vehicle: {}
     print("plotted")
 
 def main():
-    # crea cartella per i risultati della simulazione
-    sim_path = create_directory_path()
-    
+    # seed per il generatore di numeri casuali
+    seed = random.randint(0, 1000000)
+
+    path = os.path.join(os.path.dirname(__file__), "../results")
+
     args = sys.argv[1:]
-    if len(args) > 0:
-        if "-s" in args or "--simplified" in args:
+    
+    for arg in args:
+        if arg.startswith("-apath=") or arg.startswith("--absolute_path="):
+            path = arg.split("=")[1]
+
+        elif arg.startswith("-rpath=") or arg.startswith("--relative_path="):
+            path = os.path.join(os.path.dirname(__file__), arg.split("=")[1])
+
+    # crea cartella per i risultati della simulazione
+    sim_path = create_directory_path(path)
+
+    for arg in args:
+        if arg == "-h" or arg == "--help":
+            print("Usage: python3 {} [-s|--simplified] [--seed=SEED] [-log|--log]".format(sys.argv[0]))
+            print("\t-s|--simplified\t\tRun the simulation with the simplified configuration")
+            print("\t--seed=SEED\t\tSet the seed for the random number generator")
+            print("\t-log|--log\t\tEnable logging")
+            exit()
+        
+        elif arg == "-s" or arg == "--simplified":
             print("Running simplified simulation")
             # load simplified configuration
             simplified_config = load_config(os.path.join(os.path.dirname(__file__),"../config/simplified.json"))
@@ -529,11 +533,12 @@ def main():
         },
 
         "deployment": {
-            "type": "grid",
+            "type": "grid_cells",
             "parameters": {
                 "rows": ROWS,
                 "columns": COLUMNS,
-                "width": WIDTH
+                "width": WIDTH,
+                "min_distance": STAT_MIN_DISTANCE
             }
         }
     },
@@ -591,13 +596,14 @@ def main():
                 [720, 960, 1837/10000*simplified_config["users"]["number"]]
             ]
 
-            placeholders = ["VEHICLES_PER_STATION", "CHARGE_PER_TIME", "MAX_CONCURRENT_CHARGING", "ROWS", "COLUMNS", "WIDTH", "TYPE", "PARAMETERS", "LINEAR", "NORMAL", "MEAN_DISTANCE", "MAX_DISTANCE", "MIN_DISTANCE", "MEAN_VELOCITY", "MAX_VELOCITY", "MIN_VELOCITY", "NO_DEGENERATION", "STATION_CAPACITY", "REDISTRIBUTION", "RUN_TIME"]
+            placeholders = ["VEHICLES_PER_STATION", "CHARGE_PER_TIME", "MAX_CONCURRENT_CHARGING", "ROWS", "COLUMNS", "WIDTH", "STAT_MIN_DISTANCE", "TYPE", "PARAMETERS", "LINEAR", "NORMAL", "MEAN_DISTANCE", "MAX_DISTANCE", "MIN_DISTANCE", "MEAN_VELOCITY", "MAX_VELOCITY", "MIN_VELOCITY", "NO_DEGENERATION", "STATION_CAPACITY", "REDISTRIBUTION", "RUN_TIME"]
             substitutions= [simplified_config["stations"]["vehicles_per_station"],
                             1000/simplified_config["stations"]["recharge_time"],
                             simplified_config["stations"]["max_simultaneous_recharge"],
                             radice,
                             radice,
                             simplified_config["stations"]["distance"],
+                            simplified_config["stations"]["min_distance"],
                             simplified_config["stations"]["type"],
                             str(storage).replace("'", '"'),
                             linear,
@@ -620,40 +626,22 @@ def main():
             # write configuration to file
             with open(os.path.join(os.path.dirname(__file__), "../config/simulation.json"), "w") as f:
                 print(configuration, file=f)
-
-            # caricamento file di configurazione
-            config_data = load_config(os.path.join(os.path.dirname(__file__),"../config/simulation.json"))
         
-        if "-log" in args or "--log" in args:
+        elif arg == "-log" or arg == "--log":
             setup_logger(os.path.join(sim_path, "log.log"))
-    else:
-        # caricamento file di configurazione
-        config_data = load_config(os.path.join(os.path.dirname(__file__),"../config/simulation.json"))
 
-        # write brief description of the simulation and the configuration used
-        ## WARNING: assumptions are made on the structure of the configuration file
-        # TODO: make this more general
-        with open(os.path.join(sim_path, "description.txt"), "w") as f:
-            print(
-"""Description (WARNING SOME ASSUMPTION MADE ON THE STRUCTURE OF THE CONFIGURATION FILE):
-Grid 18x18, each point is 700 meters away from the others
-- Number of stations: 324
-- Vehicle per station: {}
-- Station Storage: {}
-- Number of users: {}
-- Vehicle autonomy: {} meters
-- Charging time: {} minutes
-- Simultanous charging: {}
-- No Degeneration flag: {}
-""".format(
-    config_data["v_per_station"],
-    config_data["station"]["storage"],
-    sum([int(arr[2]) for arr in config_data["users"]["linear"]]) + sum([int(arr[2]) for arr in config_data["users"]["normal"]]),
-    1000/41.5*700,
-    1000/config_data["station"]["charge_per_time"],
-    config_data["station"]["max_concurrent_charging"],
-    config_data["no_degeneration"]
-), file=f)
+        elif arg.startswith("--seed="):
+            seed = int(arg.split("=")[1])
+
+    
+    # set seed
+    print("Seed: {}".format(seed))
+    random.seed(seed)
+    np.random.seed(seed)
+
+    #print(sim_path)
+    # caricamento file di configurazione
+    config_data = load_config(os.path.join(os.path.dirname(__file__),"../config/simulation.json"))
 
     # make a copy of the configuration files
     os.makedirs(os.path.join(sim_path, "conf"))
@@ -671,7 +659,7 @@ Grid 18x18, each point is 700 meters away from the others
     env = Environment()
 
     # avvio simulazione
-    simulation(env, config_data)
+    simulation(env, config_data, seed)
     
     print("Starting simulation...", end=" ")
 

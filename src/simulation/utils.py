@@ -3,9 +3,12 @@ class sortedlist(list):
         super().__init__(*args, **kwargs)
 
     def insert(self, element):
-        for i in range(len(self)):
-            if self[i] > element:
-                super().insert(i, element)
-                return
-        self.append(element)
+        # binary search to find the right position
+        lo = 0
+        hi = len(self)
+        while lo < hi:
+            mid = (lo+hi)//2
+            if self[mid] < element: lo = mid+1
+            else: hi = mid
+        super().insert(lo, element)
             

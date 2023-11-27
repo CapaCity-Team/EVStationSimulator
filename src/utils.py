@@ -4,15 +4,15 @@ import math, logging, os, json
 DEFAULT_DIRECTORY_PATH = None
 
 # Function to set the directory path
-def create_directory_path():
+def create_directory_path(path):
     global DEFAULT_DIRECTORY_PATH
     
     # se non esiste nessuna cartella per i risultati, crea la cartella result_0
     # altrimenti crea la cartella result_n+1
     i = 0
-    while os.path.exists(os.path.join(os.path.dirname(__file__), "../results/simulation_{}".format(i))):
+    while os.path.exists(os.path.join(path, "simulation_{}".format(i))):
         i += 1
-    path = os.path.join(os.path.dirname(__file__), "../results/simulation_{}".format(i))
+    path = os.path.join(path, "simulation_{}".format(i))
     os.makedirs(path)
     
     DEFAULT_DIRECTORY_PATH = path
@@ -67,4 +67,3 @@ def load_config(config_path):
         raise e
     
     return config_data
-

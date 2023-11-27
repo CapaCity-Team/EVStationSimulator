@@ -3,7 +3,6 @@ from simulation.constants import timeout
 from station import Station
 from utils import get_directory_path, log
 import os
-import numpy as np
 
 class User:
     env = None
@@ -14,18 +13,7 @@ class User:
         self.velocity = velocity
         self.process = None
 
-    def real_distance(self, distance: float):
-        # create the body of the function. It should return a new distance that is the given one plus 20 percent and a random value
-        # between -10 and 10 percent of the given distance.
-        return distance*1.2 + abs(np.random.normal(0, 0.1*distance))
-
-
-
-
     def run(self):
-        if self.id == 2:
-            pass
-
         start_time = self.env.now()
 
         log("User {} from station {} to station {}".format(self.id, self.from_station.id, self.to_station.id))
@@ -36,6 +24,8 @@ class User:
         yield self.from_station.request_unlock(self.process)
         vehicle = self.from_station.unlock()
         
+        #self.to_station.is_available()
+
         unlock_time = self.env.now() - request_time
 
         battery = vehicle.battery*100
@@ -43,7 +33,7 @@ class User:
         log("User {} got vehicle {} with battery {}% from station {} at {}".format(self.id, vehicle.id, battery, self.from_station.id, self.env.now()))
 
         distance = self.from_station.distance(self.to_station)
-        vehicle.move(self.real_distance(distance))
+        vehicle.move(distance)
         
         time = distance / self.velocity
         

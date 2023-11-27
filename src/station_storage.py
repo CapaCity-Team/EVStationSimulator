@@ -157,7 +157,6 @@ class LIFO(StationStorage):
         # Return the maximum number of vehicles that can be stored in the station storage
         return self.capacity
 
-
 class DualStack(StationStorage):
     # Concrete class implementing a Dual Stack station storage
     # Vehicles are stored in two lists, one is used to insert vehicles and the other is used to remove vehicles
@@ -243,6 +242,9 @@ class DualStack(StationStorage):
             else:
                 # If the vehicle is not fully charged then the last slot is not available
                 self.available_vehicles.block()
+        elif len(self.remove_stack) == 0:
+            # If the remove stack is empty then swap the stacks
+            self.swap_stacks()
 
     def request_unlock(self, process: Process):
         # Wait for a vehicle to be available
@@ -292,3 +294,4 @@ class DualStack(StationStorage):
     def max_capacity(self):
         # Return the maximum number of vehicles that can be stored in the station storage
         return self.stack1_size + self.stack2_size
+

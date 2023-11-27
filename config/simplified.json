@@ -1,25 +1,26 @@
 {
     "stations": {
-        "number": 100,
-        "recharge_time": 20,
+        "number": 324,
+        "recharge_time": 99,
         "max_simultaneous_recharge": 3,
-        "capacity": 12, 
+        "capacity": 30,
         "type": "DualStack",
-        "distance": 1,
-        "vehicles_per_station": 6
+        "distance": 700,
+        "min_distance": 250,
+        "vehicles_per_station": 16
     },
     "vehicle": {
-        "autonomy": 7,
-        "average_speed": 0.3,
-        "min_speed": 0.1,
-        "max_speed": 0.5
+        "autonomy": 15000,
+        "average_speed": 250,
+        "min_speed": 100,
+        "max_speed": 400
     },
     "users": {
-        "number": 1000,
-        "average_distance": 3.5,
-        "min_distance": 1,
-        "max_distance": 6.0
+        "number": 35000,
+        "average_distance": 3000,
+        "min_distance": 2000,
+        "max_distance": 4000
     },
     "no_degeneration": true,
-    "run_time": 2000
+    "run_time": 3000
 }

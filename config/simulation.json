@@ -1,19 +1,20 @@
 {
     "station": {
-        "charge_per_time": 50.0,
+        "charge_per_time": 10.1010101010101,
         "max_concurrent_charging": 3,
         
         "storage":{
             "type": "DualStack",
-            "parameters": {"stack1_size": 6, "stack2_size": 6}
+            "parameters": {"stack1_size": 15, "stack2_size": 15}
         },
 
         "deployment": {
-            "type": "grid",
+            "type": "grid_cells",
             "parameters": {
-                "rows": 10,
-                "columns": 10,
-                "width": 1
+                "rows": 18,
+                "columns": 18,
+                "width": 700,
+                "min_distance": 250
             }
         }
     },
@@ -24,27 +25,27 @@
         "deployment": {
             "type": "uniform",
             "parameters": {
-                "vehicles_per_station": 6
+                "vehicles_per_station": 16
             }
         }
     },
 
     "users": {
-        "linear": [[0, 60, 24.5], [60, 90, 13.899999999999999], [90, 120, 15.5], [120, 150, 17.1], [150, 180, 18.8], [180, 1080, 612.1999999999999]],
-        "normal": [[60, 180, 85.7], [420, 540, 28.6], [720, 960, 183.7]],
-        "mean_distance": 3.5,
-        "max_distance": 6.0,
-        "min_distance": 1,
-        "mean_velocity": 0.3,
-        "max_velocity": 0.5,
-        "min_velocity": 0.1
+        "linear": [[0, 60, 857.5], [60, 90, 486.49999999999994], [90, 120, 542.5], [120, 150, 598.5], [150, 180, 658.0], [180, 1080, 21427.0]],
+        "normal": [[60, 180, 2999.5], [420, 540, 1001.0], [720, 960, 6429.5]],
+        "mean_distance": 3000,
+        "max_distance": 4000,
+        "min_distance": 2000,
+        "mean_velocity": 250,
+        "max_velocity": 400,
+        "min_velocity": 100
     },
     
     "no_degeneration": true,
-    "v_per_station": 6,
-    "station_capacity": 12,
+    "v_per_station": 16,
+    "station_capacity": 30,
     "tries": 5000,
-    "redistribution": 100,
+    "redistribution": 3500,
 
-    "run_time": 2000
+    "run_time": 3000
 }

@@ -1,53 +1,39 @@
-import os, json
+import os, json, random
 
 def main():
-    """{
-        "stations": {
-            "number": 324,
-            "recharge_time": 10,
-            "max_simultaneous_recharge": 3,
-            "capacity": 30,
-            "type": "LIFO",
-            "distance": 1,
-            "vehicles_per_station": 15
-        },
-        "vehicle": {
-            "autonomy": 7,
-            "average_speed": 0.3,
-            "min_speed": 0.1,
-            "max_speed": 0.5
-        },
-        "users": {
-            "number": 10000,
-            "average_distance": 3.5,
-            "min_distance": 1,
-            "max_distance": 6.0
-        },
-
-        "no_degeneration": true,
-
-        "run_time": 2000
-    }"""
-
     with open(os.path.join(os.path.dirname(__file__), "../config/simplified.json"), "r") as f:
         simplified_config = json.load(f)
 
-    storage_types = ["DualStack"]
-    charging_times = [20, 10, 5]
-    max_concurrent_charging = [1, 3, 6]
+    charging_times = [i for i in range(1, 100)]
+    user_number = [25000, 30000, 35000]
+    seeds = [11297, 8850, 22096, 31782, 55605]
 
-    for s in storage_types:
+    # save seeds to file
+    with open(os.path.join(os.path.dirname(__file__), "../../simulations/seeds.txt"), "w") as f:
+        for seed in seeds:
+            f.write(str(seed) + "\n")
+
+    print(f"running {len(user_number)*len(charging_times)*len(seeds)} simulations")
+
+    base_path = os.path.join(os.path.dirname(__file__), "../../simulations")
+
+    for n in user_number:
+        simplified_config["users"]["number"] = n
+        os.makedirs(os.path.join(base_path, f"user_{n}"))
+        
         for t in charging_times:
-            for c in max_concurrent_charging:
-                simplified_config["stations"]["type"] = s
-                simplified_config["stations"]["recharge_time"] = t
-                simplified_config["stations"]["max_simultaneous_recharge"] = c
+            simplified_config["stations"]["recharge_time"] = t
+            path = os.path.join(base_path, f"user_{n}", f"time_{t}")
+            os.makedirs(path)
 
-                with open(os.path.join(os.path.dirname(__file__), "../config/simplified.json"), "w") as f:
-                    json.dump(simplified_config, f, indent=4)
-                
-                print("Running simulation with {} storage, {} charging time and {} max concurrent charging\n".format(s, t, c))
-                os.system("python3 {} -s".format(os.path.join(os.path.dirname(__file__), "main.py")))
+            print("Running simulations with charging time {}\n".format(t))
+
+            with open(os.path.join(os.path.dirname(__file__), "../config/simplified.json"), "w") as f:
+                    json.dump(simplified_config, f, indent=4)            
+
+            for i, seed in enumerate(seeds):
+                print("Running simulation {}\n".format(i))
+                os.system("python3 {} -s --seed={} -rpath={}".format(os.path.join(os.path.dirname(__file__), "main.py"), seed, path))
                 print()
 
     print("Done!")
