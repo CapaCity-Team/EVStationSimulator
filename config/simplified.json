@@ -16,7 +16,7 @@
         "max_speed": 400
     },
     "users": {
-        "number": 35000,
+        "number": 40000,
         "average_distance": 3000,
         "min_distance": 2000,
         "max_distance": 4000

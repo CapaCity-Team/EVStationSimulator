@@ -1,5 +1,5 @@
-from simulation.env import Environment
-from simulation.constants import *
+from environment.env import Environment
+from environment.constants import *
 
 class Lock:
     def __init__(self, env: Environment):

@@ -1,4 +1,4 @@
-import os, json, random
+import os, json
 
 def main():
     with open(os.path.join(os.path.dirname(__file__), "../config/simplified.json"), "r") as f:

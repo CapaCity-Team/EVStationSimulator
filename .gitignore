@@ -21,3 +21,6 @@ env/
 
 # working module
 src/env_module/
+
+# simulation results
+results/*

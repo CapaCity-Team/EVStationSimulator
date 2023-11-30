@@ -1,4 +1,4 @@
-from simulation.constants import *
+from environment.constants import *
 
 class Interrupt(Exception):
     pass

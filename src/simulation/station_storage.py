@@ -1,9 +1,9 @@
-from simulation.env import Environment
-from simulation.resources import Lock, Slots
-from simulation.process import Process
+from environment.env import Environment
+from environment.resources import Lock, Slots
+from environment.process import Process
 
 from abc import ABC, abstractmethod
-from vehicle import Vehicle
+from simulation.vehicle import Vehicle
 
 class StationStorage(ABC):
     # Abstract base class representing a station storage for vehicles
@@ -234,16 +234,7 @@ class DualStack(StationStorage):
 
         # If the insert stack is full then swap the stacks
         size = self.stack1_size if self.insert_stack == self.stack1 else self.stack2_size
-        if len(self.insert_stack) == size:
-            self.swap_stacks()
-            if vehicle.is_charged():
-                # If the vehicle is fully charged then the last slot is available
-                self.available_vehicles.release()
-            else:
-                # If the vehicle is not fully charged then the last slot is not available
-                self.available_vehicles.block()
-        elif len(self.remove_stack) == 0:
-            # If the remove stack is empty then swap the stacks
+        if (len(self.insert_stack) == size and len(self.stack1) + len(self.stack2) < self.max_capacity()) or len(self.remove_stack) == 0:
             self.swap_stacks()
 
     def request_unlock(self, process: Process):
@@ -257,8 +248,12 @@ class DualStack(StationStorage):
         self.slots.release()
         
         if len(self.remove_stack) == 0:
-            # If the remove stack is empty then swap the stacks
-            self.swap_stacks()
+            if len(self.insert_stack) == 0:
+                # If both stacks are empty then there are no available vehicles
+                self.available_vehicles.block()
+            else:
+                # If the remove stack is empty then swap the stacks
+                self.swap_stacks()
         elif self.remove_stack[-1].is_charged():
             # If the last vehicle in the remove stack is fully charged then there is an available vehicle
             self.available_vehicles.release()
@@ -275,15 +270,11 @@ class DualStack(StationStorage):
         if len(vehicles) > self.stack1_size + self.stack2_size:
             raise ValueError("The number of vehicles to deploy must be less than the capacity of the station storage")
 
-        first_half = vehicles[:len(vehicles)//2]
-        second_half = vehicles[len(vehicles)//2:]
-        for v in first_half:
-            self.stack1.append(v)
-        for v in second_half:
-            self.stack2.append(v)
+        self.stack1 = vehicles[:self.stack1_size]
+        self.stack2 = vehicles[self.stack1_size:]
 
-        self.insert_stack = self.stack1
-        self.remove_stack = self.stack2
+        self.remove_stack = self.stack1
+        self.insert_stack = self.stack2
 
         self.slots.initial(self.stack1_size + self.stack2_size - len(vehicles))
 

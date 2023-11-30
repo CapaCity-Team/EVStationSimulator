@@ -1,7 +1,7 @@
-from simulation.constants import timeout
+from environment.constants import timeout
 
-from station import Station
-from utils import get_directory_path, log
+from simulation.station import Station
+from simulation.utils import get_directory_path, log
 import os
 
 class User:

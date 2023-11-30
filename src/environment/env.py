@@ -1,6 +1,6 @@
-from simulation.utils import sortedlist
-from simulation.process import Process
-from simulation.constants import *
+from environment.utils import sortedlist
+from environment.process import Process
+from environment.constants import *
 
 class Environment:
     def __init__(self):

@@ -1,10 +1,10 @@
-from simulation.env import Environment
-from simulation.constants import timeout
-from simulation.process import Process, Interrupt
+from environment.env import Environment
+from environment.constants import timeout
+from environment.process import Process, Interrupt
 
-from vehicle import Vehicle
-from station_storage import StationStorage
-from utils import log
+from simulation.vehicle import Vehicle
+from simulation.station_storage import StationStorage
+from simulation.utils import log
 
 class Station:
     def __init__(self, env: Environment, station_id: int, position: tuple, capacity_per_time: float, max_concurrent_charging: int, vehicles: StationStorage):
@@ -106,3 +106,9 @@ class Station:
     def deploy(self, vehicles: list):
         # used in deployment phase
         self.vehicles.deploy(vehicles)
+
+    def count(self):
+        return self.vehicles.count()
+    
+    def max_capacity(self):
+        return self.vehicles.max_capacity()
