@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-def analyze_results(dir_path, config):
+def analyze_results(dir_path: str, config: dict, seed: int):
     print("Loading results...", end=" ")
 
     df = pd.read_csv(os.path.join(dir_path, "result.csv"))
@@ -102,7 +102,7 @@ def analyze_results(dir_path, config):
     # save this statistics in a file
     with open(os.path.join(dir_path, "statistics.txt"), "w") as f:
         print(
-"""
+"""Seed: {}
 Number of users: {}
 Number of completed trips: {}
 
@@ -169,6 +169,7 @@ Median trips per vehicle: {}
 Mode trips per vehicle: {}
 Variance trips per vehicle: {}
 """.format(
+    seed,
     number_of_users, number_of_completed_trips,
     avg_distance, max_distance, min_distance, median_distance, mode_distance, variance_distance,
     avg_velocity, max_velocity, min_velocity, median_velocity, mode_velocity, variance_velocity,

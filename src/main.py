@@ -201,11 +201,11 @@ def main():
     # analisi risultati
     print("Analyzing results...", end="\n\t")
 
-    analyze_results(sim_path, config_data)
+    analyze_results(sim_path, config_data, seed)
     
     print("analyzed")
 
-    print("\nYou can find all the files produced by the simulation in the directory {}".format(sim_path))
+    print("\nYou can find all the files produced by the simulation in : {}".format(sim_path))
 
 if __name__ == "__main__":
     main()
